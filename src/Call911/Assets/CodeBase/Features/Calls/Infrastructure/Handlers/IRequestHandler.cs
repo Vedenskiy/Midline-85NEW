@@ -1,7 +1,7 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
 
-namespace CodeBase.Features.Calls.Infrastructure
+namespace CodeBase.Features.Calls.Infrastructure.Handlers
 {
     public interface IRequestHandler
     {

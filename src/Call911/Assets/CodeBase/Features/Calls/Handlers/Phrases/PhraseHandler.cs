@@ -1,9 +1,9 @@
 using System.Threading;
-using CodeBase.Features.Calls.Infrastructure;
+using CodeBase.Features.Calls.Infrastructure.Handlers;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace CodeBase.Features.Calls.Phrases
+namespace CodeBase.Features.Calls.Handlers.Phrases
 {
     public class PhraseHandler : RequestHandler<PhraseData>
     {

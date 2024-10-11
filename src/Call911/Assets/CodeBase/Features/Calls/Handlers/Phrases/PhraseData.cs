@@ -1,6 +1,6 @@
-using CodeBase.Features.Calls.Infrastructure;
+using CodeBase.Features.Calls.Infrastructure.Nodes;
 
-namespace CodeBase.Features.Calls.Phrases
+namespace CodeBase.Features.Calls.Handlers.Phrases
 {
     public class PhraseData : Node
     {

@@ -1,7 +1,8 @@
 using System.Threading;
+using CodeBase.Features.Calls.Infrastructure.Nodes;
 using Cysharp.Threading.Tasks;
 
-namespace CodeBase.Features.Calls.Infrastructure
+namespace CodeBase.Features.Calls.Infrastructure.Handlers
 {
     public abstract class RequestHandler<TRequest> : IRequestHandler where TRequest : Node
     {
