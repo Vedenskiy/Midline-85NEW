@@ -32,7 +32,7 @@ namespace CodeBase.Infrastructure.Installers.Bindings
             }));
             
             builder.AddSingleton<NodeRepository>();
-            builder.AddSingleton<ParallelExecutor>();
+            builder.AddSingleton<CallsExecutor>();
         }
     }
 }

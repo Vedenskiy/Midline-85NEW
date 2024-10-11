@@ -9,7 +9,7 @@ using UniTaskExtensions = CodeBase.Features.Calls.Infrastructure.Extensions.UniT
 
 namespace CodeBase.Features.Calls.Infrastructure
 {
-    public class ParallelExecutor
+    public class CallsExecutor
     {
         private readonly Pipeline _pipeline;
         private readonly NodeRepository _nodes;
@@ -17,7 +17,7 @@ namespace CodeBase.Features.Calls.Infrastructure
         private readonly Dictionary<UniTask, Node> _processingTasks = new();
         private readonly List<UniTask> _completedTasks = new();
 
-        public ParallelExecutor(Pipeline pipeline, NodeRepository nodes)
+        public CallsExecutor(Pipeline pipeline, NodeRepository nodes)
         {
             _pipeline = pipeline;
             _nodes = nodes;
