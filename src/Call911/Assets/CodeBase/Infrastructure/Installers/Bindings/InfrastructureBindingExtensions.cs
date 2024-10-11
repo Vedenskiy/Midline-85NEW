@@ -1,3 +1,5 @@
+using CodeBase.Infrastructure.Common.AssetManagement;
+using CodeBase.Infrastructure.Installers.Extensions;
 using Reflex.Core;
 
 namespace CodeBase.Infrastructure.Installers.Bindings
@@ -6,7 +8,15 @@ namespace CodeBase.Infrastructure.Installers.Bindings
     {
         public static ContainerBuilder BindInfrastructure(this ContainerBuilder builder)
         {
+            BindAssetManagement(builder);
             return builder;
+        }
+
+        private static void BindAssetManagement(ContainerBuilder builder)
+        {
+            builder.AddSingleton<AssetProvider>();
+            builder.AddSingleton<AssetDownloadReporter>();
+            builder.AddSingleton<AssetDownloadService>();
         }
     }
 }
