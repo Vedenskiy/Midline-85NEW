@@ -7,14 +7,14 @@ using CodeBase.Features.Calls.Infrastructure.Nodes;
 using CodeBase.Infrastructure.Installers.Extensions;
 using Reflex.Core;
 
-namespace CodeBase.Infrastructure.Installers
+namespace CodeBase.Infrastructure.Installers.Bindings
 {
-    public static class CallsBindingExtension
+    public static class CallsBindingExtensions
     {
         public static ContainerBuilder BindCalls(this ContainerBuilder builder)
         {
-            builder.BindHandlers();
-            builder.BindInfrastructure();
+            BindHandlers(builder);
+            BindInfrastructure(builder);
             
             return builder;
         }
