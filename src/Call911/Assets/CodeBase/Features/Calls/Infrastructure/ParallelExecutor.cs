@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using CodeBase.Features.Calls.Infrastructure.Handlers;
 using CodeBase.Features.Calls.Infrastructure.Nodes;
 using Cysharp.Threading.Tasks;
@@ -26,7 +27,11 @@ namespace CodeBase.Features.Calls.Infrastructure
         {
             var entryNode = _nodes.GetById(entryGuid);
             _processingTasks.Add(_pipeline.Execute(entryNode, token), entryNode);
+            await ProcessWhileHasTasks(token);
+        }
 
+        private async Task ProcessWhileHasTasks(CancellationToken token)
+        {
             while (_processingTasks.Count > 0)
             {
                 _completedTasks.AddRange(_processingTasks.Keys.Where(UniTaskExtensions.IsCompleted));
@@ -38,7 +43,7 @@ namespace CodeBase.Features.Calls.Infrastructure
                 }
 
                 _completedTasks.Clear();
-                
+
                 await UniTask.Yield();
             }
         }
