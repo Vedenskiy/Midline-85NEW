@@ -21,6 +21,7 @@ namespace CodeBase.Infrastructure.Installers.Bindings
 
         private static void BindHandlers(this ContainerBuilder builder)
         {
+            builder.AddSingleton<PhraseService>();
             builder.AddSingleton<PhraseHandler>();
         }
 

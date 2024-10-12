@@ -7,9 +7,14 @@ namespace CodeBase.Features.Calls.Handlers.Phrases
 {
     public class PhraseHandler : RequestHandler<PhraseData>
     {
+        private readonly PhraseService _phrases;
+
+        public PhraseHandler(PhraseService phrases) => 
+            _phrases = phrases;
+
         protected override async UniTask Handle(PhraseData request, CancellationToken token)
         {
-            Debug.Log($"{request.PersonKey} say: \"{request.MessageKey}\"");
+            _phrases.ShowPhrase(request);
             await UniTask.Delay(FromSecondToMilliseconds(request.DurationInSeconds), cancellationToken: token);
         }
 
