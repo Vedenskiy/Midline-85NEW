@@ -22,7 +22,7 @@ namespace CodeBase.Features.Calls.Handlers.Phrases
 
         private void OnPhraseShown(PhraseData data)
         {
-            _label.text = $"{data.PersonKey}: {data.MessageKey}";
+            _label.text = $"{data.PersonKey.ToUpper()}: {data.MessageKey}";
         }
     }
 }
