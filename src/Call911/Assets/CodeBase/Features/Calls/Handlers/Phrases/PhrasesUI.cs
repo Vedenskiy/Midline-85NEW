@@ -1,12 +1,12 @@
 ﻿using Reflex.Attributes;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace CodeBase.Features.Calls.Handlers.Phrases
 {
     public class PhrasesUI : MonoBehaviour
     {
-        [SerializeField] private Text _label;
+        [SerializeField] private TextMeshProUGUI _label;
         
         private PhraseService _phrases;
 
