@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using CodeBase.Features.Calls.Handlers.Choices;
 using CodeBase.Features.Calls.Infrastructure.Handlers;
 using CodeBase.Features.Calls.Infrastructure.Nodes;
 using Cysharp.Threading.Tasks;
@@ -13,14 +14,19 @@ namespace CodeBase.Features.Calls.Infrastructure
     {
         private readonly Pipeline _pipeline;
         private readonly NodeRepository _nodes;
+        private readonly PlayerChoices _playerChoices;
 
         private readonly Dictionary<UniTask, Node> _processingTasks = new();
         private readonly List<UniTask> _completedTasks = new();
 
-        public CallsExecutor(Pipeline pipeline, NodeRepository nodes)
+        public CallsExecutor(
+            Pipeline pipeline, 
+            NodeRepository nodes, 
+            PlayerChoices playerChoices)
         {
             _pipeline = pipeline;
             _nodes = nodes;
+            _playerChoices = playerChoices;
         }
 
         public async UniTask Execute(string entryGuid, CancellationToken token = default)
@@ -51,8 +57,15 @@ namespace CodeBase.Features.Calls.Infrastructure
         private void ProcessCompletedTask(UniTask completedTask, CancellationToken token)
         {
             var completedNode = _processingTasks[completedTask];
-            var children = _nodes.GetChildrenFrom(completedNode.Guid);
-            StartNodeExecution(children, token); 
+            StartNodeExecution(GetNextNodes(completedNode), token);
+        }
+
+        private IEnumerable<Node> GetNextNodes(Node completedNode)
+        {
+            if (completedNode is ChoicesData)
+                return _nodes.GetChildrenFrom(_playerChoices.LastChoiceId);
+
+            return _nodes.GetChildrenFrom(completedNode.Guid);
         }
 
         private void StartNodeExecution(IEnumerable<Node> nodes, CancellationToken token)
