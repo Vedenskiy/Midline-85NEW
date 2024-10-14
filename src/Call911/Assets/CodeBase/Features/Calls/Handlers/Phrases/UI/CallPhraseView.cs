@@ -10,7 +10,7 @@ namespace CodeBase.Features.Calls.Handlers.Phrases.UI
 
         public void Setup(string personKey, string messageKey)
         {
-            _personName.text = personKey;
+            _personName.text = personKey.ToUpper();
             _personMessage.text = messageKey;
         }
 
