@@ -19,7 +19,7 @@ namespace CodeBase.Features.Calls.Handlers.Choices
         protected override async UniTask Handle(ChoicesData request, CancellationToken token)
         {
             _audio.PlayTimerSfx();
-            await _choices.WaitChoiceSelection(request.Choices);
+            await _choices.WaitChoiceSelection(request.Choices, token);
             _audio.StopTimerSfx();
         }
     }

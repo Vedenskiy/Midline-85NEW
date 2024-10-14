@@ -798,6 +798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _container: {fileID: 948833848}
   _buttonPrefab: {fileID: -4015225624342433323, guid: 08d8367a0fec56838a15fb690611670e, type: 3}
+  _canvas: {fileID: 948833849}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
