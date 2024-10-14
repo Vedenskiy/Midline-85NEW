@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using CodeBase.Features.Calls.Handlers.Choices;
 using CodeBase.Features.Calls.Handlers.Phrases;
 using CodeBase.Features.Calls.Infrastructure;
 using CodeBase.Features.Calls.Infrastructure.Nodes;
@@ -31,7 +32,15 @@ namespace CodeBase.Infrastructure
             yield return Link("0", "1");
             yield return Link("1", "2");
             yield return Link("2", "3");
-            yield return Link("2", "4");
+            yield return Link("3", "4");
+            
+            yield return Link("choice_1", "5");
+            yield return Link("choice_2", "6");
+            yield return Link("choice_3", "7");
+            
+            yield return Link("5", "8");
+            yield return Link("6", "9");
+            yield return Link("7", "10");
         }
 
         private IEnumerable<Node> GetTestPhrases()
@@ -40,6 +49,24 @@ namespace CodeBase.Infrastructure
             yield return MarkSay("Hello, Elena!", "1");
             yield return ElenaSay("How are you?", "2");
             yield return MarkSay("I'm fine, how you?", "3");
+            yield return new ChoicesData()
+            {
+                Guid = "4",
+                Choices = new List<ChoiceData>()
+                {
+                    new ChoiceData() { ChoiceId = "choice_1"},
+                    new ChoiceData() { ChoiceId = "choice_2"},
+                    new ChoiceData() { ChoiceId = "choice_3"},
+                }
+            };
+            
+            yield return ElenaSay("I'm, CHOICE 1!", "5");
+            yield return ElenaSay("I'm, CHOICE 2!", "6");
+            yield return ElenaSay("I'm, CHOICE 3!", "7");
+            
+            yield return MarkSay("Wow, choice 1!", "8");
+            yield return MarkSay("Wow, choice 2!", "9");
+            yield return MarkSay("Wow, choice 3!", "10");
         }
 
         private NodeLink Link(string parent, string child) => 

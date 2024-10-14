@@ -34,14 +34,7 @@ namespace CodeBase.Features.Calls.Handlers.Choices.UI
         
         private void OnChoicesShown(IReadOnlyCollection<ChoiceData> choices)
         {
-            foreach (var choiceData in choices)
-            {
-                var instance = Instantiate(_buttonPrefab, _container);
-                instance.GetComponentInChildren<TextMeshProUGUI>().text = choiceData.ChoiceId;
-                instance.Pressed += OnButtonPressed;
-                _buttons.Add(choiceData.ChoiceId, instance);
-            }
-
+            CreateButtons(choices);
             _canvas.TweenAlpha(0f, 1f, 1f, Ease.Linear);
         }
         
@@ -51,6 +44,17 @@ namespace CodeBase.Features.Calls.Handlers.Choices.UI
             {
                 ClearButtons();
             });
+        }
+
+        private void CreateButtons(IEnumerable<ChoiceData> choices)
+        {
+            foreach (var choiceData in choices)
+            {
+                var instance = Instantiate(_buttonPrefab, _container);
+                instance.Setup(choiceData.ChoiceId);
+                instance.Pressed += OnButtonPressed;
+                _buttons.Add(choiceData.ChoiceId, instance);
+            }
         }
 
         private void ClearButtons()
