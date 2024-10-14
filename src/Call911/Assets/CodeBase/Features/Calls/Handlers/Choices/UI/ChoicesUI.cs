@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using FronkonGames.TinyTween;
 using Reflex.Attributes;
 using TMPro;
 using UnityEngine;
@@ -41,19 +42,26 @@ namespace CodeBase.Features.Calls.Handlers.Choices.UI
                 _buttons.Add(choiceData.ChoiceId, instance);
             }
 
-            _canvas.alpha = 1f;
+            _canvas.TweenAlpha(0f, 1f, 1f, Ease.Linear);
         }
         
         private void OnChoicesHide()
+        {
+            _canvas.TweenAlpha(1f, 0f, 1f, Ease.Linear).OnEnd((_) =>
+            {
+                ClearButtons();
+            });
+        }
+
+        private void ClearButtons()
         {
             foreach (var button in _buttons.Values)
             {
                 button.Pressed -= OnButtonPressed;
                 Destroy(button.gameObject);
             }
-            
+
             _buttons.Clear();
-            _canvas.alpha = 0f;
         }
 
         private void OnButtonPressed(string choiceId) => 
