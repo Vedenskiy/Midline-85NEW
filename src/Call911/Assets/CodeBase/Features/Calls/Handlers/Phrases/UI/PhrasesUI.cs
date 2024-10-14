@@ -10,6 +10,7 @@ namespace CodeBase.Features.Calls.Handlers.Phrases.UI
         [SerializeField] private CallPhraseView _callPhrasePrefab;
 
         private readonly Dictionary<string, CallPhraseView> _phraseViews = new();
+        
         private PhraseService _phrases;
         private bool _isPreviousToRightMapped = false;
 
@@ -17,11 +18,23 @@ namespace CodeBase.Features.Calls.Handlers.Phrases.UI
         public void Construct(PhraseService phrases) => 
             _phrases = phrases;
 
-        private void OnEnable() => 
+        private void OnEnable()
+        {
             _phrases.PhraseShown += OnPhraseShown;
+            _phrases.PhraseHide += OnPhraseHide;
+        }
 
-        private void OnDisable() => 
+        private void OnDisable()
+        {
             _phrases.PhraseShown -= OnPhraseShown;
+            _phrases.PhraseHide -= OnPhraseHide;
+        }
+
+        private void OnPhraseHide(PhraseData data)
+        {
+            if (_phraseViews.TryGetValue(data.PersonKey, out var view))
+                view.HideMessage();
+        }
 
         private void OnPhraseShown(PhraseData data)
         {

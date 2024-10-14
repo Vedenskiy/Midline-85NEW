@@ -16,6 +16,7 @@ namespace CodeBase.Features.Calls.Handlers.Phrases
         {
             _phrases.ShowPhrase(request);
             await UniTask.Delay(FromSecondToMilliseconds(request.DurationInSeconds), cancellationToken: token);
+            _phrases.HidePhrase(request);
         }
 
         private static int FromSecondToMilliseconds(float seconds) => 

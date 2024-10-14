@@ -13,5 +13,10 @@ namespace CodeBase.Features.Calls.Handlers.Phrases.UI
             _personName.text = personKey;
             _personMessage.text = messageKey;
         }
+
+        public void HideMessage()
+        {
+            _personMessage.text = string.Empty;
+        }
     }
 }
