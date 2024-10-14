@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -31,7 +32,9 @@ namespace CodeBase.Features.Calls.Infrastructure.Nodes
         public Node GetById(string guid) => 
             _nodes[guid];
 
-        public IEnumerable<Node> GetChildrenFrom(string guid) => 
-            _links[guid].Select(childId => _nodes[childId]);
+        public IEnumerable<Node> GetChildrenFrom(string guid) =>
+            !_links.ContainsKey(guid)
+                ? ArraySegment<Node>.Empty
+                : _links[guid].Where(childId => _nodes.ContainsKey(childId)).Select(childId => _nodes[childId]);
     }
 }

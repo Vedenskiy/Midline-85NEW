@@ -23,6 +23,7 @@ namespace CodeBase.Infrastructure
         {
             _nodes.Load(GetTestPhrases(), GetTestLinks());
             await _executor.Execute("0");
+            Debug.Log("Level Completed!");
         }
 
         private IEnumerable<NodeLink> GetTestLinks()
