@@ -25,16 +25,10 @@ namespace CodeBase.Features.Calls.Handlers.Phrases.UI
 
         private void OnPhraseShown(PhraseData data)
         {
-            if (_phraseViews.TryGetValue(data.PersonKey, out var view))
-            {
-                view.Setup(data.PersonKey, data.MessageKey);
-            }
-            else
-            {
-                var instance = CreateNewCallPhrase();
-                instance.Setup(data.PersonKey, data.MessageKey);
-                _phraseViews[data.PersonKey] = instance;
-            }
+            if (!_phraseViews.ContainsKey(data.PersonKey))
+                _phraseViews[data.PersonKey] = CreateNewCallPhrase();
+            
+            _phraseViews[data.PersonKey].Setup(data.PersonKey, data.MessageKey);
         }
 
         private CallPhraseView CreateNewCallPhrase()
