@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using CodeBase.Features.Calls.Audio;
+using CodeBase.Features.Calls.Handlers.Choices;
 using CodeBase.Features.Calls.Handlers.Phrases;
 using CodeBase.Features.Calls.Infrastructure;
 using CodeBase.Features.Calls.Infrastructure.Handlers;
@@ -23,6 +25,10 @@ namespace CodeBase.Infrastructure.Installers.Bindings
         {
             builder.AddSingleton<PhraseService>();
             builder.AddSingleton<PhraseHandler>();
+
+            builder.AddSingleton<CallsAudioService>();
+            builder.AddSingleton<PlayerChoices>();
+            builder.AddSingleton<ChoicesHandler>();
         }
 
         private static void BindInfrastructure(this ContainerBuilder builder)
