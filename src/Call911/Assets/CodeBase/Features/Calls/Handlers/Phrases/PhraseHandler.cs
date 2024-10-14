@@ -15,9 +15,11 @@ namespace CodeBase.Features.Calls.Handlers.Phrases
         protected override async UniTask Handle(PhraseData request, CancellationToken token)
         {
             _phrases.ShowPhrase(request);
-            await UniTask.Delay(FromSecondToMilliseconds(request.DurationInSeconds), cancellationToken: token);
-            _phrases.HidePhrase(request);
+            await AfterPhrasePause(request, token);
         }
+
+        private static UniTask AfterPhrasePause(PhraseData request, CancellationToken token) => 
+            UniTask.Delay(FromSecondToMilliseconds(request.DurationInSeconds), cancellationToken: token);
 
         private static int FromSecondToMilliseconds(float seconds) => 
             (int)(seconds * 1000);

@@ -23,6 +23,7 @@ namespace CodeBase.Infrastructure
         private IEnumerable<PhraseData> GetTestPhrases()
         {
             yield return new PhraseData() { PersonKey = "Elena", MessageKey = "Hello, world!", DurationInSeconds = 2 };
+            yield return new PhraseData() { PersonKey = "Mark", MessageKey = "Hello, Elena!", DurationInSeconds = 2 };
             yield return new PhraseData() { PersonKey = "Elena", MessageKey = "Second message!", DurationInSeconds = 2 };
             yield return new PhraseData() { PersonKey = "Elena", MessageKey = "Third message!", DurationInSeconds = 2 };
             yield return new PhraseData() { PersonKey = "Elena", MessageKey = "Oops, it's all!", DurationInSeconds = 2 };

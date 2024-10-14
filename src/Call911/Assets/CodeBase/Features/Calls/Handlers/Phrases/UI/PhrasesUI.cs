@@ -14,6 +14,8 @@ namespace CodeBase.Features.Calls.Handlers.Phrases.UI
         private PhraseService _phrases;
         private bool _isPreviousToRightMapped = false;
 
+        private CallPhraseView _previousPhrase;
+
         [Inject]
         public void Construct(PhraseService phrases) => 
             _phrases = phrases;
@@ -32,16 +34,23 @@ namespace CodeBase.Features.Calls.Handlers.Phrases.UI
 
         private void OnPhraseHide(PhraseData data)
         {
-            if (_phraseViews.TryGetValue(data.PersonKey, out var view))
-                view.HideMessage();
+            if (_phraseViews.TryGetValue(data.PersonKey, out var view)) 
+                view.Unhighlight();
         }
 
         private void OnPhraseShown(PhraseData data)
         {
             if (!_phraseViews.ContainsKey(data.PersonKey))
                 _phraseViews[data.PersonKey] = CreateNewCallPhrase();
+
+            var nextPhraseView = _phraseViews[data.PersonKey];
             
-            _phraseViews[data.PersonKey].Setup(data.PersonKey, data.MessageKey);
+            if (_previousPhrase != nextPhraseView && _previousPhrase != null)
+                _previousPhrase.Unhighlight();
+
+            _previousPhrase = nextPhraseView;
+            _previousPhrase.Setup(data.PersonKey, data.MessageKey);
+            _previousPhrase.Highlight();
         }
 
         private CallPhraseView CreateNewCallPhrase()

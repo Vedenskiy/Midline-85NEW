@@ -5,6 +5,8 @@ namespace CodeBase.Features.Calls.Handlers.Phrases.UI
 {
     public class CallPhraseView : MonoBehaviour
     {
+        [SerializeField] private CanvasGroup _canvas;
+        
         [SerializeField] private TextMeshProUGUI _personName;
         [SerializeField] private TextMeshProUGUI _personMessage;
 
@@ -14,9 +16,14 @@ namespace CodeBase.Features.Calls.Handlers.Phrases.UI
             _personMessage.text = messageKey;
         }
 
-        public void HideMessage()
+        public void Highlight()
         {
-            _personMessage.text = string.Empty;
+            _canvas.alpha = 1.0f;
+        }
+
+        public void Unhighlight()
+        {
+            _canvas.alpha = 0.3f;
         }
     }
 }
