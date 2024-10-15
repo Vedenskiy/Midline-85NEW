@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using CodeBase.Features.Calls.Handlers.Branches;
 using CodeBase.Features.Calls.Handlers.Choices;
 using CodeBase.Features.Calls.Handlers.Phrases;
 using CodeBase.Features.Calls.Handlers.Variables;
@@ -43,11 +44,13 @@ namespace CodeBase.Infrastructure
             yield return Link("5", "8");
             yield return Link("6", "9");
             yield return Link("7", "10");
+            yield return Link("branch_1", "11");
+            yield return Link("branch_2", "12");
         }
 
         private IEnumerable<Node> GetTestPhrases()
         {
-            yield return new VariableNode() { Guid = "0", VariableName = "ElenaSays", Value = 10 };
+            yield return new VariableNode() { Guid = "0", VariableName = "test", Value = -1 };
             //yield return ElenaSay("Hello, World!", "0");
             yield return MarkSay("Hello, Elena!", "1");
             yield return ElenaSay("How are you?", "2");
@@ -62,14 +65,27 @@ namespace CodeBase.Infrastructure
                     new ChoiceData() { ChoiceId = "choice_3"},
                 }
             };
+
+            yield return new BranchesNode()
+            {
+                Guid = "5",
+                Branches = new List<Branch>()
+                {
+                    new Branch() { Condition = "test > 0", Guid = "branch_1" },
+                    new Branch() { Condition = "test < 0", Guid = "branch_2" },
+                }
+            };
             
-            yield return ElenaSay("I'm, CHOICE 1!", "5");
+            //yield return ElenaSay("I'm, CHOICE 1!", "5");
             yield return ElenaSay("I'm, CHOICE 2!", "6");
             yield return ElenaSay("I'm, CHOICE 3!", "7");
             
             yield return MarkSay("Wow, choice 1!", "8");
             yield return MarkSay("Wow, choice 2!", "9");
             yield return MarkSay("Wow, choice 3!", "10");
+            
+            yield return MarkSay("Wow, test variable more!", "11");
+            yield return MarkSay("Wow, where test variable?!", "12");
         }
 
         private NodeLink Link(string parent, string child) => 
