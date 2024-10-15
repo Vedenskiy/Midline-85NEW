@@ -29,8 +29,7 @@ namespace CodeBase.Features.Calls.Infrastructure.Nodes
         {
             var previousId = previous is ChoicesData ? _playerChoices.LastChoiceId : previous.Guid;
             var children = _nodes.GetChildrenFrom(previousId);
-            var resultChildren = FilterBranches(children);
-            return resultChildren;
+            return FilterBranches(children);
         }
 
         private IEnumerable<Node> FilterBranches(IEnumerable<Node> children)
@@ -38,20 +37,20 @@ namespace CodeBase.Features.Calls.Infrastructure.Nodes
             var branches = new Queue<BranchesData>();
             var result = new List<Node>();
 
-            AddBranchesToQueue(children, branches, result);
+            TryAddBranchesToQueue(children, branches, result);
 
             while (branches.Count > 0)
             {
                 var branch = branches.Dequeue();
                 var next = _branchHandler.GetNextBranch(branch);
                 var branchChildren = _nodes.GetChildrenFrom(next);
-                AddBranchesToQueue(branchChildren, branches, result);
+                TryAddBranchesToQueue(branchChildren, branches, result);
             }
 
             return result;
         }
 
-        private static void AddBranchesToQueue(IEnumerable<Node> children, Queue<BranchesData> branches, ICollection<Node> result)
+        private static void TryAddBranchesToQueue(IEnumerable<Node> children, Queue<BranchesData> branches, ICollection<Node> result)
         {
             foreach (var child in children)
             {
