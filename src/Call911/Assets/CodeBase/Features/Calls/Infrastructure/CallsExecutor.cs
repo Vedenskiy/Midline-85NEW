@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using CodeBase.Features.Calls.Handlers.Choices;
 using CodeBase.Features.Calls.Infrastructure.Handlers;
 using CodeBase.Features.Calls.Infrastructure.Nodes;
 using Cysharp.Threading.Tasks;
@@ -13,26 +12,20 @@ namespace CodeBase.Features.Calls.Infrastructure
     public class CallsExecutor
     {
         private readonly Pipeline _pipeline;
-        private readonly NodeRepository _nodes;
-        private readonly PlayerChoices _playerChoices;
+        private readonly NodeScheduler _scheduler;
 
         private readonly Dictionary<UniTask, Node> _processingTasks = new();
         private readonly List<UniTask> _completedTasks = new();
 
-        public CallsExecutor(
-            Pipeline pipeline, 
-            NodeRepository nodes, 
-            PlayerChoices playerChoices)
+        public CallsExecutor(Pipeline pipeline, NodeScheduler scheduler)
         {
             _pipeline = pipeline;
-            _nodes = nodes;
-            _playerChoices = playerChoices;
+            _scheduler = scheduler;
         }
-
-        public async UniTask Execute(string entryGuid, CancellationToken token = default)
+        
+        public async UniTask Execute(Node entry, CancellationToken token = default)
         {
-            var entryNode = _nodes.GetById(entryGuid);
-            _processingTasks.Add(_pipeline.Execute(entryNode, token), entryNode);
+            _processingTasks.Add(_pipeline.Execute(entry, token), entry);
             await ProcessWhileHasTasks(token);
         }
 
@@ -57,15 +50,7 @@ namespace CodeBase.Features.Calls.Infrastructure
         private void ProcessCompletedTask(UniTask completedTask, CancellationToken token)
         {
             var completedNode = _processingTasks[completedTask];
-            StartNodeExecution(GetNextNodes(completedNode), token);
-        }
-
-        private IEnumerable<Node> GetNextNodes(Node completedNode)
-        {
-            if (completedNode is ChoicesData)
-                return _nodes.GetChildrenFrom(_playerChoices.LastChoiceId);
-
-            return _nodes.GetChildrenFrom(completedNode.Guid);
+            StartNodeExecution(_scheduler.GetNextNodes(completedNode), token);
         }
 
         private void StartNodeExecution(IEnumerable<Node> nodes, CancellationToken token)

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using CodeBase.Features.Calls.Handlers.Choices;
 using CodeBase.Features.Calls.Handlers.Phrases;
 using CodeBase.Features.Calls.Infrastructure;
@@ -23,7 +24,7 @@ namespace CodeBase.Infrastructure
         private async void Start()
         {
             _nodes.Load(GetTestPhrases(), GetTestLinks());
-            await _executor.Execute("0");
+            await _executor.Execute(GetTestPhrases().First());
             Debug.Log("Level Completed!");
         }
 

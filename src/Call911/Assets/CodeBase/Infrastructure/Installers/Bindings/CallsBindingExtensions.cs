@@ -40,6 +40,7 @@ namespace CodeBase.Infrastructure.Installers.Bindings
             }));
             
             builder.AddSingleton<NodeRepository>();
+            builder.AddSingleton<NodeScheduler>();
             builder.AddSingleton<CallsExecutor>();
         }
     }
