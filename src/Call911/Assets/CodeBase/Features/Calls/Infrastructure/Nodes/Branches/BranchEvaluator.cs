@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using CodeBase.Features.Calls.External.LogicalExpression;
 
-namespace CodeBase.Features.Calls.Handlers.Branches
+namespace CodeBase.Features.Calls.Infrastructure.Nodes.Branches
 {
     public class BranchEvaluator 
     {

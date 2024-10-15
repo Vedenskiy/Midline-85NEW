@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using CodeBase.Features.Calls.Infrastructure.Nodes;
 
-namespace CodeBase.Features.Calls.Handlers.Branches
+namespace CodeBase.Features.Calls.Infrastructure.Nodes.Branches
 {
     public class BranchesNode : Node
     {

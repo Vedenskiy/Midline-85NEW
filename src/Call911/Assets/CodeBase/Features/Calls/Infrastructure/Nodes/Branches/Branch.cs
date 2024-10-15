@@ -1,4 +1,4 @@
-namespace CodeBase.Features.Calls.Handlers.Branches
+namespace CodeBase.Features.Calls.Infrastructure.Nodes.Branches
 {
     public class Branch
     {
