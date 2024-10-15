@@ -34,10 +34,12 @@ namespace CodeBase.Infrastructure.Installers.Bindings
             builder.AddSingleton<ChoicesHandler>();
 
             builder.AddSingleton<VariableHandler>();
+            builder.AddSingleton<NoOperationHandler>();
         }
 
         private static void BindInfrastructure(this ContainerBuilder builder)
         {
+            builder.AddSingleton<DialogueLoader>();
             builder.AddSingleton(typeof(VariablesProvider), typeof(IVariables), typeof(VariablesProvider));
 
             builder.AddSingleton(container => new Pipeline(new Dictionary<Type, IRequestHandler>()
@@ -45,6 +47,7 @@ namespace CodeBase.Infrastructure.Installers.Bindings
                 [typeof(PhraseNode)] = container.Resolve<PhraseHandler>(),
                 [typeof(ChoicesNode)] = container.Resolve<ChoicesHandler>(),
                 [typeof(VariableNode)] = container.Resolve<VariableHandler>(),
+                [typeof(Node)] = container.Resolve<NoOperationHandler>()
             }));
             
             builder.AddSingleton<NodeRepository>();

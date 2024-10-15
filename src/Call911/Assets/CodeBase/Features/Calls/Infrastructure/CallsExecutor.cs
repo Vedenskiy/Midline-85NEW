@@ -2,9 +2,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using CodeBase.Features.Calls.Infrastructure.Extensions;
 using CodeBase.Features.Calls.Infrastructure.Handlers;
 using CodeBase.Features.Calls.Infrastructure.Nodes;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 using UniTaskExtensions = CodeBase.Features.Calls.Infrastructure.Extensions.UniTaskExtensions;
 
 namespace CodeBase.Features.Calls.Infrastructure
@@ -14,8 +16,8 @@ namespace CodeBase.Features.Calls.Infrastructure
         private readonly Pipeline _pipeline;
         private readonly NodeScheduler _scheduler;
 
-        private readonly Dictionary<UniTask, Node> _processingTasks = new();
-        private readonly List<UniTask> _completedTasks = new();
+        private readonly Dictionary<string, (UniTask, Node)> _processing = new();
+        private readonly List<string> _completed = new();
 
         public CallsExecutor(Pipeline pipeline, NodeScheduler scheduler)
         {
@@ -25,32 +27,37 @@ namespace CodeBase.Features.Calls.Infrastructure
         
         public async UniTask Execute(Node entry, CancellationToken token = default)
         {
-            _processingTasks.Add(_pipeline.Execute(entry, token), entry);
+            var task = _pipeline.Execute(entry, token);
+            _processing.Add(entry.Guid, (task, entry));
             await ProcessWhileHasTasks(token);
         }
 
         private async Task ProcessWhileHasTasks(CancellationToken token)
         {
-            while (_processingTasks.Count > 0)
+            while (_processing.Count > 0)
             {
-                _completedTasks.AddRange(_processingTasks.Keys.Where(UniTaskExtensions.IsCompleted));
-
-                foreach (var completedTask in _completedTasks)
+                foreach (var (task, node) in _processing.Values)
                 {
-                    ProcessCompletedTask(completedTask, token);
-                    _processingTasks.Remove(completedTask);
+                    if (task.IsCompleted())
+                        _completed.Add(node.Guid);
                 }
 
-                _completedTasks.Clear();
+                foreach (var completedNodeId in _completed)
+                {
+                    ProcessCompletedTask(completedNodeId, token);
+                    _processing.Remove(completedNodeId);
+                }
+
+                _completed.Clear();
 
                 await UniTask.Yield();
             }
         }
 
-        private void ProcessCompletedTask(UniTask completedTask, CancellationToken token)
+        private void ProcessCompletedTask(string completedNodeId, CancellationToken token)
         {
-            var completedNode = _processingTasks[completedTask];
-            StartNodeExecution(_scheduler.GetNextNodes(completedNode), token);
+            var (task, node) = _processing[completedNodeId];
+            StartNodeExecution(_scheduler.GetNextNodes(node), token);
         }
 
         private void StartNodeExecution(IEnumerable<Node> nodes, CancellationToken token)
@@ -65,7 +72,7 @@ namespace CodeBase.Features.Calls.Infrastructure
 
                 node.IsProcessed = true;
                 var processingTask = _pipeline.Execute(node, token);
-                _processingTasks.Add(processingTask, node);
+                _processing.Add(node.Guid, (processingTask, node));
             }
         }
     }
