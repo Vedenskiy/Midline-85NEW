@@ -5,6 +5,7 @@ using CodeBase.Features.Calls.External.LogicalExpression;
 using CodeBase.Features.Calls.Handlers.Branches;
 using CodeBase.Features.Calls.Handlers.Choices;
 using CodeBase.Features.Calls.Handlers.Phrases;
+using CodeBase.Features.Calls.Handlers.Variables;
 using CodeBase.Features.Calls.Infrastructure;
 using CodeBase.Features.Calls.Infrastructure.Handlers;
 using CodeBase.Features.Calls.Infrastructure.Nodes;
@@ -39,6 +40,7 @@ namespace CodeBase.Infrastructure.Installers.Bindings
             {
                 [typeof(PhraseData)] = container.Resolve<PhraseHandler>(),
                 [typeof(ChoicesData)] = container.Resolve<ChoicesHandler>(),
+                [typeof(VariableNode)] = container.Resolve<VariableHandler>(),
             }));
 
             builder.AddSingleton(typeof(VariablesProvider), typeof(IVariables));
