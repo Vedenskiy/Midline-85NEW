@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using CodeBase.Features.Calls.Audio;
+using CodeBase.Features.Calls.External.LogicalExpression;
+using CodeBase.Features.Calls.Handlers.Branches;
 using CodeBase.Features.Calls.Handlers.Choices;
 using CodeBase.Features.Calls.Handlers.Phrases;
 using CodeBase.Features.Calls.Infrastructure;
@@ -38,8 +40,11 @@ namespace CodeBase.Infrastructure.Installers.Bindings
                 [typeof(PhraseData)] = container.Resolve<PhraseHandler>(),
                 [typeof(ChoicesData)] = container.Resolve<ChoicesHandler>(),
             }));
+
+            builder.AddSingleton(typeof(VariablesProvider), typeof(IVariables));
             
             builder.AddSingleton<NodeRepository>();
+            builder.AddSingleton<BranchEvaluator>();
             builder.AddSingleton<NodeScheduler>();
             builder.AddSingleton<CallsExecutor>();
         }

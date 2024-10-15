@@ -4,11 +4,11 @@ using CodeBase.Features.Calls.External.LogicalExpression;
 
 namespace CodeBase.Features.Calls.Handlers.Branches
 {
-    public class BranchNodeHandler 
+    public class BranchEvaluator 
     {
         private readonly IVariables _variables;
 
-        public BranchNodeHandler(IVariables variables) => 
+        public BranchEvaluator(IVariables variables) => 
             _variables = variables;
 
         public string GetNextBranch(BranchesData request) => 
