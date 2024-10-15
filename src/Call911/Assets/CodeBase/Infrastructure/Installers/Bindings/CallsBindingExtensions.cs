@@ -32,18 +32,20 @@ namespace CodeBase.Infrastructure.Installers.Bindings
             builder.AddSingleton<CallsAudioService>();
             builder.AddSingleton<PlayerChoices>();
             builder.AddSingleton<ChoicesHandler>();
+
+            builder.AddSingleton<VariableHandler>();
         }
 
         private static void BindInfrastructure(this ContainerBuilder builder)
         {
+            builder.AddSingleton(typeof(VariablesProvider), typeof(IVariables), typeof(VariablesProvider));
+
             builder.AddSingleton(container => new Pipeline(new Dictionary<Type, IRequestHandler>()
             {
                 [typeof(PhraseNode)] = container.Resolve<PhraseHandler>(),
                 [typeof(ChoicesNode)] = container.Resolve<ChoicesHandler>(),
                 [typeof(VariableNode)] = container.Resolve<VariableHandler>(),
             }));
-
-            builder.AddSingleton(typeof(VariablesProvider), typeof(IVariables));
             
             builder.AddSingleton<NodeRepository>();
             builder.AddSingleton<BranchEvaluator>();

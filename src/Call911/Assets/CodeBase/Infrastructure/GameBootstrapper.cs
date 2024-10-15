@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using CodeBase.Features.Calls.Handlers.Choices;
 using CodeBase.Features.Calls.Handlers.Phrases;
+using CodeBase.Features.Calls.Handlers.Variables;
 using CodeBase.Features.Calls.Infrastructure;
 using CodeBase.Features.Calls.Infrastructure.Nodes;
 using Reflex.Attributes;
@@ -46,7 +47,8 @@ namespace CodeBase.Infrastructure
 
         private IEnumerable<Node> GetTestPhrases()
         {
-            yield return ElenaSay("Hello, World!", "0");
+            yield return new VariableNode() { Guid = "0", VariableName = "ElenaSays", Value = 10 };
+            //yield return ElenaSay("Hello, World!", "0");
             yield return MarkSay("Hello, Elena!", "1");
             yield return ElenaSay("How are you?", "2");
             yield return MarkSay("I'm fine, how you?", "3");
