@@ -30,11 +30,6 @@ namespace CodeBase.Infrastructure
             var dialogue = _loader.Load("pizza");
             _nodes.Load(dialogue.GetAllNodes(), dialogue.Links);
             await _executor.Execute(_nodes.GetById("5329c7fd-aa50-4a53-b7b2-40be5ad27168"), destroyCancellationToken);
-            return;
-            
-            
-            _nodes.Load(GetTestPhrases(), GetTestLinks());
-            await _executor.Execute(GetTestPhrases().First());
             Debug.Log("Level Completed!");
         }
 
