@@ -11,7 +11,7 @@ namespace CodeBase.Features.Calls.Handlers.Branches
         public BranchEvaluator(IVariables variables) => 
             _variables = variables;
 
-        public string GetNextBranch(BranchesData request) => 
+        public string GetNextBranch(BranchesNode request) => 
             FindProcessingBranch(request.Branches).Guid;
 
         private Branch FindProcessingBranch(IEnumerable<Branch> branches)

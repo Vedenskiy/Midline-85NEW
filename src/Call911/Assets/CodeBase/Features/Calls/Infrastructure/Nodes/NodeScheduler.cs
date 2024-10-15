@@ -34,7 +34,7 @@ namespace CodeBase.Features.Calls.Infrastructure.Nodes
 
         private IEnumerable<Node> FilterBranches(IEnumerable<Node> children)
         {
-            var branches = new Queue<BranchesData>();
+            var branches = new Queue<BranchesNode>();
             var result = new List<Node>();
 
             TryAddBranchesToQueue(children, branches, result);
@@ -50,11 +50,11 @@ namespace CodeBase.Features.Calls.Infrastructure.Nodes
             return result;
         }
 
-        private static void TryAddBranchesToQueue(IEnumerable<Node> children, Queue<BranchesData> branches, ICollection<Node> result)
+        private static void TryAddBranchesToQueue(IEnumerable<Node> children, Queue<BranchesNode> branches, ICollection<Node> result)
         {
             foreach (var child in children)
             {
-                if (child is BranchesData data)
+                if (child is BranchesNode data)
                     branches.Enqueue(data);
                 else
                     result.Add(child);
