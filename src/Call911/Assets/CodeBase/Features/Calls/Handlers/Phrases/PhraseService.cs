@@ -4,13 +4,13 @@ namespace CodeBase.Features.Calls.Handlers.Phrases
 {
     public class PhraseService
     {
-        public event Action<PhraseData> PhraseShown;
-        public event Action<PhraseData> PhraseHide; 
+        public event Action<PhraseNode> PhraseShown;
+        public event Action<PhraseNode> PhraseHide; 
 
-        public void ShowPhrase(PhraseData data) => 
-            PhraseShown?.Invoke(data);
+        public void ShowPhrase(PhraseNode node) => 
+            PhraseShown?.Invoke(node);
 
-        public void HidePhrase(PhraseData data) =>
-            PhraseHide?.Invoke(data);
+        public void HidePhrase(PhraseNode node) =>
+            PhraseHide?.Invoke(node);
     }
 }

@@ -5,7 +5,7 @@ using Cysharp.Threading.Tasks;
 
 namespace CodeBase.Features.Calls.Handlers.Choices
 {
-    public class ChoicesHandler : RequestHandler<ChoicesData>
+    public class ChoicesHandler : RequestHandler<ChoicesNode>
     {
         private readonly CallsAudioService _audio;
         private readonly PlayerChoices _choices;
@@ -16,7 +16,7 @@ namespace CodeBase.Features.Calls.Handlers.Choices
             _choices = choices;
         }
 
-        protected override async UniTask Handle(ChoicesData request, CancellationToken token)
+        protected override async UniTask Handle(ChoicesNode request, CancellationToken token)
         {
             _audio.PlayTimerSfx();
             await _choices.WaitChoiceSelection(request.Choices, token);

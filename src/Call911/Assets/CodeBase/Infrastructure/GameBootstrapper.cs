@@ -50,7 +50,7 @@ namespace CodeBase.Infrastructure
             yield return MarkSay("Hello, Elena!", "1");
             yield return ElenaSay("How are you?", "2");
             yield return MarkSay("I'm fine, how you?", "3");
-            yield return new ChoicesData()
+            yield return new ChoicesNode()
             {
                 Guid = "4",
                 Choices = new List<ChoiceData>()
@@ -74,9 +74,9 @@ namespace CodeBase.Infrastructure
             new() { ParentId = parent, ChildId = child };
 
         private Node ElenaSay(string message, string withId) => 
-            new PhraseData() { Guid = withId, PersonKey = "Elena", MessageKey = message, DurationInSeconds = 2f };
+            new PhraseNode() { Guid = withId, PersonKey = "Elena", MessageKey = message, DurationInSeconds = 2f };
 
         private Node MarkSay(string message, string withId) =>
-            new PhraseData() { Guid = withId, PersonKey = "Mark", MessageKey = message, DurationInSeconds = 2f };
+            new PhraseNode() { Guid = withId, PersonKey = "Mark", MessageKey = message, DurationInSeconds = 2f };
     }
 }

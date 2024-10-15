@@ -38,8 +38,8 @@ namespace CodeBase.Infrastructure.Installers.Bindings
         {
             builder.AddSingleton(container => new Pipeline(new Dictionary<Type, IRequestHandler>()
             {
-                [typeof(PhraseData)] = container.Resolve<PhraseHandler>(),
-                [typeof(ChoicesData)] = container.Resolve<ChoicesHandler>(),
+                [typeof(PhraseNode)] = container.Resolve<PhraseHandler>(),
+                [typeof(ChoicesNode)] = container.Resolve<ChoicesHandler>(),
                 [typeof(VariableNode)] = container.Resolve<VariableHandler>(),
             }));
 

@@ -2,7 +2,7 @@ using CodeBase.Features.Calls.Infrastructure.Nodes;
 
 namespace CodeBase.Features.Calls.Handlers.Phrases
 {
-    public class PhraseData : Node
+    public class PhraseNode : Node
     {
         public string PersonKey;
         public string MessageKey;

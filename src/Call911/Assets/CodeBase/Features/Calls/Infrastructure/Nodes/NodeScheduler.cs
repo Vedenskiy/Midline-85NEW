@@ -27,7 +27,7 @@ namespace CodeBase.Features.Calls.Infrastructure.Nodes
         /// <returns>Collection of nodes for execution</returns>
         private IEnumerable<Node> GetFunctionalChildren(Node previous)
         {
-            var previousId = previous is ChoicesData ? _playerChoices.LastChoiceId : previous.Guid;
+            var previousId = previous is ChoicesNode ? _playerChoices.LastChoiceId : previous.Guid;
             var children = _nodes.GetChildrenFrom(previousId);
             return FilterBranches(children);
         }

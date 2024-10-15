@@ -32,24 +32,24 @@ namespace CodeBase.Features.Calls.Handlers.Phrases.UI
             _phrases.PhraseHide -= OnPhraseHide;
         }
 
-        private void OnPhraseHide(PhraseData data)
+        private void OnPhraseHide(PhraseNode node)
         {
-            if (_phraseViews.TryGetValue(data.PersonKey, out var view)) 
+            if (_phraseViews.TryGetValue(node.PersonKey, out var view)) 
                 view.Unhighlight();
         }
 
-        private void OnPhraseShown(PhraseData data)
+        private void OnPhraseShown(PhraseNode node)
         {
-            if (!_phraseViews.ContainsKey(data.PersonKey))
-                _phraseViews[data.PersonKey] = CreateNewCallPhrase();
+            if (!_phraseViews.ContainsKey(node.PersonKey))
+                _phraseViews[node.PersonKey] = CreateNewCallPhrase();
 
-            var nextPhraseView = _phraseViews[data.PersonKey];
+            var nextPhraseView = _phraseViews[node.PersonKey];
             
             if (_previousPhrase != nextPhraseView && _previousPhrase != null)
                 _previousPhrase.Unhighlight();
 
             _previousPhrase = nextPhraseView;
-            _previousPhrase.Setup(data.PersonKey, data.MessageKey);
+            _previousPhrase.Setup(node.PersonKey, node.MessageKey);
             _previousPhrase.Highlight();
         }
 
