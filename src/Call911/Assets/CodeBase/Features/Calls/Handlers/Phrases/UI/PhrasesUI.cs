@@ -2,6 +2,7 @@
 using CodeBase.Infrastructure.Common.Localization;
 using Reflex.Attributes;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace CodeBase.Features.Calls.Handlers.Phrases.UI
 {
@@ -56,6 +57,7 @@ namespace CodeBase.Features.Calls.Handlers.Phrases.UI
                 _localization.GetTranslatedString(node.PersonKey), 
                 _localization.GetTranslatedString(node.MessageKey));
             _previousPhrase.Highlight();
+            _container.GetComponent<VerticalLayoutGroup>().CalculateLayoutInputVertical();
         }
 
         private CallPhraseView CreateNewCallPhrase()
