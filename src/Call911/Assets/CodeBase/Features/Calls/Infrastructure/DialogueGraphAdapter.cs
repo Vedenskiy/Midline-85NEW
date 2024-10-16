@@ -6,8 +6,10 @@ using CodeBase.Features.Calls.Handlers.Phrases;
 using CodeBase.Features.Calls.Infrastructure.Nodes;
 using CodeBase.Features.Calls.Infrastructure.Nodes.Branches;
 using CodeBase.Infrastructure.Common.AssetManagement;
+using CodeBase.Infrastructure.Common.Localization;
 using Nadsat.DialogueGraph.Runtime;
 using Nadsat.DialogueGraph.Runtime.Nodes;
+using UnityEngine;
 using ChoicesNode = CodeBase.Features.Calls.Handlers.Choices.ChoicesNode;
 using VariableNode = CodeBase.Features.Calls.Handlers.Variables.VariableNode;
 
@@ -15,20 +17,48 @@ namespace CodeBase.Features.Calls.Infrastructure
 {
     public class DialogueGraphAdapter
     {
-        private const string PathToLocalDialogues = "Dialogues/";
+        private const string PathToLocalDialogues = "Dialogues";
 
         private readonly AssetProvider _assets;
+        private readonly LocalizationService _localization;
 
-        public DialogueGraphAdapter(AssetProvider assets) => 
+        public DialogueGraphAdapter(AssetProvider assets, LocalizationService localization)
+        {
             _assets = assets;
+            _localization = localization;
+        }
 
         public Dialogue Load(string level)
         {
-            var pathToLevel = Path.Combine(PathToLocalDialogues, level, level);
+            var pathToFolder = Path.Combine(PathToLocalDialogues, level);
+            var pathToLevel = Path.Combine(pathToFolder, level);
+            
+            var tables = _assets.LoadAllResources<TextAsset>(pathToFolder);
+            InitializeLocalization(tables);
+            
             var container = _assets.LoadResource<DialogueGraphContainer>(pathToLevel);
             return ConvertToDialogue(container.Graph);
         }
 
+        private void InitializeLocalization(TextAsset[] tables)
+        {
+            var mapping = new Dictionary<string, string>();
+            foreach (var table in tables)
+            {
+                if (table.name == "pizza")
+                    continue;
+                
+                var content = table.text;
+                var linesOfText = content.Split('\n');
+                foreach (var line in linesOfText)
+                {
+                    var lineContent = line.Split(',', 2);
+                    mapping[lineContent[0].Replace("\"", "")] = lineContent[1].Replace("\"", "");
+                }
+            }
+            _localization.Load(mapping);
+        }
+        
         private Dialogue ConvertToDialogue(DialogueGraph graph)
         {
             var dialogue = new Dialogue();

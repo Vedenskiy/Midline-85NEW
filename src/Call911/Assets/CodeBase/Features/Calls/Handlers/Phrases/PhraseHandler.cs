@@ -15,6 +15,7 @@ namespace CodeBase.Features.Calls.Handlers.Phrases
         {
             _phrases.ShowPhrase(request);
             await AfterPhrasePause(request, token);
+            _phrases.HidePhrase(request);
         }
 
         private static UniTask AfterPhrasePause(PhraseNode request, CancellationToken token) => 

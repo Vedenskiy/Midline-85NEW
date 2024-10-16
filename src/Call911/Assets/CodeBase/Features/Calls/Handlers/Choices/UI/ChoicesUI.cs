@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using CodeBase.Infrastructure.Common.Localization;
 using FronkonGames.TinyTween;
 using Reflex.Attributes;
 using TMPro;
@@ -15,10 +16,14 @@ namespace CodeBase.Features.Calls.Handlers.Choices.UI
         private Dictionary<string, ChoiceButton> _buttons = new();
 
         private PlayerChoices _choices;
+        private LocalizationService _localization;
         
         [Inject]
-        public void Construct(PlayerChoices choices) => 
+        public void Construct(PlayerChoices choices, LocalizationService localization)
+        {
             _choices = choices;
+            _localization = localization;
+        }
 
         private void OnEnable()
         {
@@ -51,7 +56,7 @@ namespace CodeBase.Features.Calls.Handlers.Choices.UI
             foreach (var choiceData in choices)
             {
                 var instance = Instantiate(_buttonPrefab, _container);
-                instance.Setup(choiceData.ChoiceId);
+                instance.Setup(choiceData.ChoiceId, _localization.GetTranslatedString(choiceData.ChoiceId));
                 instance.Pressed += OnButtonPressed;
                 _buttons.Add(choiceData.ChoiceId, instance);
             }

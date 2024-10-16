@@ -20,10 +20,10 @@ namespace CodeBase.Features.Calls.Handlers.Choices.UI
         private void OnDisable() => 
             _button.onClick.RemoveListener(OnButtonPressed);
         
-        public void Setup(string choiceId)
+        public void Setup(string choiceId, string text)
         {
             _choiceId = choiceId;
-            _message.text = choiceId;
+            _message.text = text;
         }
         
         private void OnButtonPressed() => 

@@ -12,5 +12,8 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
 
         public TResource LoadResource<TResource>(string path) where TResource : Object =>
             Resources.Load<TResource>(path);
+
+        public TResource[] LoadAllResources<TResource>(string path) where TResource : Object =>
+            Resources.LoadAll<TResource>(path);
     }
 }
