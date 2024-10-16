@@ -40,6 +40,8 @@ namespace CodeBase.Infrastructure.Installers.Bindings
         private static void BindInfrastructure(this ContainerBuilder builder)
         {
             builder.AddSingleton<DialogueLoader>();
+            builder.AddSingleton<DialogueGraphAdapter>();
+            
             builder.AddSingleton(typeof(VariablesProvider), typeof(IVariables), typeof(VariablesProvider));
 
             builder.AddSingleton(container => new Pipeline(new Dictionary<Type, IRequestHandler>()

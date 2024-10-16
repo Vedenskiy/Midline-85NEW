@@ -16,20 +16,22 @@ namespace CodeBase.Infrastructure
         private CallsExecutor _executor;
         private NodeRepository _nodes;
         private DialogueLoader _loader;
+        private DialogueGraphAdapter _adapter;
         
         [Inject]
-        public void Construct(CallsExecutor executor, NodeRepository nodes, DialogueLoader loader)
+        public void Construct(CallsExecutor executor, NodeRepository nodes, DialogueLoader loader, DialogueGraphAdapter adapter)
         {
             _executor = executor;
             _nodes = nodes;
             _loader = loader;
+            _adapter = adapter;
         }
 
         private async void Start()
         {
-            var dialogue = _loader.Load("pizza");
+            var dialogue = _adapter.Load("Pizza");
             _nodes.Load(dialogue.GetAllNodes(), dialogue.Links);
-            await _executor.Execute(_nodes.GetById("5329c7fd-aa50-4a53-b7b2-40be5ad27168"), destroyCancellationToken);
+            await _executor.Execute(_nodes.GetById(dialogue.EntryNodeId), destroyCancellationToken);
             Debug.Log("Level Completed!");
         }
 

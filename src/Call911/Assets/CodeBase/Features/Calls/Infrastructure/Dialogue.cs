@@ -11,6 +11,8 @@ namespace CodeBase.Features.Calls.Infrastructure
     [Serializable]
     public class Dialogue
     {
+        public string EntryNodeId;
+        
         public List<PhraseNode> Phrases;
         public List<ChoicesNode> Choices;
         public List<VariableNode> Variables;
