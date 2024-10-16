@@ -52,6 +52,9 @@ namespace CodeBase.Features.Calls.Infrastructure
                 var linesOfText = content.Split('\n');
                 foreach (var line in linesOfText)
                 {
+                    if (string.IsNullOrEmpty(line))
+                        continue;
+                    
                     var lineContent = line.Split(',', 2);
                     mapping[lineContent[0].Replace("\"", "")] = lineContent[1].Replace("\"", "");
                 }
