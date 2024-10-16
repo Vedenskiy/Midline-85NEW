@@ -12,5 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95144255850d4ca4be926fe8ed2883bb, type: 3}
   m_Name: Dialogue Database
   m_EditorClassIdentifier: 
-  Persons: []
+  Persons:
+  - Name: Elena
+    Icon: {fileID: 0}
+    Color: {r: 0.17408068, g: 0.63980675, b: 0.19981135, a: 1}
+    Emotions: []
+  - Name: Mark
+    Icon: {fileID: 0}
+    Color: {r: 0.07450978, g: 0.58302885, b: 0.78431374, a: 1}
+    Emotions: []
+  - Name: Marta
+    Icon: {fileID: 0}
+    Color: {r: 0.23137254, g: 0.6670014, b: 0.85882354, a: 1}
+    Emotions: []
+  - Name: Geogre
+    Icon: {fileID: 0}
+    Color: {r: 0.8396042, g: 0.40738893, b: 0.13861679, a: 1}
+    Emotions: []
   GlobalVariableNames: []
