@@ -12,6 +12,7 @@ namespace CodeBase.Features.Calls.Handlers.Choices.UI
         [SerializeField] private RectTransform _container;
         [SerializeField] private ChoiceButton _buttonPrefab;
         [SerializeField] private CanvasGroup _canvas;
+        [SerializeField] private ChoiceTimer _timer;
 
         private Dictionary<string, ChoiceButton> _buttons = new();
 
@@ -40,6 +41,7 @@ namespace CodeBase.Features.Calls.Handlers.Choices.UI
         private void OnChoicesShown(ICollection<ChoiceData> choices)
         {
             CreateButtons(choices);
+            _timer.gameObject.SetActive(true);
             _canvas.TweenAlpha(0f, 1f, 1f, Ease.Linear);
         }
         
@@ -48,6 +50,7 @@ namespace CodeBase.Features.Calls.Handlers.Choices.UI
             _canvas.TweenAlpha(1f, 0f, 1f, Ease.Linear).OnEnd((_) =>
             {
                 ClearButtons();
+                _timer.gameObject.SetActive(false);
             });
         }
 

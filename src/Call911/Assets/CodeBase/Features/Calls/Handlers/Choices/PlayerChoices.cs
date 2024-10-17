@@ -10,7 +10,8 @@ namespace CodeBase.Features.Calls.Handlers.Choices
     {
         public event Action<ICollection<ChoiceData>> ChoicesShown;
         public event Action ChoicesHide;
-        public event Action<string> Chosen; 
+        public event Action<string> Chosen;
+        public event Action<float> TimerStarted; 
 
         public string LastChoiceId { get; private set; }
         
@@ -20,11 +21,11 @@ namespace CodeBase.Features.Calls.Handlers.Choices
             ChoicesShown?.Invoke(choices);
 
             var elapsedTime = 0f;
+            TimerStarted?.Invoke(2f);
             while (LastChoiceId == string.Empty)
             {
                 await UniTask.Delay(100, cancellationToken: token);
                 elapsedTime += 0.1f;
-
                 if (elapsedTime > 2f) 
                     Choice(RandomChoiceFrom(choices));
             }
