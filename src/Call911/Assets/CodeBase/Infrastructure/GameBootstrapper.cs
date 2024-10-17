@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using CodeBase.Features.Calls.Handlers.Choices;
@@ -6,13 +7,19 @@ using CodeBase.Features.Calls.Handlers.Variables;
 using CodeBase.Features.Calls.Infrastructure;
 using CodeBase.Features.Calls.Infrastructure.Nodes;
 using CodeBase.Features.Calls.Infrastructure.Nodes.Branches;
+using Cysharp.Threading.Tasks;
 using Reflex.Attributes;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace CodeBase.Infrastructure
 {
     public class GameBootstrapper : MonoBehaviour
     {
+        [SerializeField] private Button _startButton;
+        [SerializeField] private TextMeshProUGUI _endLevel;
+        
         private CallsExecutor _executor;
         private NodeRepository _nodes;
         private DialogueLoader _loader;
@@ -27,12 +34,24 @@ namespace CodeBase.Infrastructure
             _adapter = adapter;
         }
 
-        private async void Start()
+        private void OnEnable() => 
+            _startButton.onClick.AddListener(StartGame);
+
+        private void OnDisable() => 
+            _startButton.onClick.RemoveListener(StartGame);
+
+        private void StartGame()
+        {
+            LoadAndStartGame().Forget();
+            _startButton.gameObject.SetActive(false);
+        }
+
+        private async UniTask LoadAndStartGame()
         {
             var dialogue = _adapter.Load("Pizza");
             _nodes.Load(dialogue.GetAllNodes(), dialogue.Links);
             await _executor.Execute(_nodes.GetById(dialogue.EntryNodeId), destroyCancellationToken);
-            Debug.Log("Level Completed!");
+            _endLevel.text = "Level Completed!";
         }
 
         private IEnumerable<NodeLink> GetTestLinks()
