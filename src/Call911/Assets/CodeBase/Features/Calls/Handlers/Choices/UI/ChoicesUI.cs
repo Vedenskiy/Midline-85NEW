@@ -37,7 +37,7 @@ namespace CodeBase.Features.Calls.Handlers.Choices.UI
             _choices.ChoicesHide -= OnChoicesHide;
         }
         
-        private void OnChoicesShown(IReadOnlyCollection<ChoiceData> choices)
+        private void OnChoicesShown(ICollection<ChoiceData> choices)
         {
             CreateButtons(choices);
             _canvas.TweenAlpha(0f, 1f, 1f, Ease.Linear);
