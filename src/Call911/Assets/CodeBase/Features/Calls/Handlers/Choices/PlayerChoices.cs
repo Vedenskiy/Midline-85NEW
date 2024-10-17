@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
@@ -8,10 +7,14 @@ namespace CodeBase.Features.Calls.Handlers.Choices
 {
     public class PlayerChoices
     {
+        private readonly ChoiceTimer _choiceTimer;
+
+        public PlayerChoices(ChoiceTimer choiceTimer) => 
+            _choiceTimer = choiceTimer;
+
         public event Action<ICollection<ChoiceData>> ChoicesShown;
         public event Action ChoicesHide;
         public event Action<string> Chosen;
-        public event Action<float> TimerStarted; 
 
         public string LastChoiceId { get; private set; }
         
@@ -20,15 +23,16 @@ namespace CodeBase.Features.Calls.Handlers.Choices
             LastChoiceId = string.Empty;
             ChoicesShown?.Invoke(choices);
 
-            var elapsedTime = 0f;
-            TimerStarted?.Invoke(2f);
+            _choiceTimer.Start(5f);
             while (LastChoiceId == string.Empty)
             {
                 await UniTask.Delay(100, cancellationToken: token);
-                elapsedTime += 0.1f;
-                if (elapsedTime > 2f) 
+                _choiceTimer.Update(0.1f);
+                
+                if (_choiceTimer.IsElapsed)
                     Choice(RandomChoiceFrom(choices));
             }
+            _choiceTimer.Stop();
 
             ChoicesHide?.Invoke();
             return LastChoiceId;

@@ -30,6 +30,7 @@ namespace CodeBase.Infrastructure.Installers.Bindings
             builder.AddSingleton<PhraseHandler>();
 
             builder.AddSingleton<CallsAudioService>();
+            builder.AddSingleton<ChoiceTimer>();
             builder.AddSingleton<PlayerChoices>();
             builder.AddSingleton<ChoicesHandler>();
 

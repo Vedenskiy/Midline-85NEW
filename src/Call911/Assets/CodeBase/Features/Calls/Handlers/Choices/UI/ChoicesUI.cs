@@ -4,6 +4,7 @@ using FronkonGames.TinyTween;
 using Reflex.Attributes;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CodeBase.Features.Calls.Handlers.Choices.UI
 {
@@ -12,7 +13,7 @@ namespace CodeBase.Features.Calls.Handlers.Choices.UI
         [SerializeField] private RectTransform _container;
         [SerializeField] private ChoiceButton _buttonPrefab;
         [SerializeField] private CanvasGroup _canvas;
-        [SerializeField] private ChoiceTimer _timer;
+        [SerializeField] private ChoiceTimerView _timer;
 
         private Dictionary<string, ChoiceButton> _buttons = new();
 
