@@ -18,39 +18,46 @@ MonoBehaviour:
   m_GUID: 45d663b63716fa117b6e79d8b94c0e24
   m_SerializeEntries:
   - m_GUID: c8fbfd2a2971f2ee2a6dc9e3838e7fb0
-    m_Address: Assets/Addressables/Calls/Pizza/Pizza.asset
+    m_Address: Calls/Pizza/Pizza.asset
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - pizza
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f22caf30f1eb6e0308a4dad6bfdb4920
-    m_Address: Assets/Addressables/Calls/Pizza/Phrases
+    m_Address: Calls/Pizza/Phrases
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - pizza
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7c75bdd706e414ee8a03bd39be1e5eca
-    m_Address: Assets/Addressables/Calls/Pizza/Phrases/Characters.csv
+    m_Address: Calls/Pizza/Phrases/Characters.csv
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - pizza
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 98a49fa83a672a2de833585721d7572d
-    m_Address: Assets/Addressables/Calls/Pizza/Phrases/Marta.csv
+    m_Address: Calls/Pizza/Phrases/Marta.csv
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - pizza
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 549b7764a06a58c439e62eea749f2dec
-    m_Address: Assets/Addressables/Calls/Pizza/Phrases/Geogre.csv
+    m_Address: Calls/Pizza/Phrases/Geogre.csv
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - pizza
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 936557a664f6ed7dfbc049f15ef45333
-    m_Address: Assets/Addressables/Calls/Pizza/Phrases/Button.csv
+    m_Address: Calls/Pizza/Phrases/Button.csv
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - pizza
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4231133fb56f1b7d6afe9f86bbfca21f
-    m_Address: Assets/Addressables/Calls/Pizza/Phrases/Elena.csv
+    m_Address: Calls/Pizza/Phrases/Elena.csv
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - pizza
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 522bfceccb1d2aaf19cfe5db123ca1ff, type: 2}
