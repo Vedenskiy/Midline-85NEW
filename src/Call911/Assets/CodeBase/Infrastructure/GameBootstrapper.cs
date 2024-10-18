@@ -14,6 +14,7 @@ namespace CodeBase.Infrastructure
     {
         [SerializeField] private Button _startButton;
         [SerializeField] private TextMeshProUGUI _endLevel;
+        [SerializeField] private Slider _loadingSlider;
         
         private CallsExecutor _executor;
         private NodeRepository _nodes;
@@ -36,10 +37,15 @@ namespace CodeBase.Infrastructure
         private async void StartGame()
         {
             Debug.Log("START");
-            await _downloadService.LoadDialogue("pizza");
+            _startButton.gameObject.SetActive(false);
+
+            var dialogue = await _downloadService.LoadDialogue("pizza", onProgress: value => _loadingSlider.value = value);
+            
+            _loadingSlider.gameObject.SetActive(false);
+            await StartGame(dialogue);
         }
         
-        private async UniTask LoadAndStartGame(Dialogue dialogue)
+        private async UniTask StartGame(Dialogue dialogue)
         {
             _nodes.Load(dialogue.GetAllNodes(), dialogue.Links);
             await _executor.Execute(_nodes.GetById(dialogue.EntryNodeId), destroyCancellationToken);

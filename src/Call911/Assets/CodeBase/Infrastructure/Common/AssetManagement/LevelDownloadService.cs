@@ -4,16 +4,27 @@ using System.Text;
 using System.Threading;
 using CodeBase.Features.Calls.Infrastructure;
 using Cysharp.Threading.Tasks;
+using Nadsat.DialogueGraph.Runtime;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceLocations;
+using Object = UnityEngine.Object;
 
 namespace CodeBase.Infrastructure.Common.AssetManagement
 {
     public class LevelDownloadService
     {
-        public async UniTask LoadDialogue(string callName, CancellationToken token = default)
+        private readonly AssetProvider _assets;
+        private readonly DialogueGraphAdapter _adapter;
+
+        public LevelDownloadService(AssetProvider assets, DialogueGraphAdapter adapter)
+        {
+            _assets = assets;
+            _adapter = adapter;
+        }
+
+        public async UniTask<Dialogue> LoadDialogue(string callName, Action<float> onProgress = null, CancellationToken token = default)
         {
             var locations = await Addressables.LoadResourceLocationsAsync(callName);
             DebugLocations(locations);
@@ -25,7 +36,7 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
             while (!downloadHandle.IsDone && downloadHandle.IsValid())
             {
                 await UniTask.Delay(100, cancellationToken: token);
-                Debug.Log($"Download percent: {downloadHandle.GetDownloadStatus().Percent}");
+                onProgress?.Invoke(downloadHandle.GetDownloadStatus().Percent);
             }
             
             if (downloadHandle.Status == AsyncOperationStatus.Failed)
@@ -35,6 +46,21 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
                 Addressables.Release(downloadHandle);
             
             Debug.Log($"Call {callName} loaded!");
+            var localization = new List<TextAsset>();
+            DialogueGraphContainer dialogueGraph = null;
+
+            foreach (var location in locations)
+            {
+                var asset = await _assets.Load<Object>(location.PrimaryKey);
+
+                if (asset is DialogueGraphContainer dialogueGraphContainer)
+                    dialogueGraph = dialogueGraphContainer;
+                
+                if (asset is TextAsset text)
+                    localization.Add(text);
+            }
+
+            return _adapter.GetDialogueFrom(dialogueGraph, localization);
         }
         
         private static float SizeToMb(long downloadSize) => downloadSize * 1f / 1048576;

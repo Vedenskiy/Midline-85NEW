@@ -39,8 +39,14 @@ namespace CodeBase.Features.Calls.Infrastructure
             var container = _assets.LoadResource<DialogueGraphContainer>(pathToLevel);
             return ConvertToDialogue(container.Graph);
         }
+        
+        public Dialogue GetDialogueFrom(DialogueGraphContainer graph, List<TextAsset> localization)
+        {
+            InitializeLocalization(localization);
+            return ConvertToDialogue(graph.Graph);
+        }
 
-        private void InitializeLocalization(TextAsset[] tables)
+        private void InitializeLocalization(IEnumerable<TextAsset> tables)
         {
             var mapping = new Dictionary<string, string>();
             foreach (var table in tables)
