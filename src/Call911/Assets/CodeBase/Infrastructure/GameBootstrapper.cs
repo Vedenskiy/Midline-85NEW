@@ -1,6 +1,9 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading;
 using CodeBase.Features.Calls.Handlers.Choices;
 using CodeBase.Features.Calls.Handlers.Phrases;
 using CodeBase.Features.Calls.Handlers.Variables;
@@ -8,10 +11,16 @@ using CodeBase.Features.Calls.Infrastructure;
 using CodeBase.Features.Calls.Infrastructure.Nodes;
 using CodeBase.Features.Calls.Infrastructure.Nodes.Branches;
 using Cysharp.Threading.Tasks;
+using Nadsat.DialogueGraph.Runtime;
 using Reflex.Attributes;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceLocations;
 using UnityEngine.UI;
+using Debug = UnityEngine.Debug;
+using Object = UnityEngine.Object;
 
 namespace CodeBase.Infrastructure
 {
@@ -40,10 +49,69 @@ namespace CodeBase.Infrastructure
         private void OnDisable() => 
             _startButton.onClick.RemoveListener(StartGame);
 
-        private void StartGame()
+        private async void StartGame()
         {
-            LoadAndStartGame().Forget();
-            _startButton.gameObject.SetActive(false);
+            Debug.Log("START");
+            await LoadCall("pizza");
+        }
+
+        private async UniTask LoadCall(string callName, CancellationToken token = default)
+        {
+            var locations = await Addressables.LoadResourceLocationsAsync(callName);
+            DebugLocations(locations);
+
+            var downloadSize = await Addressables.GetDownloadSizeAsync(locations);
+            Debug.Log($"download size: {downloadSize}");
+
+            var downloadHandle = Addressables.DownloadDependenciesAsync(locations);
+            while (!downloadHandle.IsDone && downloadHandle.IsValid())
+            {
+                await UniTask.Delay(100, cancellationToken: token);
+                Debug.Log($"Download percent: {downloadHandle.GetDownloadStatus().Percent}");
+            }
+            
+            if (downloadHandle.Status == AsyncOperationStatus.Failed)
+                Debug.LogError("Error while downloading catalog dependencies");
+            
+            if (downloadHandle.IsValid())
+                Addressables.Release(downloadHandle);
+            
+            Debug.Log($"Call {callName} loaded!");
+        }
+
+        private void DebugLocations(IEnumerable<IResourceLocation> locations)
+        {
+            var builder = new StringBuilder();
+            foreach (var location in locations) 
+                builder.Append($"{location};");
+            Debug.Log($"Locations: {builder}");
+        }
+        
+        private IEnumerator Testing()
+        {
+            const string pizza = "Calls/Pizza/Pizza.asset";
+            const string phrases = "Calls/Pizza/Phrases/";
+            var downloadSize = Addressables.GetDownloadSizeAsync(pizza);
+            yield return downloadSize;
+            Debug.Log($"Size: {downloadSize.Result}");
+            var value = Addressables.LoadAssetAsync<DialogueGraphContainer>(pizza);
+            yield return value;
+            Debug.Log($"{value.Result}");
+
+            var locations = Addressables.LoadResourceLocationsAsync("pizza");
+            yield return locations;
+
+            foreach (var location in locations.Result)
+            {
+                Debug.Log($"Resource Location: {location}");
+            }
+            
+            var phrasesLoading = Addressables.LoadAssetsAsync<Object>(locations.Result, (result) =>
+            {
+                Debug.Log($"Loaded: {result}");
+            });
+
+            yield return phrasesLoading;
         }
 
         private async UniTask LoadAndStartGame()
