@@ -28,10 +28,18 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
         {
             var locations = await Addressables.LoadResourceLocationsAsync(callName);
             DebugLocations(locations);
-
+            
             var downloadSize = await Addressables.GetDownloadSizeAsync(locations);
             Debug.Log($"download size: {SizeToMb(downloadSize)} Mb");
+            
+            await DownloadDependenciesAsync(locations, onProgress, token);
+            Debug.Log($"Call {callName} loaded!");
+            
+            return await LoadDialogue(locations);
+        }
 
+        private async UniTask DownloadDependenciesAsync(IList<IResourceLocation> locations, Action<float> onProgress = null, CancellationToken token = default)
+        {
             var downloadHandle = Addressables.DownloadDependenciesAsync(locations);
             while (!downloadHandle.IsDone && downloadHandle.IsValid())
             {
@@ -44,8 +52,10 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
             
             if (downloadHandle.IsValid())
                 Addressables.Release(downloadHandle);
-            
-            Debug.Log($"Call {callName} loaded!");
+        }
+
+        private async UniTask<Dialogue> LoadDialogue(IList<IResourceLocation> locations)
+        {
             var localization = new List<TextAsset>();
             DialogueGraphContainer dialogueGraph = null;
 
@@ -62,7 +72,7 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
 
             return _adapter.GetDialogueFrom(dialogueGraph, localization);
         }
-        
+
         private static float SizeToMb(long downloadSize) => downloadSize * 1f / 1048576;
 
         private void DebugLocations(IEnumerable<IResourceLocation> locations)
