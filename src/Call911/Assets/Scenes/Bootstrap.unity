@@ -1337,6 +1337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startButton: {fileID: 1671412792}
   _endLevel: {fileID: 63890319}
+  _loadingSlider: {fileID: 2069615725}
 --- !u!4 &1816008960
 Transform:
   m_ObjectHideFlags: 0
