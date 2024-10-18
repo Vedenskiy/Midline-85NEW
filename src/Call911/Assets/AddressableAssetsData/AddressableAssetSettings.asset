@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 45d663b63716fa117b6e79d8b94c0e24
   m_currentHash:
     serializedVersion: 2
-    Hash: 00000000000000000000000000000000
+    Hash: 3bcc0be14fc42477265bea23645caae5
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
       - m_Id: ff7369b5ce1c5632fb293aec72064a7c
         m_Value: 'ServerData/[BuildTarget]'
       - m_Id: 3ee976d22005000279c00e2f47fe1a61
-        m_Value: 'http://[PrivateIpAddress]:[HostingServicePort]'
+        m_Value: 'https://s3.timeweb.cloud/96a2b796-bf1bb49d-ad70-4c16-9d1e-4e38c51256d9/calls/[BuildTarget]'
     m_ProfileEntryNames:
     - m_Id: 4a1ff9b49dff636ebadc10684a7aa86e
       m_Name: BuildTarget

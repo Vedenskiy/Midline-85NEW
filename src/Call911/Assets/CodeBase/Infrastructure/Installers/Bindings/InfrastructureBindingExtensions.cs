@@ -19,6 +19,8 @@ namespace CodeBase.Infrastructure.Installers.Bindings
             builder.AddSingleton<AssetProvider>();
             builder.AddSingleton<AssetDownloadReporter>();
             builder.AddSingleton<AssetDownloadService>();
+
+            builder.AddSingleton<LevelDownloadService>();
         }
 
         private static void BindLocalization(ContainerBuilder builder)
