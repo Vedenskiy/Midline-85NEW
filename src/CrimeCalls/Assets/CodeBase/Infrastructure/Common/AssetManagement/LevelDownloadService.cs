@@ -18,6 +18,8 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
         private readonly AssetProvider _assets;
         private readonly DialogueGraphAdapter _adapter;
 
+        private long _downloadSize;
+
         public LevelDownloadService(AssetProvider assets, DialogueGraphAdapter adapter)
         {
             _assets = assets;
@@ -31,12 +33,16 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
             
             var downloadSize = await Addressables.GetDownloadSizeAsync(locations);
             Debug.Log($"download size: {SizeToMb(downloadSize)} Mb");
+            _downloadSize = downloadSize;
             
             await DownloadDependenciesAsync(locations, onProgress, token);
             Debug.Log($"Call {callName} loaded!");
             
             return await LoadDialogue(locations);
         }
+
+        public float GetDownloadSizeMb() =>
+            SizeToMb(_downloadSize);
 
         private async UniTask DownloadDependenciesAsync(IList<IResourceLocation> locations, Action<float> onProgress = null, CancellationToken token = default)
         {

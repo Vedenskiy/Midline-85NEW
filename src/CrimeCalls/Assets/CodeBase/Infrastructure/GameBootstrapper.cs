@@ -15,6 +15,7 @@ namespace CodeBase.Infrastructure
         [SerializeField] private Button _startButton;
         [SerializeField] private TextMeshProUGUI _endLevel;
         [SerializeField] private Slider _loadingSlider;
+        [SerializeField] private TextMeshProUGUI _loadingText;
         
         private CallsExecutor _executor;
         private NodeRepository _nodes;
@@ -39,7 +40,15 @@ namespace CodeBase.Infrastructure
             Debug.Log("START");
             _startButton.gameObject.SetActive(false);
 
-            var dialogue = await _downloadService.LoadDialogue("pizza", onProgress: value => _loadingSlider.value = value);
+            var dialogue = await _downloadService.LoadDialogue("pizza", onProgress: value =>
+            {
+                _loadingSlider.value = value;
+                var targetSize = _downloadService.GetDownloadSizeMb();
+                var loadedSize = value * targetSize;
+                
+                var progressText = $"({loadedSize:F1} МБ / {targetSize:F1} МБ)";
+                _loadingText.text = $"Загрузка {progressText}";
+            });
             
             _loadingSlider.gameObject.SetActive(false);
             await StartGame(dialogue);

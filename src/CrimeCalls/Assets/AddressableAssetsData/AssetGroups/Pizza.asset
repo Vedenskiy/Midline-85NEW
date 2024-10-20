@@ -59,6 +59,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - pizza
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 642f42e3f58fa406481259221891ffc5
+    m_Address: Assets/Addressables/garbage.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pizza
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7648b646125698bcc92c83f5ed357e09
+    m_Address: Assets/Addressables/garbage 1.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pizza
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 522bfceccb1d2aaf19cfe5db123ca1ff, type: 2}
   m_SchemaSet:
