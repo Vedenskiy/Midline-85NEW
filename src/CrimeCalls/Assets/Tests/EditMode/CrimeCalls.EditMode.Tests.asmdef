@@ -1,11 +1,11 @@
 {
-    "name": "Call911.EditMode.Tests",
+    "name": "CrimeCalls.EditMode.Tests",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "Call911",
-        "UniTask"
+        "UniTask",
+        "CrimeCalls"
     ],
     "includePlatforms": [
         "Editor"

@@ -1,5 +1,5 @@
 {
-    "name": "Call911.Editor",
+    "name": "CrimeCalls.Editor",
     "rootNamespace": "",
     "references": [
         "GUID:3958fd60bd22aaa54857f4775f4e959e"
