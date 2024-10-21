@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95144255850d4ca4be926fe8ed2883bb, type: 3}
+  m_Name: Dialogue Database
+  m_EditorClassIdentifier: 
+  Persons:
+  - Name: Elena
+    Icon: {fileID: 0}
+    Color: {r: 0.29119053, g: 0.8048404, b: 0.38327208, a: 1}
+    Emotions: []
+  - Name: Girl
+    Icon: {fileID: 0}
+    Color: {r: 0.18709932, g: 0.6371524, b: 0.80651337, a: 1}
+    Emotions: []
+  - Name: Geogre
+    Icon: {fileID: 0}
+    Color: {r: 0.8039216, g: 0.33217448, b: 0.2117647, a: 1}
+    Emotions: []
+  - Name: Police
+    Icon: {fileID: 0}
+    Color: {r: 0.2117647, g: 0.29952207, b: 0.8039216, a: 1}
+    Emotions: []
+  GlobalVariableNames: []
