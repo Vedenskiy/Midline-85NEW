@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -112,14 +113,22 @@ namespace CodeBase.Features.Calls.Infrastructure
                 })
                 .ToList();
 
-        private static List<PhraseNode> ConvertDialogueToPhrases(IEnumerable<DialogueNode> nodes) =>
+        private List<PhraseNode> ConvertDialogueToPhrases(IEnumerable<DialogueNode> nodes) =>
             nodes.Select(node => new PhraseNode()
                 {
                     Guid = node.Guid, 
                     PersonKey = node.PersonId, 
                     MessageKey = node.PhraseId, 
-                    DurationInSeconds = 4,
+                    DurationInSeconds = CalculateTimeForPhrase(node.PersonId),
                 })
                 .ToList();
+
+        private float CalculateTimeForPhrase(string phraseId)
+        {
+            var delimiters = new[] { ' ', '\r', '\n' };
+            var text = _localization.GetTranslatedString(phraseId);
+            var words = text.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+            return words.Length * 0.4f;
+        }
     }
 }
