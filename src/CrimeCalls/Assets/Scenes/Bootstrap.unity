@@ -1339,6 +1339,7 @@ MonoBehaviour:
   _startButton: {fileID: 1671412792}
   _endLevel: {fileID: 63890319}
   _loadingSlider: {fileID: 2069615725}
+  _loadingText: {fileID: 453668754}
 --- !u!4 &1816008960
 Transform:
   m_ObjectHideFlags: 0
