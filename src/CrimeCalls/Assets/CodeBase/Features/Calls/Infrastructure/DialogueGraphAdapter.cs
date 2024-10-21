@@ -119,7 +119,7 @@ namespace CodeBase.Features.Calls.Infrastructure
                     Guid = node.Guid, 
                     PersonKey = node.PersonId, 
                     MessageKey = node.PhraseId, 
-                    DurationInSeconds = CalculateTimeForPhrase(node.PersonId),
+                    DurationInSeconds = CalculateTimeForPhrase(node.PhraseId),
                 })
                 .ToList();
 
