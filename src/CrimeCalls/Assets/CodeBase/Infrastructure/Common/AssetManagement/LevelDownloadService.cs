@@ -37,8 +37,10 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
             
             await DownloadDependenciesAsync(locations, onProgress, token);
             Debug.Log($"Call {callName} loaded!");
-            
-            return await LoadDialogue(locations);
+
+            var dialogue = await LoadDialogue(locations);
+            Debug.Log($"Completed dialogue loaded!");
+            return dialogue;
         }
 
         public float GetDownloadSizeMb() =>
