@@ -1,0 +1,31 @@
+<linker>
+  <assembly fullname="Nadsat.DialogueGraph, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Nadsat.DialogueGraph.Runtime.DialogueGraphContainer" preserve="all" />
+    <type fullname="Nadsat.DialogueGraph.Runtime.Data.ChoiceData" preserve="nothing" serialized="true" />
+    <type fullname="Nadsat.DialogueGraph.Runtime.Data.Vector2Data" preserve="nothing" serialized="true" />
+    <type fullname="Nadsat.DialogueGraph.Runtime.DialogueGraph" preserve="nothing" serialized="true" />
+    <type fullname="Nadsat.DialogueGraph.Runtime.NodeLinks" preserve="nothing" serialized="true" />
+    <type fullname="Nadsat.DialogueGraph.Runtime.Nodes.BackgroundImageData" preserve="nothing" serialized="true" />
+    <type fullname="Nadsat.DialogueGraph.Runtime.Nodes.ChoicesNode" preserve="nothing" serialized="true" />
+    <type fullname="Nadsat.DialogueGraph.Runtime.Nodes.DialogueNode" preserve="nothing" serialized="true" />
+    <type fullname="Nadsat.DialogueGraph.Runtime.Nodes.EndNode" preserve="nothing" serialized="true" />
+    <type fullname="Nadsat.DialogueGraph.Runtime.Nodes.NoteNode" preserve="nothing" serialized="true" />
+    <type fullname="Nadsat.DialogueGraph.Runtime.Nodes.RedirectNode" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
+  </assembly>
+  <assembly fullname="Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.InstanceProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.LegacyResourcesProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.SceneProvider" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Object" preserve="all" />
+    <type fullname="UnityEngine.Sprite" preserve="all" />
+    <type fullname="UnityEngine.TextAsset" preserve="all" />
+    <type fullname="UnityEngine.Texture2D" preserve="all" />
+  </assembly>
+</linker>
