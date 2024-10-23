@@ -11,6 +11,8 @@ Shader "Midline/LevelFading"
         _IsDissolve ("Is Dissolve", range(0, 1)) = 0.0
         _TimeScale ("Time Scale", float) = 1.0
         _Progress ("Progress", range(0, 1)) = 0.0
+        
+        _LinesStrength ("Lines Strength", float) = 1.0
     }
     SubShader
     {
@@ -48,6 +50,7 @@ Shader "Midline/LevelFading"
             fixed _OffsetY;
 
             fixed _IsDissolve;
+            fixed _LinesStrength;
             
             v2f vert (appdata v)
             {
@@ -186,7 +189,7 @@ Shader "Midline/LevelFading"
                 fixed final_mask = mask1 * mask;
                 fixed4 tex = tex2D(_MainTex, i.uv + fixed2(sin(_Time.y / 10) / 20, 0));
 
-                fixed lines = waveLines(i.uv, _Time.y);
+                fixed lines = waveLines(i.uv, _Time.y) * _LinesStrength;
                 fixed maskedLines = lines * (1 - final_mask) * (1 - _Progress);
                 fixed result = max(final_mask * tex, maskedLines);
 
