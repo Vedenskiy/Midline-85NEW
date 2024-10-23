@@ -1,5 +1,5 @@
-using System;
-using System.Threading;
+using CodeBase.Features.Calls.Infrastructure;
+using CodeBase.Features.Calls.Infrastructure.Nodes;
 using CodeBase.Infrastructure.Common.AssetManagement;
 using Cysharp.Threading.Tasks;
 using Reflex.Attributes;
@@ -20,11 +20,19 @@ namespace CodeBase.Features.Menu
         [SerializeField] private Button _startButton;
         [SerializeField] private Button _returnButton;
 
+        private CallsExecutor _executor;
+        private NodeRepository _nodes;
         private LevelDownloadService _downloadService;
-        
+
+        private Dialogue _dialogue;
+
         [Inject]
-        public void Construct(LevelDownloadService downloadService) => 
+        public void Construct(CallsExecutor executor, NodeRepository nodes, LevelDownloadService downloadService)
+        {
+            _executor = executor;
+            _nodes = nodes;
             _downloadService = downloadService;
+        }
 
         private void OnEnable()
         {
@@ -40,22 +48,12 @@ namespace CodeBase.Features.Menu
             _returnButton.onClick.RemoveListener(OnReturnPressed);
         }
 
-        private async void Start()
-        {
-            var isLoaded = await _downloadService.IsLoadedLevel("pizza");
-            if (isLoaded)
-            {
-                _downloadButton.gameObject.SetActive(false);
-                _startButton.gameObject.SetActive(true);
-            }
-        }
-
         private async void OnDownloadPressed()
         {
             _downloadButton.gameObject.SetActive(false);
             _downloadProgressBar.gameObject.SetActive(true);
             
-            await _downloadService.LoadDialogue("pizza", progress =>
+            _dialogue = await _downloadService.LoadDialogue("pizza", progress =>
             {
                 _downloadProgressBar.Apply(progress);
 
@@ -70,14 +68,21 @@ namespace CodeBase.Features.Menu
             _startButton.gameObject.SetActive(true);
         }
         
-        private void OnStartPressed()
+        private async void OnStartPressed()
         {
-            Debug.Log($"LEVEL STARTED!");
+            gameObject.SetActive(false);
+            await StartGame(_dialogue);
         }
         
         private void OnReturnPressed()
         {
             Debug.Log("RETURN TO MENU!");
+        }
+        
+        private async UniTask StartGame(Dialogue dialogue)
+        {
+            _nodes.Load(dialogue.GetAllNodes(), dialogue.Links);
+            await _executor.Execute(_nodes.GetById(dialogue.EntryNodeId), destroyCancellationToken);
         }
     }
 }

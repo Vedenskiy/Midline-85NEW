@@ -26,19 +26,6 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
             _adapter = adapter;
         }
 
-        public async UniTask<bool> IsLoadedLevel(string levelName, CancellationToken token = default)
-        {
-            var downloadSize = await Addressables.GetDownloadSizeAsync(levelName);
-            var paths = new List<string>();
-            Caching.GetAllCachePaths(paths);
-            foreach (var path in paths)
-            {
-                Debug.Log($"cached {path}");
-            }
-            Debug.Log($"{downloadSize}");
-            return downloadSize <= 0;
-        }
-
         public async UniTask<Dialogue> LoadDialogue(string callName, Action<float> onProgress = null, CancellationToken token = default)
         {
             var locations = await Addressables.LoadResourceLocationsAsync(callName);
