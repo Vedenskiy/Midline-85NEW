@@ -12,7 +12,7 @@ namespace CodeBase.Infrastructure.Installers.Bindings
     {
         public static ContainerBuilder BindInfrastructure(this ContainerBuilder builder)
         {
-            BindCoroutineRunner(builder);
+            //BindCoroutineRunner(builder);
             BindSceneLoading(builder);
             BindAssetManagement(builder);
             BindLocalization(builder);
