@@ -57,7 +57,8 @@ namespace CodeBase.Features.Calls.Handlers.Phrases.UI
                 _localization.GetTranslatedString(node.PersonKey), 
                 _localization.GetTranslatedString(node.MessageKey));
             _previousPhrase.Highlight();
-            _container.GetComponent<VerticalLayoutGroup>().CalculateLayoutInputVertical();
+            
+            LayoutRebuilder.ForceRebuildLayoutImmediate(_container);
         }
 
         private CallPhraseView CreateNewCallPhrase()
