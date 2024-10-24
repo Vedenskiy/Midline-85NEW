@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using CodeBase.Common.Tweens;
 using CodeBase.Infrastructure.Common.Localization;
 using FronkonGames.TinyTween;
 using Reflex.Attributes;

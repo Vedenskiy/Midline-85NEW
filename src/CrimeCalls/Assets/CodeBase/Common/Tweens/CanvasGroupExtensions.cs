@@ -1,6 +1,7 @@
+using FronkonGames.TinyTween;
 using UnityEngine;
 
-namespace FronkonGames.TinyTween
+namespace CodeBase.Common.Tweens
 {
     public static class CanvasGroupExtensions
     {
