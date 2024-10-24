@@ -1,4 +1,5 @@
 using System;
+using CodeBase.Features.Calls.Configs;
 using CodeBase.Features.Calls.Infrastructure;
 using CodeBase.Features.Calls.Infrastructure.Nodes;
 using CodeBase.Infrastructure.Common.AssetManagement;
@@ -14,6 +15,7 @@ namespace CodeBase.Features.Menu
     {
         [SerializeField] private TextMeshProUGUI _title;
         [SerializeField] private TextMeshProUGUI _description;
+        [SerializeField] private Image _icon;
         
         [SerializeField] private Button _downloadButton;
         [SerializeField] private LoadingProgressBar _downloadProgressBar;
@@ -35,6 +37,13 @@ namespace CodeBase.Features.Menu
             _executor = executor;
             _nodes = nodes;
             _downloadService = downloadService;
+        }
+
+        public void Setup(LevelConfig config)
+        {
+            _title.text = config.Name;
+            _description.text = config.Description;
+            _icon.sprite = config.Icon;
         }
 
         private void OnEnable()

@@ -1,4 +1,5 @@
 using System;
+using CodeBase.Features.Calls.Configs;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -12,11 +13,19 @@ namespace CodeBase.Features.Menu
         [SerializeField] private TextMeshProUGUI _title;
         [SerializeField] private TextMeshProUGUI _description;
 
-        public event Action<string> Clicked; 
+        private string _levelLabel = "notfound";
+        
+        public event Action<string> Clicked;
 
-        public void OnPointerClick(PointerEventData eventData)
+        public void Setup(LevelConfig config)
         {
-            Clicked?.Invoke("none");
+            _levelLabel = config.Name;
+            _icon.sprite = config.Icon;
+            _title.text = config.Name;
+            _description.text = config.Description;
         }
+
+        public void OnPointerClick(PointerEventData eventData) => 
+            Clicked?.Invoke(_levelLabel);
     }
 }
