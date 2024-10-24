@@ -1,3 +1,4 @@
+using System;
 using CodeBase.Features.Calls.Infrastructure;
 using CodeBase.Features.Calls.Infrastructure.Nodes;
 using CodeBase.Infrastructure.Common.AssetManagement;
@@ -25,6 +26,8 @@ namespace CodeBase.Features.Menu
         private LevelDownloadService _downloadService;
 
         private Dialogue _dialogue;
+
+        public event Action Returned;
 
         [Inject]
         public void Construct(CallsExecutor executor, NodeRepository nodes, LevelDownloadService downloadService)
@@ -74,11 +77,9 @@ namespace CodeBase.Features.Menu
             await StartGame(_dialogue);
         }
         
-        private void OnReturnPressed()
-        {
-            Debug.Log("RETURN TO MENU!");
-        }
-        
+        private void OnReturnPressed() => 
+            Returned?.Invoke();
+
         private async UniTask StartGame(Dialogue dialogue)
         {
             _nodes.Load(dialogue.GetAllNodes(), dialogue.Links);
