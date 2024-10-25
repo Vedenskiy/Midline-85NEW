@@ -189,6 +189,10 @@ Shader "Midline/LevelFading"
                 fixed final_mask = mask1 * mask;
                 fixed4 tex = tex2D(_MainTex, i.uv + fixed2(sin(_Time.y / 10) / 20, 0));
 
+                // TODO: not use _Time.y for it, cause it's not has good precision and overflow
+                // break shader effect
+                // Good alternative: time = frac(_Time.y / UNITY_TWO_PI) * UNITY_TWO_PI (need test)
+                // but alternative has problem with waves, that change phase, it's not looped.
                 fixed lines = waveLines(i.uv, _Time.y) * _LinesStrength;
                 fixed maskedLines = lines * (1 - final_mask) * (1 - _Progress);
                 fixed result = max(final_mask * tex, maskedLines);
