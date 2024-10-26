@@ -38,8 +38,9 @@ namespace CodeBase.Infrastructure.Installers.Bindings
         private static void BindAssetManagement(ContainerBuilder builder)
         {
             builder.AddSingleton<AssetProvider>();
-            builder.AddSingleton<AssetDownloadReporter>();
-            builder.AddSingleton<AssetDownloadService>();
+            //builder.AddSingleton<AssetDownloadReporter>();
+            //builder.AddSingleton<AssetDownloadService>();
+            builder.AddSingleton<AssetDownloadReporterRegistry>();
 
             builder.AddSingleton<LevelDownloadService>();
         }

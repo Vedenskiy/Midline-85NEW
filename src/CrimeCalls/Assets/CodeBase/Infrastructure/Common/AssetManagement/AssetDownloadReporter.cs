@@ -8,8 +8,9 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
         public const float UpdateThreshold = 0.01f;
         
         public float Progress { get; private set; }
+        public long DownloadSize { get; set; }
 
-        public event Action Updated;
+        public event Action<AssetDownloadReporter> Updated;
 
         public void Report(float newValue)
         {
@@ -17,12 +18,18 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
                 return;
 
             Progress = newValue;
-            Updated?.Invoke();
+            Updated?.Invoke(this);
         }
 
-        public void Reset()
-        {
+        public void Reset() => 
             Progress = 0;
-        }
+
+        public float GetDownloadSizeMb() => 
+            SizeToMb(DownloadSize);
+
+        private static float SizeToMb(long downloadSize) => downloadSize * 1f / 1048576;
+
+        public void UpdateTargetDownloadSize(long downloadSize) => 
+            DownloadSize = downloadSize;
     }
 }

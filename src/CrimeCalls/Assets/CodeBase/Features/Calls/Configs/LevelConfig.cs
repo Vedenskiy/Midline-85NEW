@@ -7,6 +7,7 @@ namespace CodeBase.Features.Calls.Configs
     public class LevelConfig 
     {
         public string Name;
+        public string DownloadLabel;
         public Sprite Icon;
         public string Description;
     }
