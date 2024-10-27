@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace CodeBase.Infrastructure.Common.AssetManagement
+namespace CodeBase.Infrastructure.Common.AssetManagement.Reports
 {
     public class AssetDownloadReporter
     {

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace CodeBase.Infrastructure.Common.AssetManagement
+namespace CodeBase.Infrastructure.Common.AssetManagement.Reports
 {
     public class AssetDownloadReporterRegistry
     {

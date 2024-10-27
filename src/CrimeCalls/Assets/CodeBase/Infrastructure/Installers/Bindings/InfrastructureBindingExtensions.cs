@@ -1,4 +1,5 @@
 using CodeBase.Infrastructure.Common.AssetManagement;
+using CodeBase.Infrastructure.Common.AssetManagement.Reports;
 using CodeBase.Infrastructure.Common.Localization;
 using CodeBase.Infrastructure.Common.Scenes;
 using CodeBase.Infrastructure.Installers.Extensions;
