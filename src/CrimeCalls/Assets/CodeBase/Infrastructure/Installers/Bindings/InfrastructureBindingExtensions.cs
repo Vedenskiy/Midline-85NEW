@@ -1,10 +1,8 @@
-using CodeBase.Infrastructure.Common;
 using CodeBase.Infrastructure.Common.AssetManagement;
 using CodeBase.Infrastructure.Common.Localization;
 using CodeBase.Infrastructure.Common.Scenes;
 using CodeBase.Infrastructure.Installers.Extensions;
 using Reflex.Core;
-using UnityEngine;
 
 namespace CodeBase.Infrastructure.Installers.Bindings
 {
@@ -19,17 +17,6 @@ namespace CodeBase.Infrastructure.Installers.Bindings
             return builder;
         }
 
-        private static void BindCoroutineRunner(ContainerBuilder builder)
-        {
-            builder.AddSingleton((container) =>
-            {
-                var newGameObject = new GameObject(nameof(CoroutineRunner));
-                var coroutineRunner = newGameObject.AddComponent<CoroutineRunner>();
-                Object.DontDestroyOnLoad(newGameObject);
-                return coroutineRunner;
-            }, typeof(ICoroutineRunner));
-        }
-
         private static void BindSceneLoading(ContainerBuilder builder)
         {
             builder.AddSingleton<SceneLoader>();
@@ -38,8 +25,6 @@ namespace CodeBase.Infrastructure.Installers.Bindings
         private static void BindAssetManagement(ContainerBuilder builder)
         {
             builder.AddSingleton<AssetProvider>();
-            //builder.AddSingleton<AssetDownloadReporter>();
-            //builder.AddSingleton<AssetDownloadService>();
             builder.AddSingleton<AssetDownloadReporterRegistry>();
 
             builder.AddSingleton<LevelDownloadService>();
