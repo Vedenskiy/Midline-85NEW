@@ -10,13 +10,7 @@ namespace CodeBase.Infrastructure.Common.AssetManagement.Reports
             _reporters = new Dictionary<string, AssetDownloadReporter>();
 
         public AssetDownloadReporter this[string key] => CreateOrGet(key);
-
-        public void UpdateDownloadSize(string key, long downloadSize)
-        {
-            var reporter = _reporters[key];
-            reporter.DownloadSize = downloadSize;
-        }
-
+        
         public AssetDownloadReporter CreateOrGet(string key)
         {
             _reporters.TryAdd(key, new AssetDownloadReporter());
