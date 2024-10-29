@@ -1,4 +1,4 @@
-Shader "Midline/LevelFading"
+Shader "Midline/Background Dissolve"
 {
     Properties
     {
