@@ -12,27 +12,29 @@ jobs:
                 targetPlatform:
                     - WebGL
         steps:
-            - uses: actions/checkout@v4
-              with:
-                fetch-depth: 0
-                lfs: true
-                
-            - uses: actions/cache@v3
-              with:
-                path: Library
-                key: Library-${{ matrix.targetPlatform }}
-                restore-keys: Library-
+            - name: Checkout repository
+                uses: actions/checkout@v4
+                with:
+                    fetch-depth: 0
+                    lfs: true
             
-            - uses: game-ci/unity-builder@v4
-              env:
-                UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-                UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-                UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-              with:
-                projectPath: src/CrimeCalls
-                targetPlatform: ${{ matrix.targetPlatform }}
+            - name: Caching unity project folders
+                uses: actions/cache@v3
+                with:
+                    path: ${{ vars.PROJECT_ROOT_PATH }}/Library
+                    key: ${{ vars.PROJECT_ROOT_PATH }}/Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+                    restore-kets: Library-
+                    
+            - name: Build unity project
+                env:
+                    UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+                    UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+                    UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+                with:
+                    projectPath: ${{ vars.PROJECT_ROOT_PATH }}
+                    targetPlatform: ${{ matrix.targetPlatform }}
             
-            - uses: actions/upload-artifact@v3
-              with:
-                name: Build-${{ matrix.targetPlatform }}
-                path: build/${{ matrix.targetPlatform }}
+            - name: Upload build to artifacts
+                with:
+                    name: Build-${{ matrix.targetPlatform }}
+                    path: build/${{ matrix.targetPlatform }}
