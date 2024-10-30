@@ -36,6 +36,7 @@ jobs:
                 targetPlatform: ${{ matrix.targetPlatform }}
             
             - name: Upload build to artifacts
+              uses: actions/upload-artifact@v3
               with:
                 name: Build-${{ matrix.targetPlatform }}
                 path: build/${{ matrix.targetPlatform }}
