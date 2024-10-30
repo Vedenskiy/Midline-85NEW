@@ -41,7 +41,7 @@ namespace CodeBase.Features.Calls.UI
         private IEnumerator Hiding()
         {
             _material.SetFloat(IsDissolve, 1f);
-            yield return SmoothMaterialProgressChange(1, 0, _hidingDuration);
+            yield return SmoothMaterialProgressChange(1f, 0f, _hidingDuration);
         }
 
         private IEnumerator SmoothMaterialProgressChange(float origin, float target, float duration)
