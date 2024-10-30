@@ -48,7 +48,7 @@ jobs:
                 echo "${{ secrets.SERVER_SSH }}" > "$HOME/.ssh/key"
                 chmod 600 "$HOME/.ssh/key"
 
-            - name: Copy build files to server
+            - name: Copy WebGL build files to server
               run: |
-                cd build 
+                cd build/WebGL 
                 rsync -azvhPL -e "ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@${{ secrets.SERVER_IP }}:${{ vars.SERVER_PATH_TO_BUILD }}
