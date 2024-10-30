@@ -23,7 +23,7 @@ jobs:
               with:
                 path: ${{ vars.PROJECT_ROOT_PATH }}/Library
                 key: ${{ vars.PROJECT_ROOT_PATH }}/Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-                restore-kets: Library-
+                restore-keys: Library-
                     
             - name: Build unity project
               uses: game-ci/unity-builder@v4
