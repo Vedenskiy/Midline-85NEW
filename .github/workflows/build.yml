@@ -40,3 +40,15 @@ jobs:
               with:
                 name: Build-${{ matrix.targetPlatform }}
                 path: build/${{ matrix.targetPlatform }}
+
+            - name: Setup SSH keys
+              run: |
+                set -eu
+                mkdir "$HOME/.ssh"
+                echo "${{ secrets.SERVER_SSH }}" > "$HOME/.ssh/key"
+                chmod 600 "$HOME/.ssh/key"
+
+            - name: Copy build files to server
+              run: |
+                cd build 
+                rsync -azvhPL -e "ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@${{ secrets.SERVER_IP }}:${{ vars.SERVER_PATH_TO_BUILD }}
