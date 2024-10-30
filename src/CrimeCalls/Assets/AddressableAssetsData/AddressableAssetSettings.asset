@@ -81,7 +81,7 @@ MonoBehaviour:
       - m_Id: ff7369b5ce1c5632fb293aec72064a7c
         m_Value: 'ServerData/[BuildTarget]'
       - m_Id: 3ee976d22005000279c00e2f47fe1a61
-        m_Value: 'https://s3.timeweb.cloud/96a2b796-e4b36635-26b8-4b90-9d91-6b30d8bb5a9c/[BuildTarget]'
+        m_Value: 'https://data.crimecalls.ru/[BuildTarget]'
     m_ProfileEntryNames:
     - m_Id: 4a1ff9b49dff636ebadc10684a7aa86e
       m_Name: BuildTarget
