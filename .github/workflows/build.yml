@@ -14,6 +14,8 @@ jobs:
     buildForWebGL:
         name: Build for ${{ matrix.targetPlatform }}
         runs-on: ubuntu-latest
+        permissions:
+            contents: write
         strategy:
             fail-fast: false
             matrix:
@@ -73,8 +75,9 @@ jobs:
                 cd build/WebGL 
                 rsync -azvhPL -e "ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@${{ secrets.SERVER_IP }}:${{ vars.SERVER_PATH_TO_BUILD }}
 
-            - name: Push changed files back to repository
+            - name: Push updated version file back to repository
               uses: stefanzweifel/git-auto-commit-action@v5
               with:
                   commit_message: "[CI/CD] updated project after build"
                   commit_options: '--no-verify --signoff'
+                  file_pattern: ${{ vars.PROJECT_ROOT_PATH }}/ProjectSettings/ProjectSettings.asset
