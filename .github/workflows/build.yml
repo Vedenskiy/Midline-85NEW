@@ -1,6 +1,14 @@
 name: Build project
 
-on: [push, pull_request]
+on: 
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+        types:
+            - closed
 
 jobs:
     buildForWebGL:
