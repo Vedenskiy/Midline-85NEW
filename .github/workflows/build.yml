@@ -41,16 +41,16 @@ jobs:
                 name: Build-${{ matrix.targetPlatform }}
                 path: build/${{ matrix.targetPlatform }}
 
-            - name: Upload addressables to S3
-              uses: shallwefootball/s3-upload-action@master
-              id: S3
+            - name: Upload addressables to S3 and remove other files in S3 
+              uses: jakejarvis/s3-sync-action@master
               with:
-                  aws_key_id: ${{ secrets.AWS_ACCESS_KEY }}
-                  aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-                  aws_bucket: ${{ secrets.AWS_BUCKET_NAME }}
-                  endpoint: ${{ secrets.AWS_ENDPOINT }}
-                  source_dir: ${{ vars.PROJECT_ROOT_PATH }}/ServerData/${{ matrix.targetPlatform }}
-                  destination_dir: ${{ matrix.targetPlatform }}
+                  args: --acl public-read --follow-symlinks --delete
+              env:
+                  AWS_S3_BUCKET: ${{ secrets.AWS_BUCKET_NAME }}
+                  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+                  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                  AWS_S3_ENDPOINT: ${{ secrets.AWS_ENDPOINT }}
+                  SOURCE_DIR: ${{ vars.PROJECT_ROOT_PATH }}/ServerData
 
             - name: Setup SSH keys
               run: |
