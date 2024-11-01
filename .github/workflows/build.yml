@@ -10,7 +10,7 @@ on:
         types:
             - closed
 
-jobs:
+jobs:    
     buildForWebGL:
         name: Build for ${{ matrix.targetPlatform }}
         runs-on: ubuntu-latest
@@ -45,12 +45,6 @@ jobs:
               with:
                 projectPath: ${{ vars.PROJECT_ROOT_PATH }}
                 targetPlatform: ${{ matrix.targetPlatform }}
-            
-            - name: Upload build to artifacts
-              uses: actions/upload-artifact@v3
-              with:
-                name: Build-${{ matrix.targetPlatform }}
-                path: build/${{ matrix.targetPlatform }}
 
             - name: Upload addressables to S3 and remove other files in S3 
               uses: jakejarvis/s3-sync-action@master
