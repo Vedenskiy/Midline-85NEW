@@ -1,4 +1,5 @@
 ﻿using System;
+using CodeBase.Common.Extensions;
 using CodeBase.Infrastructure.Common.Localization;
 using UnityEngine;
 
@@ -14,13 +15,19 @@ namespace CodeBase.Features.Calls.Handlers.Phrases
         public event Action<PhraseNode> PhraseShown;
         public event Action<PhraseNode> PhraseHide;
 
-        public void ShowPhrase(PhraseNode node)
+        public void ShowPhrase(PhraseNode phrase)
         {
-            Debug.Log($"[phrase] {node.PersonKey} say: [{node.MessageKey}] {_localization.GetTranslatedString(node.MessageKey)} ({node.DurationInSeconds}");
-            PhraseShown?.Invoke(node);
+            Log(phrase);
+            PhraseShown?.Invoke(phrase);
         }
 
-        public void HidePhrase(PhraseNode node) =>
-            PhraseHide?.Invoke(node);
+        public void HidePhrase(PhraseNode phrase) =>
+            PhraseHide?.Invoke(phrase);
+
+        private void Log(PhraseNode phrase)
+        {
+            var tag = Color.cyan.Paint("phrase");
+            Debug.Log($"[{tag}] {phrase.PersonKey} say: [{phrase.MessageKey}] {_localization.GetTranslatedString(phrase.MessageKey)} ({phrase.DurationInSeconds}s)");
+        }
     }
 }
