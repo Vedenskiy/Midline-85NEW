@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: 45d663b63716fa117b6e79d8b94c0e24
   m_SerializeEntries:
   - m_GUID: 614b4fb076b43cb7e98e899e8c3fa89c
-    m_Address: Assets/Addressables/LevelsCatalog.asset
+    m_Address: LevelsCatalog
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

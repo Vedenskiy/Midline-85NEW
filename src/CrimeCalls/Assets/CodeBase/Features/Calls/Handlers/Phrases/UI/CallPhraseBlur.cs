@@ -6,7 +6,7 @@ namespace CodeBase.Features.Calls.Handlers.Phrases.UI
 {
     public class CallPhraseBlur : MonoBehaviour
     {
-        private const float MinimumBlurStrength = 0.1f;
+        private const float MinimumBlurStrength = 0.05f;
         private const float MaximumBlurStrength = 1f;
         private const float ShowBlurDuration = 1f;
         private const float HideBlurDuration = 2f;

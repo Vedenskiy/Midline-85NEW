@@ -13,6 +13,8 @@ namespace CodeBase.Features.Calls.Handlers.Phrases.UI
         [SerializeField] private TextMeshProUGUI _personMessage;
 
         [SerializeField] private CallPhraseBlur _blur;
+
+        private bool _isHighlighted;
         
         public void Setup(string personKey, string messageKey)
         {
@@ -22,14 +24,22 @@ namespace CodeBase.Features.Calls.Handlers.Phrases.UI
 
         public void Highlight()
         {
+            if (_isHighlighted)
+                return;
+            
             _canvas.TweenAlpha(0.3f, 1f, 1f, Ease.Linear);
             _blur.ShowMessage();
+            _isHighlighted = true;
         }
 
         public void Unhighlight()
         {
+            if (!_isHighlighted)
+                return;
+            
             _canvas.TweenAlpha(1f, 0.3f, 1f, Ease.Linear);
             _blur.HideMessage();
+            _isHighlighted = false;
         }
     }
 }
