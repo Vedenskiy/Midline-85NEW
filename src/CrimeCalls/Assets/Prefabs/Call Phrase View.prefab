@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 735900686302978637}
   - component: {fileID: 5232116679239851799}
   - component: {fileID: 2377097681209489319}
+  - component: {fileID: 5361255121803734464}
+  - component: {fileID: 8091713665465321217}
   m_Layer: 5
   m_Name: Message Text
   m_TagString: Untagged
@@ -35,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800.6201, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &5232116679239851799
 CanvasRenderer:
@@ -135,6 +137,84 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5361255121803734464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117280113255569827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5733a7761f64549b19f144aac71d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _strength: 1
+  _algorithm: 100
+  _downSample: 1
+  _blurAxes2D: 0
+  _blur: 36
+  _applyAlphaCurve: 1
+  _alphaCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.028145347
+      value: 1.0057316
+      inSlope: -2.6983945
+      outSlope: -2.6983945
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.15167327
+      value: 0.52051
+      inSlope: -2.0867631
+      outSlope: -2.0867631
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.29690966
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.50199205
+      value: 0.18276823
+      inSlope: -0.55788547
+      outSlope: -0.55788547
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.2752385
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0048828
+      value: -0.012142181
+      inSlope: -0.38758
+      outSlope: -0.38758
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &8091713665465321217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117280113255569827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35fc49e13720d6c4fb056bc4d105e6af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _applyToSprites: 1
+  _updateOnTransform: 1
+  _relativeToTransformScale: 0
+  _relativeFontSize: 0
+  _filters:
+  - {fileID: 5361255121803734464}
 --- !u!1 &5428247316824057896
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,6 +226,7 @@ GameObject:
   - component: {fileID: 8974710397034404681}
   - component: {fileID: 4186859054661311459}
   - component: {fileID: 954756767545151237}
+  - component: {fileID: 4564113249382776}
   - component: {fileID: 7281296148913097098}
   - component: {fileID: 986118444223759743}
   - component: {fileID: 2924990192093022295}
@@ -192,6 +273,7 @@ MonoBehaviour:
   _canvas: {fileID: 7281296148913097098}
   _personName: {fileID: 6016177173192099144}
   _personMessage: {fileID: 2377097681209489319}
+  _blur: {fileID: 4564113249382776}
 --- !u!114 &954756767545151237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +290,19 @@ MonoBehaviour:
   _mappingSize: 100
   _personName: {fileID: 6016177173192099144}
   _personMessage: {fileID: 2377097681209489319}
+--- !u!114 &4564113249382776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5428247316824057896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6cd534e8cf942b9af30907647fadb51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _blur: {fileID: 5361255121803734464}
 --- !u!225 &7281296148913097098
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -295,7 +390,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800.6201, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &5165531213904517975
 CanvasRenderer:
