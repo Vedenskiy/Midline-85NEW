@@ -10,7 +10,7 @@ on:
         types:
             - closed
 
-jobs:    
+jobs:
     buildForWebGL:
         name: Build for ${{ matrix.targetPlatform }}
         runs-on: ubuntu-latest
@@ -29,11 +29,13 @@ jobs:
                 lfs: true
             
             - name: Caching unity project folders
-              uses: actions/cache@v3
+              uses: actions/cache@v4
               with:
                 path: ${{ vars.PROJECT_ROOT_PATH }}/Library
-                key: ${{ vars.PROJECT_ROOT_PATH }}/Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-                restore-keys: Library-
+                key: Library-${{ matrix.targetPlatform }}
+                restore-keys: |
+                    Library-${{ matrix.targetPlatform }}
+                    Library-
                     
             - name: Build unity project
               uses: game-ci/unity-builder@v4
@@ -64,7 +66,7 @@ jobs:
                 echo "${{ secrets.SERVER_SSH }}" > "$HOME/.ssh/key"
                 chmod 600 "$HOME/.ssh/key"
 
-            - name: Copy WebGL build files to server
+            - name: Upload WebGL build files to server
               run: |
                 cd build/WebGL 
                 rsync -azvhPL -e "ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@${{ secrets.SERVER_IP }}:${{ vars.SERVER_PATH_TO_BUILD }}
@@ -72,6 +74,7 @@ jobs:
             - name: Push updated version file back to repository
               uses: stefanzweifel/git-auto-commit-action@v5
               with:
-                  commit_message: "[CI/CD] updated project after build"
+                  commit_message: '[CI/CD] updated project to ${{ steps.build.outputs.buildVersion }} version'
                   commit_options: '--no-verify --signoff'
                   file_pattern: ${{ vars.PROJECT_ROOT_PATH }}/ProjectSettings/ProjectSettings.asset
+                  #tagging_message: 'v${{ steps.build.outputs.buildVersion }}'
