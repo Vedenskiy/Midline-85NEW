@@ -1,4 +1,4 @@
-![Build](https://github.com/Scrawach/CrimeCalls/actions/workflows/build.yml/badge.svg)
+![Build](https://github.com/Scrawach/CrimeCalls/actions/workflows/build-and-deploy.yml/badge.svg)
 
 ## Crime Calls
 
