@@ -1,52 +1,27 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 using CodeBase.Common.Extensions;
 using CodeBase.Infrastructure.Common.AssetManagement.Reports;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.AddressableAssets.ResourceLocators;
 using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.ResourceManagement.ResourceLocations;
 
 namespace CodeBase.Infrastructure.Common.AssetManagement
 {
     public class AssetDownloadService
     {
-        private readonly AssetDownloadReporter _downloadReporter;
-
-        private List<IResourceLocator> _catalogLocators;
-        private long _downloadSize;
-
-        public AssetDownloadService(AssetDownloadReporter downloadReporter) => 
-            _downloadReporter = downloadReporter;
-
-        public async UniTask InitializeDownloadDataAsync(CancellationToken token = default)
+        public async UniTaskVoid InitializeAsync(CancellationToken token = default)
         {
             await Addressables.InitializeAsync().ToUniTask(cancellationToken: token);
             await UpdateCatalogsAsync(token);
-            await UpdateDownloadSizeAsync(token);
         }
 
-        public float GetDownloadSizeMb() => 
-            SizeToMb(_downloadSize);
-
-        public async UniTask UpdateContentAsync(CancellationToken token = default)
+        public async UniTask DownloadAsync(string key, AssetDownloadReporter reporter, CancellationToken token = default)
         {
-            if (_catalogLocators == null)
-                await UpdateCatalogsAsync(token);
-
-            var locations = await RefreshResourceLocations(_catalogLocators, token);
-
-            if (locations.IsNullOrEmpty())
-                return;
-
             try
             {
-                await DownloadContentWithPreciseProgress(locations, token);
+                await DownloadingAsync(key, reporter, token);
             }
             catch (Exception e)
             {
@@ -54,65 +29,42 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
             }
         }
 
-        private async UniTask DownloadContentWithPreciseProgress(IList<IResourceLocation> locations, CancellationToken token)
-        {
-            var downloadHandle = Addressables.DownloadDependenciesAsync(locations);
+        public async UniTask<long> GetDownloadSizeAsync(string key, CancellationToken token = default) => 
+            await Addressables.GetDownloadSizeAsync(key).ToUniTask(cancellationToken: token);
 
-            while (!downloadHandle.IsDone && downloadHandle.IsValid())
-            {
-                await UniTask.Delay(100, cancellationToken: token);
-                _downloadReporter.Report(downloadHandle.GetDownloadStatus().Percent);
-            }
-            
-            _downloadReporter.Report(1);
-            
-            if (downloadHandle.Status == AsyncOperationStatus.Failed)
-                Debug.LogError("Error while downloading catalog dependencies");
-            
-            if (downloadHandle.IsValid())
-                Addressables.Release(downloadHandle);
-            
-            _downloadReporter.Reset();
-        }
-
-        private async Task UpdateCatalogsAsync(CancellationToken token)
+        private static async UniTask UpdateCatalogsAsync(CancellationToken token = default)
         {
             var catalogsToUpdate = await Addressables
                 .CheckForCatalogUpdates()
                 .ToUniTask(cancellationToken: token);
 
             if (catalogsToUpdate.IsNullOrEmpty())
-            {
-                _catalogLocators = Addressables.ResourceLocators.ToList();
                 return;
-            }
 
-            _catalogLocators = await Addressables
+            await Addressables
                 .UpdateCatalogs(catalogsToUpdate)
                 .ToUniTask(cancellationToken: token);
         }
-        
-        private async Task UpdateDownloadSizeAsync(CancellationToken token)
+
+        private static async UniTask DownloadingAsync(string key, AssetDownloadReporter reporter, CancellationToken token = default)
         {
-            var locations = await RefreshResourceLocations(_catalogLocators, token);
+            var download = Addressables.DownloadDependenciesAsync(key);
 
-            if (locations.IsNullOrEmpty())
-                return;
-
-            _downloadSize = await Addressables
-                .GetDownloadSizeAsync(locations)
-                .ToUniTask(cancellationToken: token);
+            while (!download.IsDone && download.IsValid())
+            {
+                await UniTask.Delay(100, cancellationToken: token);
+                reporter.Report(download.GetDownloadStatus().Percent);
+            }
+                
+            reporter.Report(1f);
+                
+            if (download.Status == AsyncOperationStatus.Failed)
+                Debug.LogError("Error while downloading catalog dependencies");
+                
+            if (download.IsValid())
+                Addressables.Release(download);
+                
+            reporter.Reset();
         }
-
-        private static async UniTask<IList<IResourceLocation>> RefreshResourceLocations(IEnumerable<IResourceLocator> locators, CancellationToken token)
-        {
-            var keysToCheck = locators.SelectMany(x => x.Keys);
-
-            return await Addressables
-                .LoadResourceLocationsAsync(keysToCheck, Addressables.MergeMode.Union)
-                .ToUniTask(cancellationToken: token);
-        }
-
-        private static float SizeToMb(long downloadSize) => downloadSize * 1f / 1048576;
     }
 }
