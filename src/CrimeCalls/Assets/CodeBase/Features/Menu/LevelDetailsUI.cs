@@ -8,6 +8,7 @@ using Cysharp.Threading.Tasks;
 using Reflex.Attributes;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
 
 namespace CodeBase.Features.Menu
@@ -89,10 +90,18 @@ namespace CodeBase.Features.Menu
         {
             _downloadButton.gameObject.SetActive(false);
             _downloadProgressBar.gameObject.SetActive(true);
-            _dialogue = await _downloadService.LoadDialogue(_config.DownloadLabel, destroyCancellationToken);
+
+            var references = _config.GetAllReferences();
+            var size = await Addressables.GetDownloadSizeAsync(references);
+            Debug.LogError($"Size: {SizeToMb(size)}");
+            
+            //_dialogue = await _downloadService.LoadDialogue(_config.DownloadLabel, destroyCancellationToken);
             _downloadProgressBar.gameObject.SetActive(false);
             _startButton.gameObject.SetActive(true);
         }
+        
+        private static float SizeToMb(long downloadSize) => downloadSize * 1f / 1048576;
+
         
         private async void OnStartPressed()
         {
