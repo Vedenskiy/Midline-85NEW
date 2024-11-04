@@ -10,5 +10,6 @@ namespace CodeBase.Features.Calls.Configs
         public string DownloadLabel;
         public Sprite Icon;
         public string Description;
+        public CallConfig Test;
     }
 }
