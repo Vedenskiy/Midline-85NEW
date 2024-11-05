@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.ResourceLocations;
+using UnityEngine.Serialization;
 
 namespace CodeBase.Features.Calls.Configs
 {
@@ -13,13 +14,13 @@ namespace CodeBase.Features.Calls.Configs
         public string DownloadLabel;
         public Sprite Icon;
         public string Description;
-        public CallConfig Test;
+        public CallConfig Content;
 
         public IEnumerable<AssetReference> GetAllReferences()
         {
-            yield return Test.DialogueContainer;
+            yield return Content.DialogueContainer;
             
-            foreach (var content in Test.DialogueContents)
+            foreach (var content in Content.DialogueContents)
                 yield return content;
         }
     }
