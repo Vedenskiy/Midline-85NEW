@@ -47,6 +47,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1804b961ee846e018b5a82018c2381a3, type: 2}
   - {fileID: 11400000, guid: 0c00e8e3a52e81e9ea38cbb9ee4acdcd, type: 2}
   - {fileID: 11400000, guid: ca47be9613bdb68f184058f250d8c103, type: 2}
+  - {fileID: 11400000, guid: 440640b7227c04d309f1a0f80059b95c, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -103,6 +104,7 @@ MonoBehaviour:
     m_LabelNames:
     - default
     - pizza
+    - oldpizza
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 721977c047332e278b6b6540b635ff84, type: 2}

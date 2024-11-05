@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: a2afa4626d9be228c922f38617df4be5
   m_SerializeEntries:
   - m_GUID: c8fbfd2a2971f2ee2a6dc9e3838e7fb0
-    m_Address: Pizza.asset
+    m_Address: Pizza
     m_ReadOnly: 0
     m_SerializedLabels:
     - pizza

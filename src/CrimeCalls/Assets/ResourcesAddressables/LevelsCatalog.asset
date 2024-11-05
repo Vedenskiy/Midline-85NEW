@@ -17,49 +17,49 @@ MonoBehaviour:
     DownloadLabel: pizza
     Icon: {fileID: -8623419401106750416, guid: c80817da7e343c166aa4d9e6a0ecb4d4, type: 3}
     Description: Something about pizza
-    Test:
-      DialogueContainer:
-        m_AssetGUID: c8fbfd2a2971f2ee2a6dc9e3838e7fb0
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
-      DialogueContents:
-      - m_AssetGUID: 7c75bdd706e414ee8a03bd39be1e5eca
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
-      - m_AssetGUID: 98a49fa83a672a2de833585721d7572d
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
-      - m_AssetGUID: 549b7764a06a58c439e62eea749f2dec
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 1
-      - m_AssetGUID: 936557a664f6ed7dfbc049f15ef45333
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
-      - m_AssetGUID: 4231133fb56f1b7d6afe9f86bbfca21f
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 1
-  - Name: OldPizza
-    DownloadLabel: oldpizza
-    Icon: {fileID: -8623419401106750416, guid: c80817da7e343c166aa4d9e6a0ecb4d4, type: 3}
-    Description: Something about old pizza
-    Test:
+    Content:
       DialogueContainer:
         m_AssetGUID: 
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 0
       DialogueContents: []
+  - Name: OldPizza
+    DownloadLabel: oldpizza
+    Icon: {fileID: -8623419401106750416, guid: c80817da7e343c166aa4d9e6a0ecb4d4, type: 3}
+    Description: Something about old pizza
+    Content:
+      DialogueContainer:
+        m_AssetGUID: 511806cf0da2b377da773162f47efbf0
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      DialogueContents:
+      - m_AssetGUID: 883190f8019de114eb7ce9d4d1ffac3f
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      - m_AssetGUID: a7441ba761a6b83ee86fbf47c4ba82a2
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 1
+      - m_AssetGUID: 82df5ee31b91ec7139a799abf269a469
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 1
+      - m_AssetGUID: f8896b30f6c2b3ca68f5603019c21945
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 1
+      - m_AssetGUID: d3c82a17c1077426bb221cee8f94d87a
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 1
   - Name: OldFire
     DownloadLabel: oldfire
     Icon: {fileID: -8623419401106750416, guid: c80817da7e343c166aa4d9e6a0ecb4d4, type: 3}
     Description: Something about old fire
-    Test:
+    Content:
       DialogueContainer:
         m_AssetGUID: 
         m_SubObjectName: 

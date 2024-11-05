@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: OldPizza
+  m_EditorClassIdentifier: 
+  m_GroupName: OldPizza
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 8cfc0162a9d0f04b1829210c5b186349
+  m_SerializeEntries:
+  - m_GUID: 511806cf0da2b377da773162f47efbf0
+    m_Address: OldPizza
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - oldpizza
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 883190f8019de114eb7ce9d4d1ffac3f
+    m_Address: Button
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - oldpizza
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7441ba761a6b83ee86fbf47c4ba82a2
+    m_Address: Elena
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - oldpizza
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 82df5ee31b91ec7139a799abf269a469
+    m_Address: Geogre
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - oldpizza
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f8896b30f6c2b3ca68f5603019c21945
+    m_Address: Police
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - oldpizza
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d3c82a17c1077426bb221cee8f94d87a
+    m_Address: Girl
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - oldpizza
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fbfba1f33a5876c6fa287bf9468b3b37
+    m_Address: Phrases
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - oldpizza
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 522bfceccb1d2aaf19cfe5db123ca1ff, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 934ab02d9250871079e0ac4a201323c3, type: 2}
+    - {fileID: 11400000, guid: b3186792e918a91f19335e4cf9fea1cc, type: 2}
