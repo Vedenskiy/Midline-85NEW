@@ -91,11 +91,7 @@ namespace CodeBase.Features.Menu
             _downloadButton.gameObject.SetActive(false);
             _downloadProgressBar.gameObject.SetActive(true);
 
-            var references = _config.GetAllReferences();
-            var size = await Addressables.GetDownloadSizeAsync(references);
-            Debug.LogError($"Size: {SizeToMb(size)}");
-            
-            //_dialogue = await _downloadService.LoadDialogue(_config.DownloadLabel, destroyCancellationToken);
+            _dialogue = await _downloadService.LoadDialogue(_config.DownloadLabel, destroyCancellationToken);
             _downloadProgressBar.gameObject.SetActive(false);
             _startButton.gameObject.SetActive(true);
         }
