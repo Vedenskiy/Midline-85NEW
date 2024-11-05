@@ -135,7 +135,7 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: 0.0.149
+  bundleVersion: 0.0.156
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -159,7 +159,7 @@ PlayerSettings:
   applicationIdentifier:
     Standalone: com.DefaultCompany.2DProject
   buildNumber:
-    Standalone: 0.0.149
+    Standalone: 0.0.156
     VisionOS: 0
     iPhone: 0
     tvOS: 0
