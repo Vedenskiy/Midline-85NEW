@@ -59,6 +59,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - oldpizza
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4b1ffb8fb3eabc4e8304f0d2a9b8123
+    m_Address: Assets/ResourcesAddressables/Calls/OldPizza/Images
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - oldpizza
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 522bfceccb1d2aaf19cfe5db123ca1ff, type: 2}
   m_SchemaSet:
