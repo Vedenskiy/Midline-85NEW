@@ -59,21 +59,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - pizza
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cfa746a5e03154d84a7f3de603af480c
-    m_Address: Assets/Addressables/Calls/garbage.jpg
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ce3e26b11a2cd1941b290e67b7093983
-    m_Address: Assets/Addressables/Calls/another garbage.jpg
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e7bfae9365f4d5891a641974e175f383
-    m_Address: Assets/Addressables/Calls/another garbage 1.jpg
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 522bfceccb1d2aaf19cfe5db123ca1ff, type: 2}
   m_SchemaSet:

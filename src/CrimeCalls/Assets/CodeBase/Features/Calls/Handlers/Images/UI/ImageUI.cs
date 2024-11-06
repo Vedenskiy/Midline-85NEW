@@ -1,4 +1,3 @@
-using System;
 using CodeBase.Features.Calls.UI;
 using Reflex.Attributes;
 using UnityEngine;
@@ -33,13 +32,21 @@ namespace CodeBase.Features.Calls.Handlers.Images.UI
         
         private void OnImageShown(Sprite image)
         {
-            _image.sprite = image;
-            _shaderController.Show();
+            if (_shaderController.IsShown)
+                _shaderController.Hide(onCompleted: () => StartShowImage(image));
+            else
+                StartShowImage(image);
         }
         
         private void OnImageHide()
         {
             _shaderController.Hide();
+        }
+
+        private void StartShowImage(Sprite image)
+        {
+            _image.sprite = image;
+            _shaderController.Show();
         }
     }
 }
