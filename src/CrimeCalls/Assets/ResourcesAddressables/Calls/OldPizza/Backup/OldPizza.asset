@@ -322,6 +322,12 @@ MonoBehaviour:
         Y: 1600
       PersonId: Geogre
       PhraseId: OldPizza.Geogre.015
+    - Guid: ac8c9b37-5b15-4453-a272-a693d5b42a37
+      Position:
+        X: 10567
+        Y: 1412
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.029
     - Guid: c3dfcade-7332-4110-9bff-186b48db3e9b
       Position:
         X: 10567
@@ -334,6 +340,12 @@ MonoBehaviour:
         Y: 1641
       PersonId: Elena
       PhraseId: OldPizza.Elena.031
+    - Guid: 62a70b4d-279c-4c19-98ab-c6aa827567a1
+      Position:
+        X: 10778
+        Y: 1424
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.016
     - Guid: c9110cab-d1e0-4500-882c-7695653a9be6
       Position:
         X: 10994
@@ -1168,18 +1180,6 @@ MonoBehaviour:
         Y: 213
       PersonId: Elena
       PhraseId: OldPizza.Elena.002
-    - Guid: ac8c9b37-5b15-4453-a272-a693d5b42a37
-      Position:
-        X: 10571
-        Y: 1519
-      PersonId: Elena
-      PhraseId: OldPizza.Elena.029
-    - Guid: 62a70b4d-279c-4c19-98ab-c6aa827567a1
-      Position:
-        X: 10787
-        Y: 1520
-      PersonId: Geogre
-      PhraseId: OldPizza.Geogre.016
     Images:
     - Guid: 65d1e1a7-49d7-454a-999a-847bc1bfd84e
       Position:
@@ -1445,20 +1445,6 @@ MonoBehaviour:
         X: 9080
         Y: 389
       PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_022.jpg
-      DurationInSeconds: 0
-      IgnoreDuration: 0
-    - Guid: bd51dc74-7ff3-4e58-80c6-59f65f710809
-      Position:
-        X: 9088
-        Y: 860
-      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_022.jpg
-      DurationInSeconds: 0
-      IgnoreDuration: 0
-    - Guid: 56490c54-b318-492e-b850-4181e2e5de58
-      Position:
-        X: 10609
-        Y: 1332
-      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_025.jpg
       DurationInSeconds: 0
       IgnoreDuration: 0
     Interludes: []
@@ -3159,14 +3145,6 @@ MonoBehaviour:
       FromPortId: 246a5525-1758-4ac5-b0ec-8cb3dc527185
       ToGuid: 291edfc5-8b7d-4054-aa37-623ee38687db
       ToPortId: 3deece5a-33d5-4d0c-b01f-5a5388bd459d
-    - FromGuid: b3d293da-1121-4f22-be83-4773a8e74a76
-      FromPortId: eafd7d31-0164-4dbb-a1f6-1a77f59062b2
-      ToGuid: bd51dc74-7ff3-4e58-80c6-59f65f710809
-      ToPortId: cf8b712a-7c03-4a18-9b87-29a2ba5ec35e
-    - FromGuid: ae03995e-7787-4585-8543-4a815d1f29d8
-      FromPortId: OldPizza.Button.023
-      ToGuid: 56490c54-b318-492e-b850-4181e2e5de58
-      ToPortId: c2c053a0-7156-4dfd-81f9-bcd7e7968e0e
     Notes: []
     AudioEventNodes: []
     EndNodes:
