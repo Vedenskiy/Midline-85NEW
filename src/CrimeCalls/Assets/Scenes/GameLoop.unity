@@ -399,6 +399,7 @@ GameObject:
   - component: {fileID: 443931865}
   - component: {fileID: 443931864}
   - component: {fileID: 443931866}
+  - component: {fileID: 443931867}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -478,6 +479,20 @@ MonoBehaviour:
   _material: {fileID: 2100000, guid: a6f9e53ad10496459accaaa0348cb9b8, type: 2}
   _showingDuration: 2
   _hidingDuration: 2
+--- !u!114 &443931867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443931862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e980d789dfd4ceda578b074b6a0f970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _image: {fileID: 443931864}
+  _shaderController: {fileID: 443931866}
 --- !u!1 &599333816
 GameObject:
   m_ObjectHideFlags: 0

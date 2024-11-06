@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using CodeBase.Features.Calls.Audio;
 using CodeBase.Features.Calls.External.LogicalExpression;
 using CodeBase.Features.Calls.Handlers.Choices;
+using CodeBase.Features.Calls.Handlers.Images;
 using CodeBase.Features.Calls.Handlers.Phrases;
 using CodeBase.Features.Calls.Handlers.Variables;
 using CodeBase.Features.Calls.Infrastructure;
@@ -36,6 +37,9 @@ namespace CodeBase.Infrastructure.Installers.Bindings
 
             builder.AddSingleton<VariableHandler>();
             builder.AddSingleton<NoOperationHandler>();
+
+            builder.AddSingleton<ImagesService>();
+            builder.AddSingleton<ImageHandler>();
         }
 
         private static void BindInfrastructure(this ContainerBuilder builder)
