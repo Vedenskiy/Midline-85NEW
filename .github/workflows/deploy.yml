@@ -1,4 +1,4 @@
-name: Build and deploy
+name: Deploy
 
 on: 
     push:
@@ -12,7 +12,7 @@ on:
 
 jobs:
     buildAndDeploy:
-        name: Build for ${{ matrix.targetPlatform }}
+        name: Deploy for ${{ matrix.targetPlatform }}
         runs-on: ubuntu-latest
         permissions:
             contents: write
