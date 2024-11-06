@@ -1,0 +1,3 @@
+[submodule "src/Call991/Assets/Plugins/DialogueGraph"]
+	path = src/Call991/Assets/Plugins/DialogueGraph
+	url = https://github.com/Scrawach/com.nadsat.dialoguegraph
