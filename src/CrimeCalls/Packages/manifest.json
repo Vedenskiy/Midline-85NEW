@@ -2,7 +2,6 @@
   "dependencies": {
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
     "com.gustavopsantos.reflex": "https://github.com/gustavopsantos/reflex.git?path=/Assets/Reflex/#9.0.0",
-    "com.nadsat.dialoguegraph": "https://github.com/Scrawach/com.nadsat.dialoguegraph.git",
     "com.unity.addressables": "1.21.21",
     "com.unity.collab-proxy": "2.5.2",
     "com.unity.feature.2d": "2.0.0",

@@ -14,13 +14,6 @@
       "dependencies": {},
       "hash": "935f1cefcf48b5a48bbba0ae4c69947acf1d8520"
     },
-    "com.nadsat.dialoguegraph": {
-      "version": "https://github.com/Scrawach/com.nadsat.dialoguegraph.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "7b948fbae7fd140d76299f487aa3a4bb2b3ba7c3"
-    },
     "com.unity.2d.animation": {
       "version": "10.0.2",
       "depth": 1,
