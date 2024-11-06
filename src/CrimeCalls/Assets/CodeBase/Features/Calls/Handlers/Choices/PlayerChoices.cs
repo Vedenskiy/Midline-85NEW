@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using CodeBase.Common.Extensions;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace CodeBase.Features.Calls.Handlers.Choices
 {
@@ -41,6 +43,7 @@ namespace CodeBase.Features.Calls.Handlers.Choices
         public void Choice(string choiceId)
         {
             LastChoiceId = choiceId;
+            Debug.Log($"[{Color.magenta.Paint("choices")}] player choice: {LastChoiceId}");
             Chosen?.Invoke(choiceId);
         }
 
