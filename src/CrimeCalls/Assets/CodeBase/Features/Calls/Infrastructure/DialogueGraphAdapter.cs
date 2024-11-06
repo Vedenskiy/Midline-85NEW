@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using CodeBase.Features.Calls.Handlers.Choices;
+using CodeBase.Features.Calls.Handlers.Images;
 using CodeBase.Features.Calls.Handlers.Phrases;
 using CodeBase.Features.Calls.Infrastructure.Nodes;
-using CodeBase.Features.Calls.Infrastructure.Nodes.Branches;
 using CodeBase.Infrastructure.Common.AssetManagement;
 using CodeBase.Infrastructure.Common.Localization;
 using Nadsat.DialogueGraph.Runtime;
 using Nadsat.DialogueGraph.Runtime.Nodes;
 using UnityEngine;
 using ChoicesNode = CodeBase.Features.Calls.Handlers.Choices.ChoicesNode;
-using VariableNode = CodeBase.Features.Calls.Handlers.Variables.VariableNode;
 
 namespace CodeBase.Features.Calls.Infrastructure
 {
@@ -28,23 +27,11 @@ namespace CodeBase.Features.Calls.Infrastructure
             _assets = assets;
             _localization = localization;
         }
-
-        public Dialogue Load(string level)
-        {
-            var pathToFolder = Path.Combine(PathToLocalDialogues, level);
-            var pathToLevel = Path.Combine(pathToFolder, level);
-            
-            var tables = _assets.LoadAllResources<TextAsset>(pathToFolder);
-            InitializeLocalization(tables);
-            
-            var container = _assets.LoadResource<DialogueGraphContainer>(pathToLevel);
-            return ConvertToDialogue(container.Graph);
-        }
         
-        public Dialogue GetDialogueFrom(DialogueGraphContainer graph, List<TextAsset> localization)
+        public Dialogue GetDialogueFrom(DialogueGraphContainer graph, string levelName, List<TextAsset> localization)
         {
             InitializeLocalization(localization);
-            return ConvertToDialogue(graph.Graph);
+            return ConvertToDialogue(levelName, graph.Graph);
         }
 
         private void InitializeLocalization(IEnumerable<TextAsset> tables)
@@ -69,26 +56,56 @@ namespace CodeBase.Features.Calls.Infrastructure
             _localization.Load(mapping);
         }
         
-        private Dialogue ConvertToDialogue(DialogueGraph graph)
+        private Dialogue ConvertToDialogue(string levelName, DialogueGraph graph)
         {
             var dialogue = new Dialogue();
 
-            dialogue.Phrases = ConvertDialogueToPhrases(graph.Nodes);
-            dialogue.Choices = ConvertChoices(graph.ChoiceNodes);
-            dialogue.Empties = ConvertEmptyNodes(graph.RedirectNodes);
-            dialogue.Links = ConvertNodeLinks(graph.Links);
+            dialogue.Nodes = ConvertNodes(graph).ToList();
+            dialogue.Links = ConvertNodeLinks(levelName, graph.Links);
             dialogue.EntryNodeId = graph.EntryNodeGuid;
 
-            dialogue.Variables = new List<VariableNode>();
-            dialogue.Branches = new List<BranchesNode>();
-            
             return dialogue;
         }
 
-        private static List<NodeLink> ConvertNodeLinks(List<NodeLinks> links) =>
+        private IEnumerable<Node> ConvertNodes(DialogueGraph graph)
+        {
+            foreach (var phraseNode in ConvertDialogueToPhrases(graph.Nodes))
+            {
+                yield return phraseNode;
+            }
+
+            foreach (var choice in ConvertChoices(graph.ChoiceNodes))
+            {
+                yield return choice;
+            }
+
+            foreach (var emptyNode in ConvertEmptyNodes(graph.RedirectNodes))
+            {
+                yield return emptyNode;
+            }
+
+            foreach (var image in ConvertImageNodes(graph.Images))
+            {
+                yield return image;
+            }
+        }
+
+        private IEnumerable<ImageNode> ConvertImageNodes(List<BackgroundImageNode> images) =>
+            images.Select(image =>
+            {
+                Debug.Log("Adapt image node");
+                return new ImageNode()
+                {
+                    Guid = image.Guid,
+                    PathToImage = image.PathToImage,
+                    IgnoreDuration = true
+                };
+            });
+
+        private static List<NodeLink> ConvertNodeLinks(string levelName, List<NodeLinks> links) =>
             links.Select(link => new NodeLink()
                 {
-                    ParentId = link.FromPortId.StartsWith("Pizza") ? link.FromPortId : link.FromGuid,
+                    ParentId = link.FromPortId.ToLower().StartsWith(levelName) ? link.FromPortId : link.FromGuid,
                     ChildId = link.ToGuid,
                 })
                 .ToList();

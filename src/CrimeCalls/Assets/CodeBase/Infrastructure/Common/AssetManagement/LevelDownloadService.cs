@@ -41,7 +41,7 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
             await DownloadDependenciesAsync(locations, reporter, token);
             Debug.Log($"Call {callName} loaded!");
 
-            var dialogue = await LoadDialogue(locations);
+            var dialogue = await LoadDialogue(callName, locations);
             Debug.Log($"Completed dialogue loaded!");
             return dialogue;
         }
@@ -62,7 +62,7 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
                 Addressables.Release(downloadHandle);
         }
 
-        private async UniTask<Dialogue> LoadDialogue(IList<IResourceLocation> locations)
+        private async UniTask<Dialogue> LoadDialogue(string levelName, IList<IResourceLocation> locations)
         {
             var localization = new List<TextAsset>();
             DialogueGraphContainer dialogueGraph = null;
@@ -78,7 +78,7 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
                     localization.Add(text);
             }
 
-            return _adapter.GetDialogueFrom(dialogueGraph, localization);
+            return _adapter.GetDialogueFrom(dialogueGraph, levelName, localization);
         }
 
         private void DebugLocations(IEnumerable<IResourceLocation> locations)

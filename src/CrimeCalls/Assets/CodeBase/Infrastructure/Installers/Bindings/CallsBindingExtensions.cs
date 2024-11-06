@@ -54,6 +54,7 @@ namespace CodeBase.Infrastructure.Installers.Bindings
                 [typeof(PhraseNode)] = container.Resolve<PhraseHandler>(),
                 [typeof(ChoicesNode)] = container.Resolve<ChoicesHandler>(),
                 [typeof(VariableNode)] = container.Resolve<VariableHandler>(),
+                [typeof(ImageNode)] = container.Resolve<ImageHandler>(),
                 [typeof(Node)] = container.Resolve<NoOperationHandler>()
             }));
             

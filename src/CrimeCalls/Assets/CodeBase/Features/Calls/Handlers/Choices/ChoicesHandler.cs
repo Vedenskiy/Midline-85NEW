@@ -1,7 +1,9 @@
 using System.Threading;
+using CodeBase.Common.Extensions;
 using CodeBase.Features.Calls.Audio;
 using CodeBase.Features.Calls.Infrastructure.Handlers;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace CodeBase.Features.Calls.Handlers.Choices
 {
@@ -20,6 +22,7 @@ namespace CodeBase.Features.Calls.Handlers.Choices
         {
             _audio.PlayTimerSfx();
             await _choices.WaitChoiceSelection(request.Choices, token);
+            Debug.Log($"[{Color.magenta.Paint("choices")}] player choice: {_choices.LastChoiceId}");
             _audio.StopTimerSfx();
         }
     }

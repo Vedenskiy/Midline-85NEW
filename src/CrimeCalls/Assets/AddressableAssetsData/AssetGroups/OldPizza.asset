@@ -17,12 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 8cfc0162a9d0f04b1829210c5b186349
   m_SerializeEntries:
-  - m_GUID: 511806cf0da2b377da773162f47efbf0
-    m_Address: OldPizza
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - oldpizza
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 883190f8019de114eb7ce9d4d1ffac3f
     m_Address: Button
     m_ReadOnly: 0
@@ -55,6 +49,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fbfba1f33a5876c6fa287bf9468b3b37
     m_Address: Phrases
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - oldpizza
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3ae0c37470fcc0847a1d487323a23611
+    m_Address: OldPizza.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - oldpizza
