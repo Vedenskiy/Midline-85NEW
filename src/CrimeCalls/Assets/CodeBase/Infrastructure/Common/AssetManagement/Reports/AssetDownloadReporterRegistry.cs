@@ -9,9 +9,9 @@ namespace CodeBase.Infrastructure.Common.AssetManagement.Reports
         public AssetDownloadReporterRegistry() => 
             _reporters = new Dictionary<string, AssetDownloadReporter>();
 
-        public AssetDownloadReporter this[string key] => CreateOrGet(key);
+        public AssetDownloadReporter this[string key] => GetOrCreate(key);
         
-        public AssetDownloadReporter CreateOrGet(string key)
+        public AssetDownloadReporter GetOrCreate(string key)
         {
             _reporters.TryAdd(key, new AssetDownloadReporter());
             return _reporters[key];

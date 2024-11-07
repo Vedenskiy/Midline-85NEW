@@ -17,7 +17,6 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
     {
         private readonly AssetProvider _assets;
         private readonly DialogueGraphAdapter _adapter;
-        private readonly AssetDownloadReporterRegistry _reporters;
 
         public LevelDownloadService(
             AssetProvider assets, 
@@ -26,16 +25,15 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
         {
             _assets = assets;
             _adapter = adapter;
-            _reporters = reporters;
         }
 
-        public async UniTask<Dialogue> LoadDialogue(string callName, CancellationToken token = default)
+        public async UniTask<Dialogue> LoadDialogue(string callName, AssetDownloadReporter reporter, CancellationToken token = default)
         {
-            var reporter = _reporters[callName];
             var locations = await Addressables.LoadResourceLocationsAsync(callName);
             DebugLocations(locations);
             
             var downloadSize = await Addressables.GetDownloadSizeAsync(locations);
+            reporter.Reset();
             reporter.UpdateTargetDownloadSize(downloadSize);
             
             await DownloadDependenciesAsync(locations, reporter, token);

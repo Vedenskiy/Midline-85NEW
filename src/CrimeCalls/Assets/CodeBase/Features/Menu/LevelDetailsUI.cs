@@ -32,6 +32,7 @@ namespace CodeBase.Features.Menu
 
         private Dialogue _dialogue;
         private LevelConfig _config;
+        private AssetDownloadReporter _reporter;
 
         public event Action Returned;
 
@@ -54,6 +55,7 @@ namespace CodeBase.Features.Menu
             _title.text = config.Name;
             _description.text = config.Description;
             _icon.sprite = config.Icon;
+            _reporter = _reporters.GetOrCreate(_config.DownloadLabel);
         }
 
         private void OnEnable()
@@ -61,8 +63,7 @@ namespace CodeBase.Features.Menu
             _downloadButton.onClick.AddListener(OnDownloadPressed);
             _startButton.onClick.AddListener(OnStartPressed);
             _returnButton.onClick.AddListener(OnReturnPressed);
-
-            _reporters[_config.DownloadLabel].Updated += OnReporterUpdated;
+            _reporter.Updated += OnReporterUpdated;
         }
         
         private void OnDisable()
@@ -70,8 +71,7 @@ namespace CodeBase.Features.Menu
             _downloadButton.onClick.RemoveListener(OnDownloadPressed);
             _startButton.onClick.RemoveListener(OnStartPressed);
             _returnButton.onClick.RemoveListener(OnReturnPressed);
-            
-            _reporters[_config.DownloadLabel].Updated -= OnReporterUpdated;
+            _reporter.Updated -= OnReporterUpdated;
         }
 
         private void OnReporterUpdated(AssetDownloadReporter reporter)
@@ -91,13 +91,10 @@ namespace CodeBase.Features.Menu
             _downloadButton.gameObject.SetActive(false);
             _downloadProgressBar.gameObject.SetActive(true);
 
-            _dialogue = await _downloadService.LoadDialogue(_config.DownloadLabel, destroyCancellationToken);
+            _dialogue = await _downloadService.LoadDialogue(_config.DownloadLabel, _reporter, destroyCancellationToken);
             _downloadProgressBar.gameObject.SetActive(false);
             _startButton.gameObject.SetActive(true);
         }
-        
-        private static float SizeToMb(long downloadSize) => downloadSize * 1f / 1048576;
-
         
         private async void OnStartPressed()
         {
