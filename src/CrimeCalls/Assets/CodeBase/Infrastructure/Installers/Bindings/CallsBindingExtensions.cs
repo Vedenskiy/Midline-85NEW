@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using CodeBase.Features.Calls;
 using CodeBase.Features.Calls.Audio;
 using CodeBase.Features.Calls.External.LogicalExpression;
 using CodeBase.Features.Calls.Handlers.Choices;
@@ -61,7 +62,10 @@ namespace CodeBase.Infrastructure.Installers.Bindings
             builder.AddSingleton<NodeRepository>();
             builder.AddSingleton<BranchEvaluator>();
             builder.AddSingleton<NodeScheduler>();
-            builder.AddSingleton<CallsExecutor>();
+            builder.AddSingleton<NodeExecutor>();
+
+            builder.AddSingleton<CallRepository>();
+            builder.AddSingleton<CallExecutor>();
         }
     }
 }

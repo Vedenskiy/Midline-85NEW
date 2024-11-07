@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using CodeBase.Features.Calls;
 using CodeBase.Features.Calls.Infrastructure;
+using CodeBase.Features.Menu;
 using CodeBase.Infrastructure.Common.AssetManagement.Reports;
 using Cysharp.Threading.Tasks;
 using Nadsat.DialogueGraph.Runtime;
@@ -16,14 +18,16 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
     public class LevelDownloadService
     {
         private readonly AssetProvider _assets;
+        private readonly CallRepository _calls;
         private readonly DialogueGraphAdapter _adapter;
 
         public LevelDownloadService(
             AssetProvider assets, 
-            DialogueGraphAdapter adapter, 
-            AssetDownloadReporterRegistry reporters)
+            CallRepository calls,
+            DialogueGraphAdapter adapter)
         {
             _assets = assets;
+            _calls = calls;
             _adapter = adapter;
         }
 
@@ -41,6 +45,7 @@ namespace CodeBase.Infrastructure.Common.AssetManagement
 
             var dialogue = await LoadDialogue(callName, locations);
             Debug.Log($"Completed dialogue loaded!");
+            _calls.Add(callName, dialogue);
             return dialogue;
         }
         

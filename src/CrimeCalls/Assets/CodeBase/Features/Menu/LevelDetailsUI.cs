@@ -1,7 +1,6 @@
 using System;
+using CodeBase.Features.Calls;
 using CodeBase.Features.Calls.Configs;
-using CodeBase.Features.Calls.Infrastructure;
-using CodeBase.Features.Calls.Infrastructure.Nodes;
 using CodeBase.Infrastructure.Common.AssetManagement;
 using CodeBase.Infrastructure.Common.AssetManagement.Reports;
 using Cysharp.Threading.Tasks;
@@ -25,27 +24,23 @@ namespace CodeBase.Features.Menu
         [SerializeField] private Button _startButton;
         [SerializeField] private Button _returnButton;
 
-        private CallsExecutor _executor;
-        private NodeRepository _nodes;
         private LevelDownloadService _downloadService;
+        private CallExecutor _callExecutor;
         private AssetDownloadReporterRegistry _reporters;
 
-        private Dialogue _dialogue;
         private LevelConfig _config;
         private AssetDownloadReporter _reporter;
-
+        
         public event Action Returned;
 
         [Inject]
         public void Construct(
-            CallsExecutor executor, 
-            NodeRepository nodes, 
             LevelDownloadService downloadService, 
+            CallExecutor callExecutor,
             AssetDownloadReporterRegistry downloadReporterRegistry)
         {
-            _executor = executor;
-            _nodes = nodes;
             _downloadService = downloadService;
+            _callExecutor = callExecutor;
             _reporters = downloadReporterRegistry;
         }
 
@@ -91,7 +86,8 @@ namespace CodeBase.Features.Menu
             _downloadButton.gameObject.SetActive(false);
             _downloadProgressBar.gameObject.SetActive(true);
 
-            _dialogue = await _downloadService.LoadDialogue(_config.DownloadLabel, _reporter, destroyCancellationToken);
+            await _downloadService.LoadDialogue(_config.DownloadLabel, _reporter, destroyCancellationToken);
+            
             _downloadProgressBar.gameObject.SetActive(false);
             _startButton.gameObject.SetActive(true);
         }
@@ -99,16 +95,10 @@ namespace CodeBase.Features.Menu
         private async void OnStartPressed()
         {
             gameObject.SetActive(false);
-            await StartGame(_dialogue);
+            _callExecutor.Execute(_config.DownloadLabel).Forget();
         }
         
         private void OnReturnPressed() => 
             Returned?.Invoke();
-
-        private async UniTask StartGame(Dialogue dialogue)
-        {
-            _nodes.Load(dialogue.GetAllNodes(), dialogue.Links);
-            await _executor.Execute(_nodes.GetById(dialogue.EntryNodeId), destroyCancellationToken);
-        }
     }
 }

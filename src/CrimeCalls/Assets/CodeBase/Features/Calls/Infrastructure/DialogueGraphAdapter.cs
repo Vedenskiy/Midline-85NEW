@@ -91,15 +91,11 @@ namespace CodeBase.Features.Calls.Infrastructure
         }
 
         private IEnumerable<ImageNode> ConvertImageNodes(List<BackgroundImageNode> images) =>
-            images.Select(image =>
+            images.Select(image => new ImageNode()
             {
-                Debug.Log("Adapt image node");
-                return new ImageNode()
-                {
-                    Guid = image.Guid,
-                    PathToImage = image.PathToImage,
-                    IgnoreDuration = true
-                };
+                Guid = image.Guid,
+                PathToImage = image.PathToImage,
+                IgnoreDuration = true
             });
 
         private static List<NodeLink> ConvertNodeLinks(string levelName, List<NodeLinks> links) =>

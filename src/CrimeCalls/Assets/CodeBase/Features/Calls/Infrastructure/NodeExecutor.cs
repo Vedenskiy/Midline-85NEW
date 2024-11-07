@@ -8,7 +8,7 @@ using Cysharp.Threading.Tasks;
 
 namespace CodeBase.Features.Calls.Infrastructure
 {
-    public class CallsExecutor
+    public class NodeExecutor
     {
         private readonly Pipeline _pipeline;
         private readonly NodeScheduler _scheduler;
@@ -16,7 +16,7 @@ namespace CodeBase.Features.Calls.Infrastructure
         private readonly Dictionary<string, (UniTask, Node)> _processing = new();
         private readonly List<string> _completed = new();
 
-        public CallsExecutor(Pipeline pipeline, NodeScheduler scheduler)
+        public NodeExecutor(Pipeline pipeline, NodeScheduler scheduler)
         {
             _pipeline = pipeline;
             _scheduler = scheduler;
