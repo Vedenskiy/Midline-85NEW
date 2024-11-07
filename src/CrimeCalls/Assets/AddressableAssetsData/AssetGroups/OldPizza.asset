@@ -47,12 +47,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - oldpizza
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fbfba1f33a5876c6fa287bf9468b3b37
-    m_Address: Phrases
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - oldpizza
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 09296a348c6dad07da44375a30fe4523
     m_Address: OldPizza.asset
     m_ReadOnly: 0
