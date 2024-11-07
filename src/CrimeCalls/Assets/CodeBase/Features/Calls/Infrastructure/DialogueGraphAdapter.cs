@@ -138,10 +138,11 @@ namespace CodeBase.Features.Calls.Infrastructure
 
         private float CalculateTimeForPhrase(string phraseId)
         {
+            const float timeForWord = 0.4f;
             var delimiters = new[] { ' ', '\r', '\n' };
             var text = _localization.GetTranslatedString(phraseId);
             var words = text.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
-            return words.Length * 0.4f;
+            return words.Length * timeForWord;
         }
     }
 }
