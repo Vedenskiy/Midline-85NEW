@@ -1,5 +1,6 @@
 using CodeBase.Common.Tweens;
 using FronkonGames.TinyTween;
+using FronkonGames.TinyTween.Easing;
 using TMPro;
 using UnityEngine;
 

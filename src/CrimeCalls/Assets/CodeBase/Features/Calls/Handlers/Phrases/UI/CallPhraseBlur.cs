@@ -1,5 +1,7 @@
 using ChocDino.UIFX;
 using FronkonGames.TinyTween;
+using FronkonGames.TinyTween.Easing;
+using FronkonGames.TinyTween.Tweens;
 using UnityEngine;
 
 namespace CodeBase.Features.Calls.Handlers.Phrases.UI

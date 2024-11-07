@@ -1,4 +1,4 @@
-namespace FronkonGames.TinyTween
+namespace FronkonGames.TinyTween.Tweens
 {
     /// <summary> Generic interface of a tween. </summary>
     public interface ITween<T> : ITween where T : struct

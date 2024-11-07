@@ -1,4 +1,6 @@
 using FronkonGames.TinyTween;
+using FronkonGames.TinyTween.Easing;
+using FronkonGames.TinyTween.Tweens;
 using UnityEngine;
 
 namespace CodeBase.Common.Tweens

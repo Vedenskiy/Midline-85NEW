@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using CodeBase.Common.Tweens;
 using CodeBase.Infrastructure.Common.Localization;
 using FronkonGames.TinyTween;
+using FronkonGames.TinyTween.Easing;
 using Reflex.Attributes;
 using TMPro;
 using UnityEngine;

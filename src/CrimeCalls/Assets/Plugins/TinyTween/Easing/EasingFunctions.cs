@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace FronkonGames.TinyTween
+namespace FronkonGames.TinyTween.Easing
 {
     /// <summary> Easing functions. </summary>
     internal static class EasingFunctions

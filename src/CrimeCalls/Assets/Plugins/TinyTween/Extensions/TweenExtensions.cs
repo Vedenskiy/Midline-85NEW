@@ -1,6 +1,8 @@
+using FronkonGames.TinyTween.Easing;
+using FronkonGames.TinyTween.Tweens;
 using UnityEngine;
 
-namespace FronkonGames.TinyTween
+namespace FronkonGames.TinyTween.Extensions
 {
     /// <summary> Extensions to make it easy to use TinyTween. </summary>
     public static class TweenExtensions
@@ -88,7 +90,7 @@ namespace FronkonGames.TinyTween
         /// <param name="ease">Easing.</param>
         /// <returns>Tween.</returns>
         public static Tween<Color> Tween(this Color self, Color origin, Color destination, float duration, Ease ease) =>
-            FronkonGames.TinyTween.TweenColor.Create()
+            Tweens.TweenColor.Create()
                 .Origin(origin)
                 .Destination(destination)
                 .Duration(duration)
@@ -240,7 +242,7 @@ namespace FronkonGames.TinyTween
         /// <param name="name">The name of the color variable.</param>
         /// <returns>Tween.</returns>
         public static Tween<Color> TweenColor(this Material self, Color origin, Color destination, float duration, Ease ease, string name = "_Color") =>
-            FronkonGames.TinyTween.TweenColor.Create()
+            Tweens.TweenColor.Create()
                 .Origin(origin)
                 .Destination(destination)
                 .Duration(duration)

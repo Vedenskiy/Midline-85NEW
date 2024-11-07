@@ -1,5 +1,7 @@
 using System;
 using FronkonGames.TinyTween;
+using FronkonGames.TinyTween.Easing;
+using FronkonGames.TinyTween.Tweens;
 using Reflex.Attributes;
 using UnityEngine;
 using UnityEngine.UI;

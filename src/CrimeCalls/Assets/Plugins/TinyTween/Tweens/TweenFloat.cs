@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace FronkonGames.TinyTween
+namespace FronkonGames.TinyTween.Tweens
 {
     /// <summary> Tween float. </summary>
     public sealed class TweenFloat : Tween<float>

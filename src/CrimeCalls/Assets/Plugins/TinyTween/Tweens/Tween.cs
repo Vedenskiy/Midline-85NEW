@@ -1,7 +1,8 @@
 using System;
+using FronkonGames.TinyTween.Easing;
 using UnityEngine;
 
-namespace FronkonGames.TinyTween
+namespace FronkonGames.TinyTween.Tweens
 {
     /// <summary> Tween operation. If it is created manually, Update() must be called. </summary>
     public abstract class Tween<T> : ITween<T> where T : struct
