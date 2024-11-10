@@ -50,12 +50,11 @@ body {
 }
 #unity-progress-bar-empty {
     width: 80%;
-    height: 8px;
+    height: 6px;
     margin-top: 20px;
     margin-bottom: 10px;
     text-align: left;
     background: rgb(47,45,56);
-    padding: 2px;
 }
 #unity-progress-bar-full {
     width: 0%;
