@@ -48,6 +48,7 @@ jobs:
               with:
                 projectPath: ${{ vars.PROJECT_ROOT_PATH }}
                 targetPlatform: ${{ matrix.targetPlatform }}
+                unityVersion: "6000.0.25f1"
 
             - name: Upload addressables to S3 and remove other files in S3 
               uses: jakejarvis/s3-sync-action@master
