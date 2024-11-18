@@ -1,5 +1,4 @@
 using ChocDino.UIFX;
-using FronkonGames.TinyTween;
 using FronkonGames.TinyTween.Easing;
 using FronkonGames.TinyTween.Tweens;
 using UnityEngine;
@@ -8,7 +7,7 @@ namespace CodeBase.Features.Calls.Handlers.Phrases.UI
 {
     public class CallPhraseBlur : MonoBehaviour
     {
-        private const float MinimumBlurStrength = 0.05f;
+        private const float MinimumBlurStrength = 0f;
         private const float MaximumBlurStrength = 1f;
         private const float ShowBlurDuration = 1f;
         private const float HideBlurDuration = 2f;
@@ -30,6 +29,16 @@ namespace CodeBase.Features.Calls.Handlers.Phrases.UI
                 .Duration(duration)
                 .Easing(Ease.Linear)
                 .OnUpdate(value => _blur.Strength = value.Value)
+                .OnEnd(value =>
+                {
+                    // The plugin UIFX has a bug with blurring,
+                    // when the strength becomes 0 and or
+                    // change from value to 0 has too small a step - the text breaks.
+                    
+                    // The following code is needed to fix this situation:
+                    _blur.Strength = origin;
+                    _blur.Strength = destination;
+                })
                 .Start();
     }
 }
