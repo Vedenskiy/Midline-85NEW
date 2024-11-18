@@ -26,13 +26,34 @@ namespace ChocDino.UIFX
 		Add_Multiply,
 	}
 
+	public enum BuiltInGradient
+	{
+		SoftRainbow,
+		Grey80ToClear,
+	}
+
 	[UnityInternal.ExcludeFromDocs]
 	public static class ColorUtils
 	{
+		private static Gradient s_softRainbowGradient;
+		private static Gradient s_grey80ToClearGradient;
+
 		[UnityInternal.ExcludeFromDocs]
-		public static Gradient SoftRainbowGradient;
-		[UnityInternal.ExcludeFromDocs]
-		public static Gradient Grey80ToClearGradient;
+		public static Gradient GetBuiltInGradient(BuiltInGradient b)
+		{
+			Gradient result = null;
+			switch (b)
+			{
+				case BuiltInGradient.SoftRainbow:
+				result = s_softRainbowGradient;
+				break;
+				case BuiltInGradient.Grey80ToClear:
+				result = s_grey80ToClearGradient;
+				break;
+			}
+
+			return CloneGradient(result);
+		}
 
 		static ColorUtils()
 		{
@@ -53,8 +74,8 @@ namespace ChocDino.UIFX
 				alpha[0].alpha = 1f;
 				alpha[1].time = 1f;
 				alpha[1].alpha = 1f;
-				SoftRainbowGradient = new Gradient();
-				SoftRainbowGradient.SetKeys(keys, alpha);
+				s_softRainbowGradient = new Gradient();
+				s_softRainbowGradient.SetKeys(keys, alpha);
 			}
 			{
 				GradientColorKey[] keys = new GradientColorKey[2];
@@ -67,8 +88,8 @@ namespace ChocDino.UIFX
 				alpha[0].alpha = 1f;
 				alpha[1].time = 1f;
 				alpha[1].alpha = 0f;
-				Grey80ToClearGradient = new Gradient();
-				Grey80ToClearGradient.SetKeys(keys, alpha);
+				s_grey80ToClearGradient = new Gradient();
+				s_grey80ToClearGradient.SetKeys(keys, alpha);
 			}
 		}
 

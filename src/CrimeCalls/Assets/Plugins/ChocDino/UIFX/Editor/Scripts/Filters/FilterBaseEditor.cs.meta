@@ -13,6 +13,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 268262
   packageName: UIFX - Blur Filter
-  packageVersion: 1.7.10
-  assetPath: Assets/ChocDino/UIFX/Editor/Scripts/Filters/FilterBaseEditor.cs
-  uploadId: 691474
+  packageVersion: 1.7.11
+  assetPath: Assets/Plugins/ChocDino/UIFX/Editor/Scripts/Filters/FilterBaseEditor.cs
+  uploadId: 705928

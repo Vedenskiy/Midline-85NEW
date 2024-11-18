@@ -118,6 +118,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 268262
   packageName: UIFX - Blur Filter
-  packageVersion: 1.7.10
-  assetPath: Assets/ChocDino/UIFX/Editor/Resources/uifx-icon.png
-  uploadId: 691474
+  packageVersion: 1.7.11
+  assetPath: Assets/Plugins/ChocDino/UIFX/Editor/Resources/uifx-icon.png
+  uploadId: 705928

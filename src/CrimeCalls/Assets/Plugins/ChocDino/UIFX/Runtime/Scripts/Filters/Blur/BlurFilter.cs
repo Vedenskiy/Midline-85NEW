@@ -39,10 +39,10 @@ namespace ChocDino.UIFX
 		[SerializeField] float _blur = 8f;
 
 		[Tooltip("Toggle the use of the alpha curve to fade to transparent as blur Strength increases")]
-		[SerializeField] bool _applyAlphaCurve = true;
+		[SerializeField] bool _applyAlphaCurve = false;
 
 		[Tooltip("An optional curve to allow the Graphic to fade to transparent as the blur Strength property increases")]
-		[SerializeField] AnimationCurve _alphaCurve = null;
+		[SerializeField] AnimationCurve _alphaCurve = new AnimationCurve(new Keyframe(0f, 1f, -1f, -1f), new Keyframe(1f, 0f, -1f, -1f));
 
 		/// <summary></summary>
 		public BlurAlgorithm Algorithm { get { return _algorithm; } set { if (ChangeProperty(ref _algorithm, value)) { UpdateAlgorithm(); } } }

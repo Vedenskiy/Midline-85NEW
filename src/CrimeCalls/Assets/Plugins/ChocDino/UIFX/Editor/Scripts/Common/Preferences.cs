@@ -33,10 +33,12 @@ namespace ChocDino.UIFX.Editor
 			private string _defines;
 			private string _oldDefines;
 			private bool _unappliedChanges;
+			private BuildTargetGroup _buildTarget;
+
 
 			public override void OnActivate(string searchContext, VisualElement rootElement)
 			{
-				CacheDefines();
+				_buildTarget = BuildTargetGroup.Unknown;
 			}
 
 			public override void OnDeactivate()
@@ -45,25 +47,21 @@ namespace ChocDino.UIFX.Editor
 
 			private void CacheDefines()
 			{
-				var target = EditorUserBuildSettings.activeBuildTarget;
-				var group = BuildPipeline.GetBuildTargetGroup(target);
 				#if UNITY_2023_1_OR_NEWER
-				var buildTarget = UnityEditor.Build.NamedBuildTarget.FromBuildTargetGroup(group);
-				_oldDefines = _defines = PlayerSettings.GetScriptingDefineSymbols(buildTarget);
+				var namedBuildTarget = UnityEditor.Build.NamedBuildTarget.FromBuildTargetGroup(_buildTarget);
+				_oldDefines = _defines = PlayerSettings.GetScriptingDefineSymbols(namedBuildTarget);
 				#else
-				_oldDefines = _defines = PlayerSettings.GetScriptingDefineSymbolsForGroup(group);
+				_oldDefines = _defines = PlayerSettings.GetScriptingDefineSymbolsForGroup(_buildTarget);
 				#endif
 			}
 
 			private void ApplyDefines()
 			{
-				var target = EditorUserBuildSettings.activeBuildTarget;
-				var group = BuildPipeline.GetBuildTargetGroup(target);
 				#if UNITY_2023_1_OR_NEWER
-				var buildTarget = UnityEditor.Build.NamedBuildTarget.FromBuildTargetGroup(group);
-				PlayerSettings.SetScriptingDefineSymbols(buildTarget, _defines);
+				var namedBuildTarget = UnityEditor.Build.NamedBuildTarget.FromBuildTargetGroup(_buildTarget);
+				PlayerSettings.SetScriptingDefineSymbols(namedBuildTarget, _defines);
 				#else
-				PlayerSettings.SetScriptingDefineSymbolsForGroup(group, _defines);
+				PlayerSettings.SetScriptingDefineSymbolsForGroup(_buildTarget, _defines);
 				#endif
 				CacheDefines();
 			}
@@ -120,22 +118,55 @@ namespace ChocDino.UIFX.Editor
 
 				EditorGUILayout.Space();
 
-				bool changes= false;
-				changes |= ShowDefineToggle("Text Mesh Pro Support (Requires com.unity.textmeshpro package)", UIFX_TMPRO);
-				changes |= ShowDefineToggle("Hide Inspector Filter Preview", UIFX_FILTER_HIDE_INSPECTOR_PREVIEW);
-				changes |= ShowDefineToggle("Beta Features", UIFX_BETA);
 				ShowEditorPref(Content_BakedImagesFolder, BaseEditor.PrefKey_BakedImageSubfolder, BaseEditor.DefaultBakedImageAssetsSubfolder);
+
+				EditorGUILayout.Space();
+
+				GUILayout.Label("Active platform is: " + BuildPipeline.GetBuildTargetGroup(EditorUserBuildSettings.activeBuildTarget).ToString());
+
+				bool isActivePlatform = BuildPipeline.GetBuildTargetGroup(EditorUserBuildSettings.activeBuildTarget) == _buildTarget;
+
+				bool changes = false;
+				{
+					if (isActivePlatform)
+					{
+						GUI.color = new Color(1.1f, 1.1f, 1.1f, 1f);
+					}
+					BuildTargetGroup group = EditorGUILayout.BeginBuildTargetSelectionGrouping();
+					if (_buildTarget != group)
+					{
+						_buildTarget = group;
+						CacheDefines();
+					}
+					changes |= ShowDefineToggle("Text Mesh Pro Support (Requires com.unity.textmeshpro package)", UIFX_TMPRO);
+					changes |= ShowDefineToggle("Hide Inspector Filter Preview", UIFX_FILTER_HIDE_INSPECTOR_PREVIEW);
+					changes |= ShowDefineToggle("Beta Features", UIFX_BETA);
+					EditorGUILayout.EndBuildTargetSelectionGrouping();
+				}
+				GUI.color = Color.white;
 				EditorGUILayout.Space();
 				EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
 
 				if (SystemInfo.deviceName == "DESKTOP-ULTRA")
 				{
 					GUILayout.Label("Developer Mode:", EditorStyles.largeLabel);
+					if (isActivePlatform)
+					{
+						GUI.color = new Color(1.1f, 1.1f, 1.1f, 1f);
+					}
+					BuildTargetGroup group = EditorGUILayout.BeginBuildTargetSelectionGrouping();
+					if (_buildTarget != group)
+					{
+						_buildTarget = group;
+						CacheDefines();
+					}
 					changes |= ShowDefineToggle("Debug Logging", UIFX_LOG);
 					changes |= ShowDefineToggle("Filter Debugging", UIFX_FILTER_DEBUG);
 					changes |= ShowDefineToggle("Filter Force Update in Play Mode", UIFX_FILTERS_FORCE_UPDATE_PLAYMODE);
 					changes |= ShowDefineToggle("Filter Force Update in Edit Mode", UIFX_FILTERS_FORCE_UPDATE_EDITMODE);
 					changes |= ShowDefineToggle("Unreleased Features", UIFX_UNRELEASED);
+					EditorGUILayout.EndBuildTargetSelectionGrouping();
+					GUI.color = Color.white;
 
 					EditorGUILayout.Space();
 					EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
@@ -196,11 +227,14 @@ namespace ChocDino.UIFX.Editor
 			private void ShowEditorPref(GUIContent label, string prefKey, string defaultValue)
 			{
 				var oldValue = EditorPrefs.GetString(prefKey, defaultValue);
-				var newValue = EditorGUILayout.TextField(label, oldValue, GUILayout.MaxWidth(512f));
+				GUILayout.BeginHorizontal();
+				EditorGUILayout.PrefixLabel(label, EditorStyles.textField);
+				var newValue = EditorGUILayout.TextField(oldValue);
 				if (newValue != oldValue)
 				{
 					EditorPrefs.SetString(prefKey, newValue);
 				}
+				GUILayout.EndHorizontal();
 			}
 		}
 	}

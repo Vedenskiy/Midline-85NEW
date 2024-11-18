@@ -19,10 +19,10 @@ namespace ChocDino.UIFX.Editor
 		private SerializedProperty _propBlurAlgorithm;
 		private SerializedProperty _propBlurAxes2D;
 		private SerializedProperty _propDownsample;
-		protected SerializedProperty _propBlur;
+		private SerializedProperty _propBlur;
 		private SerializedProperty _propApplyAlphaCurve;
 		private SerializedProperty _propAlphaCurve;
-		protected SerializedProperty _propStrength;
+		private SerializedProperty _propStrength;
 		//protected SerializedProperty _propIncludeChildren;
 
 		private static readonly AboutInfo s_aboutInfo = 

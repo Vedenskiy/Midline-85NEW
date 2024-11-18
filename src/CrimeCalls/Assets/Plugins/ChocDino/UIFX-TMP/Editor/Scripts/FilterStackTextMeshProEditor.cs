@@ -22,6 +22,7 @@ namespace ChocDino.UIFX.Editor
 		private static readonly GUIContent Content_Filters = new GUIContent("Filters");
 		private static readonly GUIContent Content_FilterList = new GUIContent("Filter List");
 		private static readonly GUIContent Content_Filter88 = new GUIContent("Filter 88  ");
+		private static readonly GUIContent Content_AddFilter = new GUIContent("Add Filter:");
 		private static readonly string Pref_Prefix = "UIFX.FilterStackTextMeshPro.";
 		private static readonly string Pref_SelectedTypeIndex = Pref_Prefix + "SelectedTypeIndex";
 
@@ -349,7 +350,7 @@ namespace ChocDino.UIFX.Editor
 
 			if (_filterTypesNames != null && _filterTypesNames.Length > 0)
 			{
-				EditorGUILayout.PrefixLabel("Add Filter:");
+				EditorGUILayout.PrefixLabel(Content_AddFilter);
 				EditorGUILayout.BeginHorizontal();
 				// Show dropdown list of filters that can be added
 				_selectedTypeIndex = EditorGUILayout.Popup(_selectedTypeIndex, _filterTypesNames);

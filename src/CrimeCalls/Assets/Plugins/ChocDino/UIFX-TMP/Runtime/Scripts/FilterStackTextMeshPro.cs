@@ -44,8 +44,6 @@ namespace ChocDino.UIFX
 			public readonly static int ResultTex = Shader.PropertyToID("_ResultTex");
 		}
 
-		private const string BlendShaderPath = "Hidden/ChocDino/UIFX/Blend";
-
 		private ScreenRectFromMeshes _screenRect = new ScreenRectFromMeshes();
 		private Compositor _composite = new Compositor();
 		private RenderTexture _rt;
@@ -61,10 +59,11 @@ namespace ChocDino.UIFX
 		[SerializeField] bool _updateOnTransform = true;
 		[SerializeField] bool _relativeToTransformScale = false;
 		[SerializeField, Delayed] float _relativeFontSize = 0f;
-		[SerializeField] FilterBase[] _filters = null;
+		[SerializeField] FilterBase[] _filters = new FilterBase[0];
 
 		public bool ApplyToSprites { get { return _applyToSprites; } set { ChangeProperty(ref _applyToSprites, value); } }
 		public bool UpdateOnTransform { get { return _updateOnTransform; } set { ChangeProperty(ref _updateOnTransform, value); } }
+		public List<FilterBase> Filters { get { return new List<FilterBase>(_filters); } set { ChangePropertyArray(ref _filters, value.ToArray()); } }
 
 		private bool CanApplyFilter()
 		{
@@ -123,11 +122,41 @@ namespace ChocDino.UIFX
 			}
 		}
 
+		protected bool ChangePropertyArray<T>(ref T backing, T value) where T : System.Collections.ICollection
+		{
+			bool result = false;
+			if (backing.Count != value.Count)
+			{
+				result = true;
+			}
+			else
+			{
+				var backingEnum = backing.GetEnumerator();
+				var valueEnum = value.GetEnumerator();
+				int index = 0;
+				while (backingEnum.MoveNext() && valueEnum.MoveNext())
+				{
+					if (!backingEnum.Current.Equals(valueEnum.Current))
+					{
+						result = true;
+						break;
+					}
+					index++;
+				}
+			}
+			if (result)
+			{
+				backing = value;
+				GraphicComponent.SetAllDirty();
+			}
+			return result;
+		}
+
 		[UnityInternal.ExcludeFromDocs]
 		protected override void OnEnable()
 		{
 			_needsRendering = true;
-			var shader = Shader.Find(BlendShaderPath);
+			var shader = Shader.Find(FilterBase.DefaultBlendShaderPath);
 			if (shader)
 			{
 				_displayMaterial = new Material(shader);
@@ -420,7 +449,6 @@ namespace ChocDino.UIFX
 
 					if (activeFilterCount > 0)
 					{
-
 						if (!_rt)
 						{
 							_rt = RenderTexture.GetTemporary(sourceTexture.width, sourceTexture.height, 0, sourceTexture.format, RenderTextureReadWrite.Linear);
@@ -488,21 +516,23 @@ namespace ChocDino.UIFX
 
 			if (_updateOnTransform)
 			{
-				// Detect a change to the matrix (this also detects changes to the camera and viewport)
-				if (MathUtils.HasMatrixChanged(_previousLocalToWorldMatrix, this.transform.localToWorldMatrix, false))
 				{
-					_previousLocalToWorldMatrix = this.transform.localToWorldMatrix;
-					forceUpdate = true;
-				}
-				if (_textMeshPro.canvas && _textMeshPro.canvas.renderMode == RenderMode.WorldSpace)
-				{
-					Camera camera = GetRenderCamera();
-					if (camera)
+					// Detect a change to the matrix (this also detects changes to the camera and viewport)
+					if (MathUtils.HasMatrixChanged(_previousLocalToWorldMatrix, this.transform.localToWorldMatrix, false))
 					{
-						if (MathUtils.HasMatrixChanged(_previousCameraMatrix, camera.transform.localToWorldMatrix, ignoreTranslation:false))
+						_previousLocalToWorldMatrix = this.transform.localToWorldMatrix;
+						forceUpdate = true;
+					}
+					if (_textMeshPro.canvas && _textMeshPro.canvas.renderMode == RenderMode.WorldSpace)
+					{
+						Camera camera = GetRenderCamera();
+						if (camera)
 						{
-							_previousCameraMatrix = camera.transform.localToWorldMatrix;
-							forceUpdate = true;
+							if (MathUtils.HasMatrixChanged(_previousCameraMatrix, camera.transform.localToWorldMatrix, ignoreTranslation:false))
+							{
+								_previousCameraMatrix = camera.transform.localToWorldMatrix;
+								forceUpdate = true;
+							}
 						}
 					}
 				}

@@ -79,7 +79,7 @@ namespace ChocDino.UIFX.Editor
 			Rect rect = EditorGUILayout.GetControlRect();
 			EditorGUILayout.EndHorizontal();
 
-			displayName = EditorGUI.BeginProperty(rect, displayName, prop);
+			EditorGUI.BeginProperty(rect, displayName, prop);
 
 			EditorGUI.BeginChangeCheck();
 
@@ -143,6 +143,56 @@ namespace ChocDino.UIFX.Editor
 				}
 			}
 			return result;
+		}
+
+		#if false
+		void ShowAlignmentSelector()
+		{
+			GUILayoutOption layout = GUILayout.ExpandWidth(false);
+			GUIStyle style = UnityEditor.EditorStyles.toolbarButton;
+			//style.margin = new RectOffset(0, 0, 0, 0);
+			//style.border = new RectOffset(0, 0, 0, 0);
+		
+			bool toggle;
+			GUILayout.BeginVertical();
+			GUILayout.BeginHorizontal();
+			toggle = _propGradientCenterX.floatValue == -1f;
+			toggle = GUILayout.Toggle(toggle, "┏", style, layout);
+			GUILayout.Toggle(false, "┳", style, layout);
+			GUILayout.Toggle(false, "┓", style, layout);
+			GUILayout.EndHorizontal();
+			GUILayout.BeginHorizontal();
+			GUILayout.Toggle(false, "┣", style, layout);
+			GUILayout.Toggle(false, "╋", style, layout);
+			GUILayout.Toggle(false, "┫", style, layout);
+			GUILayout.EndHorizontal();
+			GUILayout.BeginHorizontal();
+			GUILayout.Toggle(false, "┗", style, layout);
+			GUILayout.Toggle(false, "┻", style, layout);
+			GUILayout.Toggle(false, "┛", style, layout);
+			GUILayout.EndHorizontal();
+			GUILayout.EndVertical();
+		}
+		#endif
+
+		internal static Gradient GetGradient(SerializedProperty gradientProperty)
+		{
+			#if UNITY_2022_1_OR_NEWER
+			return gradientProperty.gradientValue;
+			#else
+			System.Reflection.PropertyInfo propertyInfo = typeof(SerializedProperty).GetProperty("gradientValue", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+			if (propertyInfo == null) { return null; }
+			else { return propertyInfo.GetValue(gradientProperty, null) as Gradient; }
+			#endif
+		}
+		internal static void SetGradient(SerializedProperty gradientProperty, Gradient value)
+		{
+			#if UNITY_2022_1_OR_NEWER
+			gradientProperty.gradientValue = value;
+			#else
+			System.Reflection.PropertyInfo propertyInfo = typeof(SerializedProperty).GetProperty("gradientValue", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+			if (propertyInfo != null) { propertyInfo.SetValue(gradientProperty, value); }
+			#endif
 		}
 	}
 }

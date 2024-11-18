@@ -22,6 +22,14 @@ using TMPro;
 
 namespace ChocDino.UIFX
 {
+	public enum FilterRenderSpace
+	{
+		// Rendering is done in local canvas-space, before transforming the vertices to screen-space.
+		Canvas,
+		// Rendering is done after transform the vertices from local-space to screen-space.
+		Screen,
+	}
+
 	/// <summary>
 	/// Base class for all derived filter classes
 	/// </summary>
@@ -34,11 +42,17 @@ namespace ChocDino.UIFX
 		[Range(0f, 1f)]
 		[SerializeField] protected float _strength = 1f;
 
+		[Tooltip("")]
+		[SerializeField] protected FilterRenderSpace _renderSpace = FilterRenderSpace.Screen;
+		
 		/// <summary>How much of the maximum effect to apply.  Range [0..1] Default is 1.0</summary>
 		public float Strength { get { return _strength; } set { ChangeProperty(ref _strength, Mathf.Clamp01(value)); } }
 
-		/// <summary> Scale all resolution calculations by this ammount.  Useful for allowing font size / transform scale to keep consistent rendering of effects.</summary>
+		/// <summary>Scale all resolution calculations by this ammount.  Useful for allowing font size / transform scale to keep consistent rendering of effects.</summary>
 		public float UserScale { get { return _userScale; } set { ChangeProperty(ref _userScale, value); } }
+
+		/// <summary></summary>
+		public FilterRenderSpace RenderSpace { get { return _renderSpace; } } // TODO: restore this: set { ChangeProperty(ref _renderSpace, value); } }
 
 		protected readonly static Vector4 Alpha8TextureAdd = new Vector4(1f, 1f, 1f, 0f);
 
@@ -46,6 +60,7 @@ namespace ChocDino.UIFX
 		{
 			public readonly static int SourceTex = Shader.PropertyToID("_SourceTex");
 			public readonly static int ResultTex = Shader.PropertyToID("_ResultTex");
+			public readonly static int Strength = Shader.PropertyToID("_Strength");
 		}
 
 		private bool _isGraphicText;
@@ -76,7 +91,7 @@ namespace ChocDino.UIFX
 		internal RectAdjustOptions RectAdjustOptions { get { return _rectAdjustOptions;} }
 		internal float ResolutionScalingFactor { get; private set; }
 
-		private const string DefaultBlendShaderPath = "Hidden/ChocDino/UIFX/Blend";
+		internal const string DefaultBlendShaderPath = "Hidden/ChocDino/UIFX/Blend";
 		private const string ResolveShaderPath = "Hidden/ChocDino/UIFX/Resolve";
 		private RenderTexture _resolveTexture;
 		private Material _resolveMaterial;
@@ -142,7 +157,7 @@ namespace ChocDino.UIFX
 
 					if (!_isLastMaterialTMPro)
 					{
-						if (_baseMaterialCopy == null || _baseMaterialCopy.shader != baseMaterial.shader)
+						if (_baseMaterial == null || _baseMaterialCopy == null || _baseMaterial != baseMaterial || _baseMaterialCopy.shader != baseMaterial.shader)
 						{
 							ObjectHelper.Destroy(ref _baseMaterialCopy);
 							_baseMaterial = baseMaterial;
@@ -191,17 +206,20 @@ namespace ChocDino.UIFX
 				GraphicComponent.RegisterDirtyMaterialCallback(OnGraphicMaterialDirtied);
 			}
 
-			string shaderPath = GetDisplayShaderPath();
-			if (!string.IsNullOrEmpty(shaderPath))
+			if (_displayMaterial == null)
 			{
-				var shader = Shader.Find(shaderPath);
-				if (shader)
+				string shaderPath = GetDisplayShaderPath();
+				if (!string.IsNullOrEmpty(shaderPath))
 				{
-					_displayMaterial = new Material(shader);
-					#if UNITY_EDITOR
-					_displayMaterial.name = "Filter-DisplayMaterial";
-					#endif
-					Debug.Assert(_displayMaterial != null);
+					var shader = Shader.Find(shaderPath);
+					if (shader)
+					{
+						_displayMaterial = new Material(shader);
+						#if UNITY_EDITOR
+						_displayMaterial.name = "Filter-DisplayMaterial";
+						#endif
+						Debug.Assert(_displayMaterial != null);
+					}
 				}
 			}
 
@@ -234,8 +252,6 @@ namespace ChocDino.UIFX
 			RenderTextureHelper.ReleaseTemporary(ref _resolveTexture);
 			ObjectHelper.Destroy(ref _resolveMaterial);
 			ObjectHelper.Destroy(ref _readableTexture);
-			ObjectHelper.Destroy(ref _displayMaterial);
-			ObjectHelper.Destroy(ref _baseMaterialCopy);
 			ObjectHelper.Destroy(ref _quadMesh);
 			ObjectHelper.Destroy(ref _mesh);
 			_composite.FreeResources();
@@ -257,6 +273,13 @@ namespace ChocDino.UIFX
 			ForceUpdate(force:true);
 
 			base.OnDisable();
+		}
+
+		protected override void OnDestroy()
+		{
+			ObjectHelper.Destroy(ref _baseMaterialCopy);
+			ObjectHelper.Destroy(ref _displayMaterial);
+			base.OnDestroy();
 		}
 
 		/// <summary>
@@ -349,6 +372,7 @@ namespace ChocDino.UIFX
 		#endif
 
 		private Matrix4x4 _previousLocalToWorldMatrix;
+		private Matrix4x4 _previousCameraMatrix;
 		private float _lastRenderAlpha = -1f;
 		internal Vector2Int _lastRenderAdjustLeftDown;
 		internal Vector2Int _lastRenderAdjustRightUp;
@@ -398,11 +422,27 @@ namespace ChocDino.UIFX
 			{
 				bool forceUpdate = _forceUpdate;
 
-				// Detect a change to the matrix (this also detects changes to the camera and viewport)
-				if (MathUtils.HasMatrixChanged(_previousLocalToWorldMatrix, this.transform.localToWorldMatrix, false))
 				{
-					forceUpdate = true;
-					_previousLocalToWorldMatrix = this.transform.localToWorldMatrix;
+					// Detect a change to the matrix (this also detects changes to the camera and viewport)
+					if (MathUtils.HasMatrixChanged(_previousLocalToWorldMatrix, this.transform.localToWorldMatrix, ignoreTranslation:false))
+					{
+						forceUpdate = true;
+						_previousLocalToWorldMatrix = this.transform.localToWorldMatrix;
+					}
+
+					// In world-space canvas, with screen-space rendering, when the camera moves we need to rerender
+					if (_canvas && _canvas.renderMode == RenderMode.WorldSpace)
+					{
+						Camera camera = GetRenderCamera();
+						if (camera)
+						{
+							if (MathUtils.HasMatrixChanged(_previousCameraMatrix, camera.transform.localToWorldMatrix, ignoreTranslation:false))
+							{
+								forceUpdate = true;
+								_previousCameraMatrix = camera.transform.localToWorldMatrix;
+							}
+						}
+					}
 				}
 
 				#if UIFX_FILTERS_FORCE_UPDATE_PLAYMODE
@@ -659,6 +699,7 @@ namespace ChocDino.UIFX
 			return result;
 		}
 
+
 		private Camera GetRenderCamera()
 		{
 			Debug.Assert(this.isActiveAndEnabled);
@@ -770,6 +811,12 @@ namespace ChocDino.UIFX
 			}
 		}
 
+		private void BuildOutputQuad(VertexHelper verts)
+		{
+			Camera renderCamera = GetRenderCamera();
+			_screenRect.BuildScreenQuad(renderCamera, this.transform, _lastRenderAlpha, verts);
+		}
+
 		private void ApplyMesh(Mesh mesh)
 		{
 			CanvasRenderer cr = CanvasRenderComponent;
@@ -804,11 +851,8 @@ namespace ChocDino.UIFX
 						}
 						_quadMesh.Clear();
 						VertexHelper verts = new VertexHelper(_quadMesh);
-
-						Camera renderCamera = GetRenderCamera();
-						_screenRect.BuildScreenQuad(renderCamera, this.transform, _lastRenderAlpha, verts);
+						BuildOutputQuad(verts);
 						verts.FillMesh(_quadMesh);
-
 						verts.Dispose();
 
 						cr.SetMesh(_quadMesh);
@@ -879,8 +923,7 @@ namespace ChocDino.UIFX
 						// Create quad to display the result
 						if (GenerateScreenRect())
 						{
-							Camera renderCamera = GetRenderCamera();
-							_screenRect.BuildScreenQuad(renderCamera, this.transform, _lastRenderAlpha, verts);
+							BuildOutputQuad(verts);
 
 							if (!_graphicMaterialDirtied)
 							{
@@ -896,8 +939,7 @@ namespace ChocDino.UIFX
 					}
 					else
 					{
-						Camera renderCamera = GetRenderCamera();
-						_screenRect.BuildScreenQuad(renderCamera, this.transform, _lastRenderAlpha, verts);
+						BuildOutputQuad(verts);
 					}
 				}
 				else
@@ -957,7 +999,7 @@ namespace ChocDino.UIFX
 				}
 				#endif
 			}
-			
+		
 			ResolutionScalingFactor = /*Filters.GetScaling(renderCamera) */ canvasScale * _userScale;
 		#endif
 		}

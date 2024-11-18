@@ -38,7 +38,7 @@ namespace ChocDino.UIFX
 				_compositeMaterial = new Material(Shader.Find(CompositeShaderPath));
 				Debug.Assert(_compositeMaterial != null);
 			}
-		
+
 			if (textureRect.width > Filters.GetMaxiumumTextureSize() || textureRect.height > Filters.GetMaxiumumTextureSize())
 			{
 				return false;

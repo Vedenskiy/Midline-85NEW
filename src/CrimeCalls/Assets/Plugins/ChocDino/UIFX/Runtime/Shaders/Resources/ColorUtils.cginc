@@ -16,7 +16,7 @@ float4 Blend_Darken(float4 src, float4 dst)
 	return float4(color, alpha);
 }
 
-// Multiplies the source and destination pixels.  
+// Multiplies the source and destination pixels.
 float4 Blend_Multiply(float4 src, float4 dst)
 {
 	return src * dst;
@@ -111,4 +111,18 @@ float3 OkLabToLinear(float3 c)
 		-1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s,
 		-0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s
 	);
+}
+
+half4 CornerGradient(half4 colorTL, half4 colorTR, half4 colorBL, half4 colorBR, half2 uv, float scale)
+{
+	// Expand/shrink the uv edges
+	uv = saturate((uv - 0.5) * scale + 0.5);
+	return lerp(lerp(colorBL, colorBR, uv.x), lerp(colorTL, colorTR, uv.x), uv.y);
+}
+
+half4 EdgeGradient(half4 colorA, half4 colorB, half uv, float scale, float bias)
+{
+	// Expand/shrink the uv edges
+	uv = saturate((uv -  0.5) * scale + bias);
+	return lerp(colorA, colorB, uv);
 }

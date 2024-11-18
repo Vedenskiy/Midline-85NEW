@@ -146,9 +146,10 @@ namespace ChocDino.UIFX
 		{
 			Debug.Assert(sourceTexture != null);
 
+			// Early-out
 			if (GetScaledRadius() <= 0f)
 			{
-				FreeResources();
+				FreeTextures();
 				return sourceTexture;
 			}
 
@@ -191,6 +192,7 @@ namespace ChocDino.UIFX
 				}
 
 				// Blur
+				Debug.Assert(_iterationCount > 0);
 				for (int i = 0; i < _iterationCount; i++)
 				{
 					if (_blurAxes2D == BlurAxes2D.Default)
@@ -216,6 +218,16 @@ namespace ChocDino.UIFX
 						src = dst;
 					}
 				}
+
+				// Free intermediate textures
+				if (src == _rtBlurH)
+				{
+					RenderTextureHelper.ReleaseTemporary(ref _rtBlurV);
+				}
+				else
+				{
+					RenderTextureHelper.ReleaseTemporary(ref _rtBlurH);
+				}
 			}
 			else
 			{
@@ -233,8 +245,6 @@ namespace ChocDino.UIFX
 			FreeTextures();
 		}
 
-		private uint _currentTextureHash;
-
 		private uint CreateTextureHash(int width, int height)
 		{
 			uint hash = 0;
@@ -243,25 +253,53 @@ namespace ChocDino.UIFX
 			return hash;
 		}
 
-		void SetupResources(RenderTexture sourceTexture)
+		private void RecreateTexture(ref RenderTexture rt, uint desiredHash, RenderTexture sourceTexture)
 		{
-			uint desiredTextureProps = 0;
-			if (sourceTexture != null)
+			// Release the texture if it isn't suitable
+			if (rt != null)
 			{
-				desiredTextureProps = CreateTextureHash(sourceTexture.width / GetDownsampleFactor(), sourceTexture.height / GetDownsampleFactor());
+				uint hash = CreateTextureHash(rt.width, rt.height);
+				if (hash != desiredHash)
+				{
+					RenderTextureHelper.ReleaseTemporary(ref rt);
+					_materialDirty = true;
+				}
 			}
 
-			if (desiredTextureProps != _currentTextureHash)
+			// Create texture
+			if (rt == null && sourceTexture != null)
 			{
-				FreeTextures();
-				_materialDirty = true;
+				Debug.Assert(sourceTexture.width > 0 && sourceTexture.height > 0);
+				int w = Mathf.Max(1, sourceTexture.width / GetDownsampleFactor());
+				int h = Mathf.Max(1, sourceTexture.height / GetDownsampleFactor());
+
+				RenderTextureFormat format = sourceTexture.format;
+				if ((Filters.PerfHint & PerformanceHint.UseMorePrecision) != 0)
+				{
+					// TODO: create based on the input texture format, but just with more precision
+					format = RenderTextureFormat.ARGBHalf;
+				}
+
+				rt = RenderTexture.GetTemporary(w, h, 0, format, RenderTextureReadWrite.Linear);
 			}
-			if (_sourceTexture == null && sourceTexture != null)
+		}
+
+		void SetupResources(RenderTexture sourceTexture)
+		{
+			uint desiredTextureHash = 0;
+			if (sourceTexture != null)
 			{
-				CreateTextures(sourceTexture);
-				_currentTextureHash = desiredTextureProps;
+				desiredTextureHash = CreateTextureHash(sourceTexture.width / GetDownsampleFactor(), sourceTexture.height / GetDownsampleFactor());
 			}
-			
+
+			RecreateTexture(ref _rtBlurH, desiredTextureHash, sourceTexture);
+			RecreateTexture(ref _rtBlurV, desiredTextureHash, sourceTexture);
+
+			#if UNITY_EDITOR
+			_rtBlurH.name = _parentFilter.name + "-BoxBlurH";
+			_rtBlurV.name = _parentFilter.name + "-BoxBlurV";
+			#endif
+	
 			if (_sourceTexture != sourceTexture)
 			{
 				_materialDirty = true;
@@ -316,28 +354,6 @@ namespace ChocDino.UIFX
 			_materialDirty = true;
 		}
 
-		void CreateTextures(RenderTexture sourceTexture)
-		{
-			Debug.Assert(sourceTexture.width > 0 && sourceTexture.height > 0);
-			int w = Mathf.Max(1, sourceTexture.width / GetDownsampleFactor());
-			int h = Mathf.Max(1, sourceTexture.height / GetDownsampleFactor());
-
-			RenderTextureFormat format = sourceTexture.format;
-			if ((Filters.PerfHint & PerformanceHint.UseMorePrecision) != 0)
-			{
-				// TODO: create based on the input texture format, but just with more precision
-				format = RenderTextureFormat.ARGBHalf;
-			}
-
-			_rtBlurH = RenderTexture.GetTemporary(w, h, 0, format, RenderTextureReadWrite.Linear);
-			_rtBlurV = RenderTexture.GetTemporary(w, h, 0, format, RenderTextureReadWrite.Linear);
-
-			#if UNITY_EDITOR
-			_rtBlurH.name = "BlurH";
-			_rtBlurV.name = "BlurV";
-			#endif
-		}
-
 		void FreeShaders()
 		{
 			ObjectHelper.Destroy(ref _material);
@@ -347,7 +363,6 @@ namespace ChocDino.UIFX
 		{
 			RenderTextureHelper.ReleaseTemporary(ref _rtBlurV);
 			RenderTextureHelper.ReleaseTemporary(ref _rtBlurH);
-			_currentTextureHash = 0;
 			_sourceTexture = null;
 		}
 

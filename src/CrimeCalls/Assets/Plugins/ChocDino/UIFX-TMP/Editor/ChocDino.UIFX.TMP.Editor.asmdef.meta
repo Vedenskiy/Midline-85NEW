@@ -9,6 +9,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 268262
   packageName: UIFX - Blur Filter
-  packageVersion: 1.7.10
-  assetPath: Assets/ChocDino/UIFX-TMP/Editor/ChocDino.UIFX.TMP.Editor.asmdef
-  uploadId: 691474
+  packageVersion: 1.7.11
+  assetPath: Assets/Plugins/ChocDino/UIFX-TMP/Editor/ChocDino.UIFX.TMP.Editor.asmdef
+  uploadId: 705928

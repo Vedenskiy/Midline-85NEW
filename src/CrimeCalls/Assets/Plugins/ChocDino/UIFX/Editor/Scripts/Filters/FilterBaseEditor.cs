@@ -11,22 +11,25 @@ namespace ChocDino.UIFX.Editor
 {
 	internal class FilterBaseEditor : BaseEditor
 	{
-		protected static readonly string ComponentColorAdjustUrl = "https://www.chocdino.com/products/uifx/bundle/components/color-adjust-filter/";
 		protected static readonly string TextMeshProGraphicTypeName = "TMPro.TextMeshProUGUI";
 		protected static readonly string FilterStackTextMeshProFullTypeName = "ChocDino.UIFX.FilterStackTextMeshPro, ChocDino.UIFX.TMP";
 
-		protected static GUIContent Content_R = new GUIContent("R");
-		protected static GUIContent Content_Size = new GUIContent("Size");
-		protected static GUIContent Content_Color = new GUIContent("Color");
-		protected static GUIContent Content_Apply = new GUIContent("Apply");
-		protected static GUIContent Content_Border = new GUIContent("Border");
-		protected static GUIContent Content_Fill = new GUIContent("Fill");
+		protected static readonly GUIContent Content_R = new GUIContent("R");
+		protected static readonly GUIContent Content_Space = new GUIContent(" ");
+		protected static readonly GUIContent Content_Size = new GUIContent("Size");
+		protected static readonly GUIContent Content_Color = new GUIContent("Color");
+		protected static readonly GUIContent Content_Colors = new GUIContent("Colors");
+		protected static readonly GUIContent Content_Apply = new GUIContent("Apply");
+		protected static readonly GUIContent Content_Border = new GUIContent("Border");
+		protected static readonly GUIContent Content_Fill = new GUIContent("Fill");
+		protected static readonly GUIContent Content_Preview = new GUIContent("Preview");
+		protected static readonly GUIContent Content_Stop = new GUIContent("Stop");
 
-		private static GUIContent Content_Debug = new GUIContent("Debug");
-		private static GUIContent Content_Strength = new GUIContent("Strength");
-		private static GUIContent Content_SaveToPNG = new GUIContent("Save to PNG", "TextMeshPro is not currently supported.");
-		private static GUIContent Content_BakeToImage = new GUIContent("Bake To Image", "Bake all filters above to an Image component. Baking currently doesn't support: world-space canvas, rotation or scale, and unmatching anchor min/max values, TextMeshPro.");
-		private static GUIContent Content_PreviewTitle= new GUIContent("UIFX - Filters");
+		private static readonly GUIContent Content_Debug = new GUIContent("Debug");
+		private static readonly GUIContent Content_Strength = new GUIContent("Strength");
+		private static readonly GUIContent Content_SaveToPNG = new GUIContent("Save to PNG", "TextMeshPro is not currently supported.");
+		private static readonly GUIContent Content_BakeToImage = new GUIContent("Bake To Image", "Bake all filters above to an Image component. Baking currently doesn't support: world-space canvas, rotation or scale, and unmatching anchor min/max values, TextMeshPro.");
+		private static readonly GUIContent Content_PreviewTitle= new GUIContent("UIFX - Filters");
 
 		private void ShowSaveToPngButton()
 		{
@@ -132,7 +135,7 @@ namespace ChocDino.UIFX.Editor
 						float aspect = (float)texture.width / (float)texture.height;
 						Rect r = GUILayoutUtility.GetAspectRect(aspect * 2f, GUILayout.ExpandWidth(true));
 						Rect rc = r;
-						rc.width /= 2;
+						rc.width /= 2f;
 						GUI.DrawTexture(rc, texture, ScaleMode.ScaleToFit, false);
 						rc.x += rc.width;
 						EditorGUI.DrawTextureAlpha(rc, texture, ScaleMode.ScaleToFit);
@@ -549,7 +552,7 @@ namespace ChocDino.UIFX.Editor
 			int indentLevel = EditorGUI.indentLevel;
 			EditorGUI.indentLevel = 0;
 			EditorGUI.BeginChangeCheck();
-			value = EditorGUILayout.Slider(value, 0f, 1f);
+			value = EditorGUILayout.Slider(value, 0f, 1f, GUILayout.ExpandWidth(false));
 			if (EditorGUI.EndChangeCheck())
 			{
 				changed = true;
@@ -580,6 +583,17 @@ namespace ChocDino.UIFX.Editor
 			{
 				prop.floatValue = strength;
 			}
+		}
+
+		internal static void DrawDualColors(SerializedProperty col1, SerializedProperty col2, GUIContent label)
+		{
+			GUILayout.BeginHorizontal();
+			EditorGUILayout.PrefixLabel(label, EditorStyles.colorField);
+			EditorGUI.indentLevel-=1;		// NOTE: This seems to be a bug in Unity where it shows the indentation with ColorFields, so we have to remove it manually...
+			EditorGUILayout.PropertyField(col1, GUIContent.none);
+			EditorGUILayout.PropertyField(col2, GUIContent.none);
+			EditorGUI.indentLevel+=1;
+			GUILayout.EndHorizontal();
 		}
 
 		protected static void SaveTexture(RenderTexture texture)
