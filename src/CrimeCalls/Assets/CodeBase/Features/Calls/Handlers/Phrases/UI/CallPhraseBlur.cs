@@ -31,9 +31,10 @@ namespace CodeBase.Features.Calls.Handlers.Phrases.UI
                 .OnUpdate(value => _blur.Strength = value.Value)
                 .OnEnd(value =>
                 {
-                    // The plugin UIFX has a bug with blurring,
+                    // The plugin UIFX has a trouble with blurring,
                     // when the strength becomes 0 and or
                     // change from value to 0 has too small a step - the text breaks.
+                    // Issue: https://github.com/Chocolate-Dinosaur/UIFX/issues/21
                     
                     // The following code is needed to fix this situation:
                     _blur.Strength = origin;
