@@ -1,3 +1,4 @@
+using CodeBase.Features.Common.Cursor;
 using CodeBase.Infrastructure.Common.AssetManagement;
 using CodeBase.Infrastructure.Common.AssetManagement.Reports;
 using CodeBase.Infrastructure.Common.Localization;
@@ -14,6 +15,7 @@ namespace CodeBase.Infrastructure.Installers.Bindings
             //BindCoroutineRunner(builder);
             BindSceneLoading(builder);
             BindAssetManagement(builder);
+            BindServices(builder);
             BindLocalization(builder);
             return builder;
         }
@@ -31,6 +33,11 @@ namespace CodeBase.Infrastructure.Installers.Bindings
             builder.AddSingleton<LevelDownloadService>();
         }
 
+        private static void BindServices(ContainerBuilder builder)
+        {
+            builder.AddSingleton<CustomCursor>();
+        }
+        
         private static void BindLocalization(ContainerBuilder builder)
         {
             builder.AddSingleton<LocalizationService>();
