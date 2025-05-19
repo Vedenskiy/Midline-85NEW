@@ -6,6 +6,7 @@ namespace CodeBase.Features.Office
 {
     public class TiledMovement : MonoBehaviour
     {
+        [SerializeField] private float _stepLength = 1f;
         [SerializeField] private float _stepDuration = 0.25f;
         [SerializeField] private float _rotateDuration = 0.25f;
         
@@ -19,7 +20,7 @@ namespace CodeBase.Features.Office
             _isProcessing = true;
             
             transform
-                .TweenMove(transform.position + direction, _stepDuration, Ease.Linear)
+                .TweenMove(transform.position + direction * _stepLength, _stepDuration, Ease.Linear)
                 .OnEnd(_ => _isProcessing = false);
         }
 

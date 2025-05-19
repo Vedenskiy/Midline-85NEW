@@ -3765,6 +3765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7f054cfb3734e5abc2ec19bc94ea76c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stepLength: 2
   _stepDuration: 0.25
   _rotateDuration: 0.25
 --- !u!114 &1547488446
