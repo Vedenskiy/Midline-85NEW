@@ -56,7 +56,8 @@ MonoBehaviour:
     probeVolumeBlendStatesCS: {fileID: 0}
   m_RendererFeatures:
   - {fileID: 3215678937939396580}
-  m_RendererFeatureMap: e44795e7f462a02c
+  - {fileID: 1499274013851303099}
+  m_RendererFeatureMap: e44795e7f462a02cbbbc94a8c57dce14
   m_UseNativeRenderPass: 0
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
@@ -82,6 +83,22 @@ MonoBehaviour:
   m_DepthTextureFormat: 0
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 1
+--- !u!114 &1499274013851303099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cdba9a084b941f993c385676ca58064, type: 3}
+  m_Name: DistortionRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  Shader: {fileID: 4800000, guid: f4817c08ff864a2483b6312e64c71396, type: 3}
+  RenderPassEvent: 550
+  DistortionTexture: {fileID: 2800000, guid: 35e804f03c874832499023ef1f3856d4, type: 3}
 --- !u!114 &3215678937939396580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,6 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: AnalogGlitchRenderFeature
   m_EditorClassIdentifier: CrimeCalls:CodeBase.Features.Office.PostProcessing.Features.Glitch:AnalogGlitchRenderFeature
-  m_Active: 1
+  m_Active: 0
   Shader: {fileID: 4800000, guid: c072e193316544e3ba2cb895292ff6d8, type: 3}
   RenderPassEvent: 550

@@ -10,7 +10,7 @@ namespace CodeBase.Features.Office.PostProcessing.Features
     {
         private static readonly Vector4 ScaleBias = new(1, 1, 0, 0);
 
-        protected readonly Material Material;
+        public readonly Material Material;
         
         protected CustomFullscreenRenderPass(Material material)
         {
