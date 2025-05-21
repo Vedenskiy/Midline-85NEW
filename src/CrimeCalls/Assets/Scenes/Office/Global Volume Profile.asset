@@ -109,7 +109,7 @@ MonoBehaviour:
     m_Value: 0
   StrengthHorizontal:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.162
 --- !u!114 &8175926358170736018
 MonoBehaviour:
   m_ObjectHideFlags: 3
