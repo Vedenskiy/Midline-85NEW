@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4882207304647685906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5170e7f22964c4fbc967c93ab26f4a6, type: 3}
+  m_Name: BlinkEyesRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  Shader: {fileID: 4800000, guid: 553dc1989cad49b7a58ab6d4740191e7, type: 3}
+  RenderPassEvent: 550
 --- !u!114 &-3579693297929111872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,8 +28,8 @@ MonoBehaviour:
   m_Name: AnalogGlitchRenderFeature
   m_EditorClassIdentifier: 
   m_Active: 1
-  _analogGlitchShader: {fileID: 4800000, guid: c072e193316544e3ba2cb895292ff6d8, type: 3}
-  _renderPassEvent: 550
+  Shader: {fileID: 0}
+  RenderPassEvent: 550
 --- !u!114 &-1329480465983574677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55,9 +70,10 @@ MonoBehaviour:
     probeSamplingDebugTexture: {fileID: 0}
     probeVolumeBlendStatesCS: {fileID: 0}
   m_RendererFeatures:
-  - {fileID: 3215678937939396580}
   - {fileID: 1499274013851303099}
-  m_RendererFeatureMap: e44795e7f462a02cbbbc94a8c57dce14
+  - {fileID: 103429328692389039}
+  - {fileID: -4882207304647685906}
+  m_RendererFeatureMap: bbbc94a8c57dce14af24112c6d746f01ee48a8ce52ea3ebc
   m_UseNativeRenderPass: 0
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
@@ -83,6 +99,21 @@ MonoBehaviour:
   m_DepthTextureFormat: 0
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 1
+--- !u!114 &103429328692389039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 124ff27fdf4e45a587beca9006175fc6, type: 3}
+  m_Name: AnalogGlitchRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  Shader: {fileID: 4800000, guid: c072e193316544e3ba2cb895292ff6d8, type: 3}
+  RenderPassEvent: 550
 --- !u!114 &1499274013851303099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdba9a084b941f993c385676ca58064, type: 3}
   m_Name: DistortionRenderFeature
   m_EditorClassIdentifier: 
-  m_Active: 0
+  m_Active: 1
   Shader: {fileID: 4800000, guid: f4817c08ff864a2483b6312e64c71396, type: 3}
   RenderPassEvent: 550
   DistortionTexture: {fileID: 2800000, guid: 35e804f03c874832499023ef1f3856d4, type: 3}

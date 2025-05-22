@@ -25,6 +25,41 @@ MonoBehaviour:
   ColorDrift:
     m_OverrideState: 1
     m_Value: 0
+--- !u!114 &-7804758957409195503
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7417803bee9d4e5d88c3a908155dfaaa, type: 3}
+  m_Name: DistortionVolume
+  m_EditorClassIdentifier: 
+  active: 0
+  StrengthVertical:
+    m_OverrideState: 0
+    m_Value: 0.571
+  StrengthHorizontal:
+    m_OverrideState: 0
+    m_Value: 0.478
+--- !u!114 &-3896371313751569827
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd7601f9869491d8309ec6c9fbb2f49, type: 3}
+  m_Name: BlinkEyesVolume
+  m_EditorClassIdentifier: 
+  active: 1
+  Progress:
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &-3791046915428383211
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -89,8 +124,34 @@ MonoBehaviour:
   m_Name: Global Volume Profile
   m_EditorClassIdentifier: 
   components:
-  - {fileID: -8773145845088906539}
-  - {fileID: 7411459759430148634}
+  - {fileID: 4797585178468399041}
+  - {fileID: -3896371313751569827}
+  - {fileID: -7804758957409195503}
+--- !u!114 &4797585178468399041
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf60a879d401af6b18700ed7a3f46c48, type: 3}
+  m_Name: AnalogGlitchVolume
+  m_EditorClassIdentifier: 
+  active: 1
+  ScanLineJitter:
+    m_OverrideState: 0
+    m_Value: 0.445
+  VerticalJump:
+    m_OverrideState: 0
+    m_Value: 0.233
+  HorizontalShake:
+    m_OverrideState: 0
+    m_Value: 0.141
+  ColorDrift:
+    m_OverrideState: 0
+    m_Value: 0.195
 --- !u!114 &7411459759430148634
 MonoBehaviour:
   m_ObjectHideFlags: 3

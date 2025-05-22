@@ -91,6 +91,11 @@ Shader "Midline/PostProcessing/Distortion"
                 half4 screen = SAMPLE_TEXTURE2D(_BlitTexture, sampler_LinearRepeat, uvwA.xy) * uvwA.z;
                 half4 screen2 = SAMPLE_TEXTURE2D(_BlitTexture, sampler_LinearRepeat, uvwB.xy) * uvwB.z;
                 half4 result = screen + screen2;
+
+
+                float2 newUv = uv;
+                return SAMPLE_TEXTURE2D(_BlitTexture, sampler_LinearRepeat, newUv + fbm(uv + _Time.y, 3) * _Strength);
+                
                 return result;
             }
             ENDHLSL
