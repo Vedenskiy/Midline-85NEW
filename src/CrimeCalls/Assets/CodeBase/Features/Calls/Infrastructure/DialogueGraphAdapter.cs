@@ -28,10 +28,13 @@ namespace CodeBase.Features.Calls.Infrastructure
             _localization = localization;
         }
         
-        public Dialogue GetDialogueFrom(DialogueGraphContainer graph, string levelName, List<TextAsset> localization)
+        public Dialogue GetDialogueFrom(DialogueGraphContainer graph, string levelName, List<TextAsset> localization) => 
+            GetDialogueFrom(graph.Graph, levelName, localization);
+
+        public Dialogue GetDialogueFrom(DialogueGraph graph, string levelName, List<TextAsset> localization)
         {
             InitializeLocalization(localization);
-            return ConvertToDialogue(levelName, graph.Graph);
+            return ConvertToDialogue(levelName, graph);
         }
 
         private void InitializeLocalization(IEnumerable<TextAsset> tables)
@@ -61,7 +64,7 @@ namespace CodeBase.Features.Calls.Infrastructure
             var dialogue = new Dialogue();
 
             dialogue.Nodes = ConvertNodes(graph).ToList();
-            dialogue.Links = ConvertNodeLinks(levelName, graph.Links);
+            dialogue.Links = ConvertNodeLinks(levelName.ToLower(), graph.Links);
             dialogue.EntryNodeId = graph.EntryNodeGuid;
 
             return dialogue;
@@ -101,10 +104,13 @@ namespace CodeBase.Features.Calls.Infrastructure
         private static List<NodeLink> ConvertNodeLinks(string levelName, List<NodeLinks> links) =>
             links.Select(link => new NodeLink()
                 {
-                    ParentId = link.FromPortId.ToLower().StartsWith(levelName) ? link.FromPortId : link.FromGuid,
+                    ParentId = RenameParentId(levelName, link),
                     ChildId = link.ToGuid,
                 })
                 .ToList();
+
+        private static string RenameParentId(string levelName, NodeLinks link) => 
+            link.FromPortId.ToLower().StartsWith(levelName) ? link.FromPortId : link.FromGuid;
 
         private static List<Node> ConvertEmptyNodes(IEnumerable<RedirectNode> nodes) =>
             nodes.Select(node => new Node() 

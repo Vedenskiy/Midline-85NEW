@@ -1,0 +1,4922 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!29 &1
+OcclusionCullingSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_OcclusionBakeSettings:
+    smallestOccluder: 5
+    smallestHole: 0.25
+    backfaceThreshold: 100
+  m_SceneGUID: 00000000000000000000000000000000
+  m_OcclusionCullingData: {fileID: 0}
+--- !u!104 &2
+RenderSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 10
+  m_Fog: 0
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogMode: 3
+  m_FogDensity: 0.01
+  m_LinearFogStart: 0
+  m_LinearFogEnd: 300
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientIntensity: 1
+  m_AmbientMode: 3
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SkyboxMaterial: {fileID: 0}
+  m_HaloStrength: 0.5
+  m_FlareStrength: 1
+  m_FlareFadeSpeed: 3
+  m_HaloTexture: {fileID: 0}
+  m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
+  m_DefaultReflectionMode: 0
+  m_DefaultReflectionResolution: 128
+  m_ReflectionBounces: 1
+  m_ReflectionIntensity: 1
+  m_CustomReflection: {fileID: 0}
+  m_Sun: {fileID: 0}
+  m_UseRadianceAmbientProbe: 0
+--- !u!157 &3
+LightmapSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
+  m_GISettings:
+    serializedVersion: 2
+    m_BounceScale: 1
+    m_IndirectOutputScale: 1
+    m_AlbedoBoost: 1
+    m_EnvironmentLightingMode: 0
+    m_EnableBakedLightmaps: 0
+    m_EnableRealtimeLightmaps: 0
+  m_LightmapEditorSettings:
+    serializedVersion: 12
+    m_Resolution: 2
+    m_BakeResolution: 40
+    m_AtlasSize: 1024
+    m_AO: 0
+    m_AOMaxDistance: 1
+    m_CompAOExponent: 1
+    m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
+    m_Padding: 2
+    m_LightmapParameters: {fileID: 0}
+    m_LightmapsBakeMode: 1
+    m_TextureCompression: 1
+    m_ReflectionCompression: 2
+    m_MixedBakeMode: 2
+    m_BakeBackend: 1
+    m_PVRSampling: 1
+    m_PVRDirectSampleCount: 32
+    m_PVRSampleCount: 512
+    m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 256
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 1
+    m_PVRDenoiserTypeDirect: 1
+    m_PVRDenoiserTypeIndirect: 1
+    m_PVRDenoiserTypeAO: 1
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
+    m_PVREnvironmentMIS: 1
+    m_PVRCulling: 1
+    m_PVRFilteringGaussRadiusDirect: 1
+    m_PVRFilteringGaussRadiusIndirect: 5
+    m_PVRFilteringGaussRadiusAO: 2
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
+  m_LightingDataAsset: {fileID: 0}
+  m_LightingSettings: {fileID: 0}
+--- !u!196 &4
+NavMeshSettings:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_BuildSettings:
+    serializedVersion: 3
+    agentTypeID: 0
+    agentRadius: 0.5
+    agentHeight: 2
+    agentSlope: 45
+    agentClimb: 0.4
+    ledgeDropHeight: 0
+    maxJumpAcrossDistance: 0
+    minRegionArea: 2
+    manualCellSize: 0
+    cellSize: 0.16666667
+    manualTileSize: 0
+    tileSize: 256
+    buildHeightMesh: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
+    debug:
+      m_Flags: 0
+  m_NavMeshData: {fileID: 0}
+--- !u!1 &19252270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 19252271}
+  - component: {fileID: 19252273}
+  - component: {fileID: 19252272}
+  m_Layer: 5
+  m_Name: Main Menu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &19252271
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19252270}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1094176886}
+  - {fileID: 1088945045}
+  m_Father: {fileID: 599333820}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &19252272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19252270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 377a7b0c4af74ba2887b3664e123c292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelsLayout: {fileID: 771622105}
+  _levelDetailsUI: {fileID: 1088945046}
+  _levelCardPrefab: {fileID: 7106419064042877325, guid: eb4589e8de399e982887db6ddf0d2e37, type: 3}
+  _catalog: {fileID: 11400000, guid: 614b4fb076b43cb7e98e899e8c3fa89c, type: 2}
+--- !u!222 &19252273
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19252270}
+  m_CullTransparentMesh: 1
+--- !u!1 &217571973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 217571976}
+  - component: {fileID: 217571975}
+  - component: {fileID: 217571974}
+  - component: {fileID: 217571977}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &217571974
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217571973}
+  m_Enabled: 1
+--- !u!20 &217571975
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217571973}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 1
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &217571976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217571973}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &217571977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217571973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+--- !u!1 &230912863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 230912864}
+  - component: {fileID: 230912865}
+  m_Layer: 5
+  m_Name: Horizontal Layout
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &230912864
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230912863}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 606975799}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &230912865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230912863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!1 &304330188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 304330190}
+  - component: {fileID: 304330189}
+  m_Layer: 0
+  m_Name: SceneScope
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &304330189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304330188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fd1482e4a9dee141aecc5bcd0a4f0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &304330190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304330188}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &442929860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 442929863}
+  - component: {fileID: 442929862}
+  - component: {fileID: 442929861}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &442929861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442929860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &442929862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442929860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &442929863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442929860}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &443931862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 443931863}
+  - component: {fileID: 443931865}
+  - component: {fileID: 443931864}
+  - component: {fileID: 443931866}
+  - component: {fileID: 443931867}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &443931863
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443931862}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 599333820}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 3200, y: 1800}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &443931864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443931862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: a6f9e53ad10496459accaaa0348cb9b8, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &443931865
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443931862}
+  m_CullTransparentMesh: 1
+--- !u!114 &443931866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443931862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa77033d764d4362938400150a74546a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _material: {fileID: 2100000, guid: a6f9e53ad10496459accaaa0348cb9b8, type: 2}
+  _showingDuration: 2
+  _hidingDuration: 2
+--- !u!114 &443931867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443931862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e980d789dfd4ceda578b074b6a0f970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _image: {fileID: 443931864}
+  _shaderController: {fileID: 443931866}
+--- !u!1 &598275940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 598275942}
+  - component: {fileID: 598275941}
+  m_Layer: 0
+  m_Name: Debug Dialogue Scene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &598275941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598275940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8171a3ad9a884685932d24458ae52f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Graph:
+    Name: OldPizza
+    EntryNodeGuid: 5907ed58-11fa-437a-8722-c99c0d98aa55
+    Nodes:
+    - Guid: 5907ed58-11fa-437a-8722-c99c0d98aa55
+      Position:
+        X: 251
+        Y: 202
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.000
+    - Guid: a375a3fe-946a-4008-bbe9-8c30babdcf5a
+      Position:
+        X: 468
+        Y: 216
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.000
+    - Guid: 1b6e6597-130a-497b-90ba-1a58884240c1
+      Position:
+        X: 946
+        Y: 17
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.001
+    - Guid: 2551a4f3-ee1e-47a0-9f2f-9f5cb4b2c40b
+      Position:
+        X: 1172
+        Y: -22
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.001
+    - Guid: 2b72f6af-6e13-492a-8247-0281c1938c54
+      Position:
+        X: 2399
+        Y: -2
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.004
+    - Guid: c221395b-c337-4a4d-858b-3eec7007ce55
+      Position:
+        X: 2589
+        Y: -40
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.004
+    - Guid: c771bbb8-9335-41d7-9994-36a010fbdbc9
+      Position:
+        X: 2403
+        Y: 209
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.005
+    - Guid: ff08412b-0a03-44a7-9d7b-6e54988c296b
+      Position:
+        X: 2596
+        Y: 246
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.005
+    - Guid: f5bac054-03e1-4b9b-890b-bb02d6a85b6d
+      Position:
+        X: 1644
+        Y: -231
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.006
+    - Guid: c9017066-4c30-40c1-abdf-19f41f710885
+      Position:
+        X: 2781
+        Y: 277
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.000
+    - Guid: 6e6a3a06-760f-4806-969b-b78f5f66545d
+      Position:
+        X: 3144
+        Y: 272
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.006
+    - Guid: 192855f9-06f8-4c8b-9bf7-55c932d2a05d
+      Position:
+        X: 938
+        Y: 263
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.007
+    - Guid: acbb5123-6054-45c8-adcf-da42b9587ee6
+      Position:
+        X: 3636
+        Y: 498
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.010
+    - Guid: a1eb0a5d-5a32-416c-a65b-560fcf4e9214
+      Position:
+        X: 3869
+        Y: 496
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.007
+    - Guid: de998f64-8938-4658-a289-0965c88e0ade
+      Position:
+        X: 3635
+        Y: 318
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.009
+    - Guid: e8bc5bd8-657a-442b-9cc6-68669d29b363
+      Position:
+        X: 4342
+        Y: 469
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.012
+    - Guid: 6f8fbfec-4024-4d53-a7f9-3a560cd9761f
+      Position:
+        X: 4558
+        Y: 394
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.008
+    - Guid: 68307461-6f70-492e-9231-2c375379096a
+      Position:
+        X: 5175
+        Y: 662
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.009
+    - Guid: 89c5fb17-74c1-4eec-a749-f8302334bb55
+      Position:
+        X: 5405
+        Y: 629
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.001
+    - Guid: 4d25b26f-f22b-4662-bc9b-02e405995f81
+      Position:
+        X: 5620
+        Y: 692
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.010
+    - Guid: 0ccc1c24-a31e-4636-a3da-7b410d7d2195
+      Position:
+        X: 5830
+        Y: 644
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.014
+    - Guid: b958311f-d027-453d-9454-967883502fab
+      Position:
+        X: 6027
+        Y: 697
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.011
+    - Guid: 7d864c08-def2-42ff-88bc-e0f89076169b
+      Position:
+        X: 6422
+        Y: 704
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.002
+    - Guid: d4f625f0-4f8d-4923-8b0a-ec2b2278b96f
+      Position:
+        X: 6654
+        Y: 705
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.003
+    - Guid: 69d51973-bb85-4003-ae23-60b4bb8968cc
+      Position:
+        X: 7258
+        Y: 634
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.016
+    - Guid: 2d4f086a-a765-4732-afb3-18c92420679d
+      Position:
+        X: 7480
+        Y: 606
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.012
+    - Guid: 819917c1-2bd5-4ea8-be6f-3f5a14e078e8
+      Position:
+        X: 8111
+        Y: 524
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.017
+    - Guid: 96bb3a3c-4648-410a-a421-4c5a289927b8
+      Position:
+        X: 8308
+        Y: 524
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.013
+    - Guid: d357fa3b-d32f-4a05-9916-bca50cb7a4ec
+      Position:
+        X: 8504
+        Y: 518
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.005
+    - Guid: 67ee41cf-b336-43b5-b09c-6158e42db98b
+      Position:
+        X: 8696
+        Y: 531
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.014
+    - Guid: 865b50b9-95ec-4d1f-b1b1-421ca9b12db2
+      Position:
+        X: 8894
+        Y: 539
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.006
+    - Guid: cc00697f-90fb-49c5-82fe-4ad140b17ccf
+      Position:
+        X: 9075
+        Y: 545
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.007
+    - Guid: cb2d2f6d-ba74-46bb-bc68-e21167faec9f
+      Position:
+        X: 9575
+        Y: 676
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.018
+    - Guid: 09f1cf23-11fd-40cf-a684-f30db2efe7e3
+      Position:
+        X: 9759
+        Y: 680
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.015
+    - Guid: f18d945d-8cc0-4195-9b9c-94d3bc276370
+      Position:
+        X: 8124
+        Y: 682
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.019
+    - Guid: 61a51149-c8be-4e39-9ba9-7df53db033fd
+      Position:
+        X: 8313
+        Y: 695
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.016
+    - Guid: a2f67b4e-1e0f-4704-a392-c41b898eb63f
+      Position:
+        X: 8509
+        Y: 695
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.009
+    - Guid: 4215048a-03a1-43b7-b176-65ed4d78fae1
+      Position:
+        X: 8698
+        Y: 706
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.020
+    - Guid: b3d293da-1121-4f22-be83-4773a8e74a76
+      Position:
+        X: 8899
+        Y: 718
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.017
+    - Guid: 9c179be2-4aae-45c0-8c62-e9536fddfbe1
+      Position:
+        X: 9086
+        Y: 725
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.010
+    - Guid: 32cf3566-68a0-481a-a43c-476b478943f2
+      Position:
+        X: 8109
+        Y: 1716
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.024
+    - Guid: 3c346b59-f8ce-435b-9ddd-066ea37234ae
+      Position:
+        X: 8310
+        Y: 1679
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.020
+    - Guid: 486fbe7b-4e0e-474f-86b9-49f1b1057bc9
+      Position:
+        X: 8500
+        Y: 1663
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.011
+    - Guid: 857b30c1-fae5-42ea-8d91-8a871be17bae
+      Position:
+        X: 9102
+        Y: 1596
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.026
+    - Guid: 1c3fb56c-a803-4ae3-bc30-fed35284b414
+      Position:
+        X: 9290
+        Y: 1568
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.013
+    - Guid: f989d0d0-1b32-4422-a72f-bcf392ab33f1
+      Position:
+        X: 9099
+        Y: 1884
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.025
+    - Guid: 66f953a8-d049-42c8-8bd3-662294271f93
+      Position:
+        X: 9305
+        Y: 1903
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.021
+    - Guid: 0375e1e6-e767-41e7-8553-55c82f67b724
+      Position:
+        X: 9499
+        Y: 1574
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.027
+    - Guid: e7949df9-403d-49fb-8bc2-85945d138543
+      Position:
+        X: 9715
+        Y: 1577
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.014
+    - Guid: 315d822a-6d66-4706-ab74-2bd12bcce6af
+      Position:
+        X: 9916
+        Y: 1571
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.028
+    - Guid: 2704b9bd-93c6-4511-a29c-b44e2d30e674
+      Position:
+        X: 10132
+        Y: 1600
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.015
+    - Guid: ac8c9b37-5b15-4453-a272-a693d5b42a37
+      Position:
+        X: 10567
+        Y: 1412
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.029
+    - Guid: c3dfcade-7332-4110-9bff-186b48db3e9b
+      Position:
+        X: 10567
+        Y: 1845
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.030
+    - Guid: ac614bca-626b-4ce0-9f69-be75e677b9c4
+      Position:
+        X: 10565
+        Y: 1641
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.031
+    - Guid: 62a70b4d-279c-4c19-98ab-c6aa827567a1
+      Position:
+        X: 10778
+        Y: 1424
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.016
+    - Guid: c9110cab-d1e0-4500-882c-7695653a9be6
+      Position:
+        X: 10994
+        Y: 1416
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.032
+    - Guid: fcd16f1e-799e-45d4-9e02-06fd6813ea1b
+      Position:
+        X: 11212
+        Y: 1430
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.017
+    - Guid: 01cbbf01-7c49-4fc6-ab3b-545d9c54b74e
+      Position:
+        X: 11469
+        Y: 1637
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.033
+    - Guid: 330f91c7-e80e-40f9-952a-fa008642a00c
+      Position:
+        X: 11695
+        Y: 1641
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.018
+    - Guid: d8536007-3f61-4ec4-a0f5-bfb7cb0936f2
+      Position:
+        X: 11949
+        Y: 1646
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.022
+    - Guid: 2d83c51d-eb0f-4fb4-9f31-ea9f0d4cfc52
+      Position:
+        X: 12421
+        Y: 1578
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.034
+    - Guid: fecbf2a3-f4e3-4ffe-b804-9c3a3ec61863
+      Position:
+        X: 12423
+        Y: 1772
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.035
+    - Guid: e57331b4-ca76-448b-b32b-19125c5f49d3
+      Position:
+        X: 12632
+        Y: 1575
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.023
+    - Guid: 9341934f-a9a4-4bf5-bb06-83d5f5e9a93f
+      Position:
+        X: 12814
+        Y: 1777
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.024
+    - Guid: 6a63cffa-f55a-4d6c-a56c-ac954f112ac1
+      Position:
+        X: 13046
+        Y: 1778
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.036
+    - Guid: 4219cba1-947f-46c9-98f9-c796b42748d0
+      Position:
+        X: 13255
+        Y: 1787
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.025
+    - Guid: c6e7db06-66ca-4ff8-91ed-ad70d190f679
+      Position:
+        X: 13467
+        Y: 1773
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.026
+    - Guid: ec17fd42-eb69-4db2-b5af-01b251ffc4a2
+      Position:
+        X: 13889
+        Y: 1906
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.038
+    - Guid: 7256b16a-029a-458c-88f3-d0de54824adb
+      Position:
+        X: 13893
+        Y: 1734
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.037
+    - Guid: 16aaf540-013e-45d6-b393-a70effd09502
+      Position:
+        X: 14086
+        Y: 1730
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.027
+    - Guid: 3b9cc0ce-6b89-495a-a0b7-dd9dbfa256aa
+      Position:
+        X: 14077
+        Y: 1904
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.028
+    - Guid: 409aed6e-aaba-4f3d-8abf-f1d0a3711231
+      Position:
+        X: 14313.044
+        Y: 1905.2174
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.029
+    - Guid: 3c0437f1-0ef8-4f7a-ba4f-7e9b0fa83494
+      Position:
+        X: 14503
+        Y: 1738
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.030
+    - Guid: 455d0933-97c5-48ae-825d-3bb4caf08e1e
+      Position:
+        X: 7788
+        Y: 2328
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.019
+    - Guid: 59fb8a33-b29f-490d-8774-26ad902bbb1e
+      Position:
+        X: 8286
+        Y: 2222
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.040
+    - Guid: c007899c-f56f-41ce-93d1-2979225facf2
+      Position:
+        X: 8291
+        Y: 2390
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.041
+    - Guid: e9c45187-fe02-47f5-851a-7b4f2796c45c
+      Position:
+        X: 8276
+        Y: 2561
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.042
+    - Guid: b05f9202-f4bb-4d6f-99fc-285a220cffba
+      Position:
+        X: 8498
+        Y: 2177
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.032
+    - Guid: f009fa1a-2650-47d9-ba1f-43a2d9cf6cc3
+      Position:
+        X: 8686
+        Y: 2230
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.020
+    - Guid: a9f15067-c4fa-489d-a78a-c1cce0a109b3
+      Position:
+        X: 9997
+        Y: 1077
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.021
+    - Guid: f90add06-c31a-4deb-bcce-407b0f2c01f9
+      Position:
+        X: 10193
+        Y: 1069
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.018
+    - Guid: 20d71cd5-da3c-4cd1-80a4-0802d2b6f8c8
+      Position:
+        X: 10606
+        Y: 1015
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.022
+    - Guid: 0422a835-b200-4f12-a219-47ebfb74f468
+      Position:
+        X: 10608
+        Y: 1187
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.023
+    - Guid: 3c53da3f-ab7c-484a-ad00-ef0c5d50b383
+      Position:
+        X: 10800
+        Y: 1194
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.019
+    - Guid: 4153428a-ec01-44c1-9841-e53de4888698
+      Position:
+        X: 8492
+        Y: 2376
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.035
+    - Guid: 24abfad9-7b0f-4de3-a2cb-ffbad8c2dcca
+      Position:
+        X: 8988
+        Y: 2450
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.043
+    - Guid: 9ec039bf-32d0-4bf5-bde8-ba12e4df7f36
+      Position:
+        X: 9215
+        Y: 2463
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.033
+    - Guid: 8f340ffc-0e80-4e1d-a170-8a368db87c32
+      Position:
+        X: 9415
+        Y: 2461
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.021
+    - Guid: 45314151-6327-4bd1-b1e7-ede2a2f5a96a
+      Position:
+        X: 9655
+        Y: 2474
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.034
+    - Guid: e32b3338-1b5a-4d98-8665-3c8bea30ff71
+      Position:
+        X: 8469
+        Y: 2570
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.036
+    - Guid: 7478ce65-833e-43c6-83fe-937457aa33ab
+      Position:
+        X: 8688
+        Y: 2385
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.022
+    - Guid: 038412d1-d693-4777-ab5c-110eea956683
+      Position:
+        X: 8689
+        Y: 2681
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.023
+    - Guid: 8b32f37a-9048-46f4-b442-e4db09b60fba
+      Position:
+        X: 10016
+        Y: 2971
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.046
+    - Guid: 9c75acc6-d4e9-490d-949c-cf36bb5359b1
+      Position:
+        X: 10240
+        Y: 3106
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.026
+    - Guid: d41e08a5-a275-4c5d-aa34-cee592827314
+      Position:
+        X: 9574
+        Y: 2808
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.044
+    - Guid: 49ddbca7-eaf1-4b73-b875-30b45059ee8c
+      Position:
+        X: 10019
+        Y: 2682
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.047
+    - Guid: 19443004-2c7b-4e50-bb29-37397e712648
+      Position:
+        X: 10023
+        Y: 2841
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.048
+    - Guid: ad97dd37-e22a-43ff-87f6-0d6b70d47112
+      Position:
+        X: 10236
+        Y: 2828
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.027
+    - Guid: ff388f38-add8-45d6-acd6-05738bfa619d
+      Position:
+        X: 10225
+        Y: 2686
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.028
+    - Guid: f8f14034-c60c-4cb8-9f7e-ff78833ff6fb
+      Position:
+        X: 10438
+        Y: 2655
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.050
+    - Guid: 72c5d513-007e-4272-a42b-4d45409c4e0a
+      Position:
+        X: 10646
+        Y: 2701
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.029
+    - Guid: 0577a7b9-cd62-4b0b-91d8-2547ec539a77
+      Position:
+        X: 10896
+        Y: 2825
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.049
+    - Guid: e9be91ee-af4f-4a65-b932-4195efcf40cc
+      Position:
+        X: 11086
+        Y: 2825
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.051
+    - Guid: a0c4130e-c424-4c7d-b0eb-33055b119a58
+      Position:
+        X: 11278
+        Y: 2825
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.030
+    - Guid: e41b7b40-f966-4d53-a1ad-8972eaf63fa4
+      Position:
+        X: 11473
+        Y: 2834
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.052
+    - Guid: 06683045-1889-4e64-bd6c-0ce769114f1a
+      Position:
+        X: 11684
+        Y: 2804
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.031
+    - Guid: dbd8f986-a610-46c6-8372-d0194343b9b8
+      Position:
+        X: 12109
+        Y: 2784
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.053
+    - Guid: a2d0aaa1-12b4-4c85-8e9b-7c1d66f2f124
+      Position:
+        X: 12107
+        Y: 2917
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.054
+    - Guid: 3a1a159c-a93c-4a9f-ba53-abad8fdc253d
+      Position:
+        X: 12314
+        Y: 2915
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.032
+    - Guid: f82e3452-bc28-4f05-babe-f49dd88898e7
+      Position:
+        X: 16167
+        Y: 2821
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.036
+    - Guid: ca7f22a9-b24c-48a6-bdc4-0975f37f5d5b
+      Position:
+        X: 16377
+        Y: 2830
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.037
+    - Guid: 2b9a97fd-26a8-462e-8fc2-5a597b1f4af0
+      Position:
+        X: 16603
+        Y: 2792
+      PersonId: Police
+      PhraseId: OldPizza.Police.000
+    - Guid: ae9504dd-e608-4f82-b06f-49fb7dfd3f91
+      Position:
+        X: 16833
+        Y: 2850
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.037
+    - Guid: 1fa54cc4-73d8-4a53-98f5-334fa3691f85
+      Position:
+        X: 17068
+        Y: 2829
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.058
+    - Guid: 1b68decb-83d8-4ef9-b2f2-05a0d8010a21
+      Position:
+        X: 11220
+        Y: 1024
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.008
+    - Guid: 28a2a31e-54b1-4303-ac47-150291150ea1
+      Position:
+        X: 10683
+        Y: 3413
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.059
+    - Guid: 5aa90fcd-8bf5-46a5-860a-ac47b419c93f
+      Position:
+        X: 10875
+        Y: 3415
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.038
+    - Guid: bb18057d-a7d7-4827-8225-8b5ca843b644
+      Position:
+        X: 10668
+        Y: 3579
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.060
+    - Guid: f6688a6a-792c-4d34-b96c-aa91975ea2c3
+      Position:
+        X: 10856
+        Y: 3584
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.039
+    - Guid: 0e70d3b0-1bf0-4d1f-91b6-fa9c5ae97f05
+      Position:
+        X: 11055
+        Y: 3592
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.040
+    - Guid: 7941675c-a843-444a-8d18-8379f12234d7
+      Position:
+        X: 11489
+        Y: 3582
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.062
+    - Guid: 5608885e-9619-43c1-9178-d5cbe2645a13
+      Position:
+        X: 11492
+        Y: 3445
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.061
+    - Guid: f0877f6f-0481-4a24-beaf-ed91544504f2
+      Position:
+        X: 11703
+        Y: 3446
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.041
+    - Guid: be236f04-dec6-4eb7-83e6-9ea175183a0b
+      Position:
+        X: 11911
+        Y: 3442
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.038
+    - Guid: ddb29298-b4c7-4c15-a18d-ccb96a5d5d66
+      Position:
+        X: 12105
+        Y: 3445
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.042
+    - Guid: 5cdb285a-66c2-4793-aee9-cb4660891523
+      Position:
+        X: 11701
+        Y: 3591
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.043
+    - Guid: 0d5e0575-9bab-4380-9a53-0e56b5e7621b
+      Position:
+        X: 12389
+        Y: 3616
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.063
+    - Guid: 72ebb99f-3154-4aca-bbe6-6ffb531cea4f
+      Position:
+        X: 12378
+        Y: 3757
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.064
+    - Guid: 41a2de7e-c6f0-4acf-97da-d2db72b732ab
+      Position:
+        X: 12597
+        Y: 3761
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.065
+    - Guid: c2fe1393-6210-4893-b201-3e6b907bd99f
+      Position:
+        X: 13046
+        Y: 3628
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.066
+    - Guid: 547fe20e-b499-45d5-949f-28ab9e642b77
+      Position:
+        X: 13244
+        Y: 3625
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.067
+    - Guid: 4d8a39c2-c19b-4d46-a7e3-380d7e42180a
+      Position:
+        X: 13057
+        Y: 3941
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.068
+    - Guid: d3c27714-9c3d-48e4-8f50-91b8c67416bb
+      Position:
+        X: 13249
+        Y: 3982
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.044
+    - Guid: 9607dc3b-e59f-4a1f-9429-0dbaf81582df
+      Position:
+        X: 13448
+        Y: 3938
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.069
+    - Guid: b2725ba9-bfc7-4920-bd2d-466f05d82906
+      Position:
+        X: 13630
+        Y: 3982
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.045
+    - Guid: db439ada-0b29-4ef8-aa0f-dff6535033bc
+      Position:
+        X: 13817
+        Y: 3933
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.070
+    - Guid: 83302576-ed27-436b-8fae-e0285b885cab
+      Position:
+        X: 14042
+        Y: 4029
+      PersonId: Police
+      PhraseId: OldPizza.Police.001
+    - Guid: dec14c4c-0547-40ac-a5eb-38bcaed0be29
+      Position:
+        X: 14244
+        Y: 3925
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.047
+    - Guid: bf19b801-98b2-4cd4-99df-abd939fb1a8e
+      Position:
+        X: 14455
+        Y: 3930
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.071
+    - Guid: 0e84cb21-f27c-4236-ab46-a115cb2afa9d
+      Position:
+        X: 5243
+        Y: 2833
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.072
+    - Guid: ea1b4cd5-8cfb-4542-84da-16d53db539d7
+      Position:
+        X: 5472
+        Y: 2840
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.039
+    - Guid: cc43cfbc-a5ee-4f20-8a7b-a3540d0ad3e2
+      Position:
+        X: 5938
+        Y: 2769
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.073
+    - Guid: 068217cc-9e42-4724-97f1-d724aaeffd02
+      Position:
+        X: 6140
+        Y: 2770
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.040
+    - Guid: 92254f5a-6a95-4c82-a9ff-39ebe1171a48
+      Position:
+        X: 6383
+        Y: 2778
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.048
+    - Guid: ea671684-aec4-4979-acce-679ad662c461
+      Position:
+        X: 6604
+        Y: 3010
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.075
+    - Guid: 5f623ecc-e0db-42eb-be26-adc3eb3a4349
+      Position:
+        X: 6829
+        Y: 3002
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.042
+    - Guid: 10e7fe11-9355-4aff-9c50-28eff140314b
+      Position:
+        X: 7329
+        Y: 2914
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.076
+    - Guid: 4156cd14-d507-4c92-9415-b0a7dbc25b0f
+      Position:
+        X: 7519
+        Y: 2915
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.043
+    - Guid: 36064d8a-b150-443a-a029-dfb3afb133cd
+      Position:
+        X: 7725
+        Y: 2906
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.050
+    - Guid: 60fdf6e5-1682-41c1-b2b2-9d4ac8816752
+      Position:
+        X: 7335
+        Y: 3071
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.077
+    - Guid: ba8929b3-4d18-42f1-8472-c5d7e864eda6
+      Position:
+        X: 7340
+        Y: 3192
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.078
+    - Guid: 70d0d33a-e740-4a50-8a0d-03319eaee09a
+      Position:
+        X: 7709
+        Y: 3197
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.051
+    - Guid: 42e30438-541e-4928-9143-21b844182938
+      Position:
+        X: 9583
+        Y: 3113
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.045
+    - Guid: 948c3aec-36bf-4e1c-a3bc-effb222f0d0e
+      Position:
+        X: 5954
+        Y: 3088
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.074
+    - Guid: 19616a0d-f289-47b6-9b5b-1eb0f2d107fc
+      Position:
+        X: 6158
+        Y: 3078
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.041
+    - Guid: df65c611-111d-49ad-8740-5f33330f395b
+      Position:
+        X: 6388
+        Y: 3088
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.049
+    - Guid: 28a0ab77-e06d-4f33-92f6-007e1bd098a1
+      Position:
+        X: 12760
+        Y: 2775
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.056
+    - Guid: 77eb5079-d2f9-4fad-b8df-6fe60454b4da
+      Position:
+        X: 12757
+        Y: 3140
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.055
+    - Guid: e28decee-effe-4d9a-95b9-e8994ef528be
+      Position:
+        X: 12970
+        Y: 3155
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.034
+    - Guid: 2eb1ce6e-0c45-467d-aa5d-811c640e51ef
+      Position:
+        X: 12948
+        Y: 2776
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.035
+    - Guid: 22de24eb-4df7-415d-9394-4fa85276be7e
+      Position:
+        X: 13147
+        Y: 2774
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.057
+    - Guid: 8178ae2a-66c8-4f08-9c63-96ec20a0a352
+      Position:
+        X: 3650
+        Y: -347
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.008
+    - Guid: 3faf3c6e-855e-49b0-9a9d-f69e793ba9f9
+      Position:
+        X: 3882
+        Y: -348
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.044
+    - Guid: ea29126b-5592-48c4-ac6b-291db7f8e2fc
+      Position:
+        X: 4308
+        Y: -490
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.079
+    - Guid: 9f54a24d-8d77-475e-8242-916c44206e6f
+      Position:
+        X: 4331
+        Y: -298
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.080
+    - Guid: bd7596d5-53d4-4327-94de-648130074f2f
+      Position:
+        X: 4555
+        Y: -300
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.046
+    - Guid: 2959c60f-49c5-484b-b88e-ebe76ac3ebbf
+      Position:
+        X: 4534
+        Y: -490
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.045
+    - Guid: d1901972-a08b-422c-bc3a-385604fd4118
+      Position:
+        X: 4806
+        Y: -390
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.052
+    - Guid: 2bdffc66-5513-4f63-872b-861cbdcd55f1
+      Position:
+        X: 5002
+        Y: -388
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.047
+    - Guid: 2f1c20dd-a821-4ff2-aa0b-1edf96212a86
+      Position:
+        X: 4956
+        Y: 623
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.011
+    - Guid: e1269a8f-bc0c-4e12-be3e-81e137c36473
+      Position:
+        X: 7688
+        Y: 622
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.004
+    - Guid: 1cb4c9dd-7884-488f-967a-cdbab2a486bd
+      Position:
+        X: 4946
+        Y: 115
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.013
+    - Guid: 645b0a0a-c510-47e9-b3b5-fd1ef25c2cba
+      Position:
+        X: 6218
+        Y: 656
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.015
+    - Guid: 922ab4d0-76a2-4cbc-96a7-4e16543abc6c
+      Position:
+        X: 5111
+        Y: 216
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.048
+    - Guid: cb82629a-fe1c-460a-b860-3b8bcc9d698b
+      Position:
+        X: 5286
+        Y: 118
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.053
+    - Guid: b0fc83ca-1048-4271-bc07-95cfc6894842
+      Position:
+        X: 5471
+        Y: 234
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.049
+    - Guid: a66f95fa-d3fc-4fc3-87a5-3499408e08fa
+      Position:
+        X: 5634
+        Y: 127
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.082
+    - Guid: 121aa16f-8d09-459f-a19f-194d8760cd9d
+      Position:
+        X: 5814
+        Y: 215
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.050
+    - Guid: 1b54fdf1-53bd-41ca-bd7f-2201d5774730
+      Position:
+        X: 5998
+        Y: 124
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.054
+    - Guid: 9cf59f8e-ffa3-471c-a2af-8e46daf2a927
+      Position:
+        X: 6431
+        Y: 105
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.083
+    - Guid: 600e8f0a-9fc4-4e2b-beb4-8ad10f66c84d
+      Position:
+        X: 6432
+        Y: 272
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.084
+    - Guid: c8136f07-f683-4fd8-b5d6-7ba16c399a7a
+      Position:
+        X: 6628
+        Y: 270
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.051
+    - Guid: be72eae4-3655-439a-9f00-fe48e1ce6a22
+      Position:
+        X: 6639
+        Y: 108
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.052
+    - Guid: 426e151a-26cb-4913-8cb7-5dc2159ba2e6
+      Position:
+        X: 6649
+        Y: 466
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.055
+    - Guid: 69bcf123-4f93-406d-bc13-6e30190f41d5
+      Position:
+        X: 6914
+        Y: 105
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.056
+    - Guid: ec45de55-5a2e-46bb-863c-38872d311458
+      Position:
+        X: 7351
+        Y: 2352
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.039
+    - Guid: 817c7afb-77ab-4563-90cb-6718354beda3
+      Position:
+        X: 7565
+        Y: 2325
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.031
+    - Guid: 6c8f48c8-5e70-4eb4-83bd-5523a4f21fba
+      Position:
+        X: 8905
+        Y: 2772
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.024
+    - Guid: dd42edd5-199a-4218-ab16-ffbfd03d867d
+      Position:
+        X: 9114
+        Y: 2767
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.025
+    - Guid: 9f3f7cbe-3e1a-4b45-9ef7-6bd918cb8e8a
+      Position:
+        X: 8698
+        Y: 1666
+      PersonId: Geogre
+      PhraseId: OldPizza.Geogre.012
+    - Guid: 489b4994-c65d-4a7a-a5b3-00ca8d721194
+      Position:
+        X: 1880
+        Y: -88
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.003
+    - Guid: 5ae0420a-53f8-476c-b3f1-868a9477034a
+      Position:
+        X: 1878
+        Y: 241
+      PersonId: Girl
+      PhraseId: OldPizza.Girl.002
+    - Guid: 9dafa0b8-64e4-4b07-ba6d-58888861f6a4
+      Position:
+        X: 1663
+        Y: -83
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.003
+    - Guid: 1d3b03e1-46e5-4ab6-89b3-edee627ea95b
+      Position:
+        X: 1637
+        Y: 213
+      PersonId: Elena
+      PhraseId: OldPizza.Elena.002
+    Images:
+    - Guid: 65d1e1a7-49d7-454a-999a-847bc1bfd84e
+      Position:
+        X: 467
+        Y: 343
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/girl_001.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 538800fa-70eb-4c9a-979c-25fde6d4765b
+      Position:
+        X: 6148
+        Y: 2899
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/girl_003.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 344b17c3-4bc4-4478-a020-5d01dcf4b921
+      Position:
+        X: 6393
+        Y: 2904
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_022.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 8d12aafc-ac81-4c0e-a3d3-78b7b23b54bc
+      Position:
+        X: 6391
+        Y: 3233
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/susp1.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: e902792d-815e-4121-8fe2-47afc8db85c4
+      Position:
+        X: 7706
+        Y: 3326
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_020.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 0071d55d-cc9f-46ea-acff-783e594d7b8d
+      Position:
+        X: 8911
+        Y: 2908
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/susp2.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: c7aa6d65-97df-4017-9099-8e31a49b1b41
+      Position:
+        X: 10028
+        Y: 2515
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_045.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 6a305ef7-16c1-49f2-9174-4a2f784bd2c2
+      Position:
+        X: 10647
+        Y: 2529
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_047a.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: d8004b51-6ae8-4080-977a-023117a5e76a
+      Position:
+        X: 11277
+        Y: 2934
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_047.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 6687f724-27d4-4a8d-8709-4dc435201b12
+      Position:
+        X: 12330
+        Y: 3203
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/susp3.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: e418cd22-34aa-40ee-9b9f-b29199a70c0b
+      Position:
+        X: 12753
+        Y: 2938
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_025.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 4a14db8c-867f-41b0-972a-377c69a8cd2e
+      Position:
+        X: 16612
+        Y: 2941
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/police_002.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 7cf0713f-d5fd-4b98-8b1c-88682ccab458
+      Position:
+        X: 17085
+        Y: 2949
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/elena_085.png
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 397b7be0-a094-432e-af01-b0c6c5cb360e
+      Position:
+        X: 3886
+        Y: -524
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/girl_003.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 8ef060bb-d195-4d5c-b636-881400c4e504
+      Position:
+        X: 5411
+        Y: 779
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/susp1.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: f7962097-002e-4c43-a4f5-9f477a0310a2
+      Position:
+        X: 6226
+        Y: 779
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_020.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: ec3de095-8ccf-4cfb-b227-6bcb9d05f01b
+      Position:
+        X: 6858
+        Y: 265
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_020.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 220d7c7d-2aff-40cd-b200-8c89e021d429
+      Position:
+        X: 7791
+        Y: 2464
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_023.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 1e73e2f2-7fe0-4468-9ce4-e3d63cd7a5c9
+      Position:
+        X: 8901
+        Y: 2571
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_016.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: e2489367-0d1e-4b31-bd45-b9d3836fba19
+      Position:
+        X: 10448
+        Y: 3264
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/susp2.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: d2f6a7d8-4902-426a-b3c8-40ac736fcc20
+      Position:
+        X: 11073
+        Y: 3720
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_001.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: f84fc4ad-ae5a-4622-bbd0-bbfbd1957901
+      Position:
+        X: 11703
+        Y: 3289
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_022.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 2fa91983-244e-477b-8399-d7fe7723c97e
+      Position:
+        X: 11702
+        Y: 3715
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_023.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: e65cdf5b-d68d-423a-a1da-5ece1609e410
+      Position:
+        X: 13249
+        Y: 4093
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_025.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 31a201bb-2e45-4872-99e4-9761f0dc644f
+      Position:
+        X: 13636
+        Y: 4127
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_001.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 0405cf31-72ac-416f-b0a7-2845454486d0
+      Position:
+        X: 14045
+        Y: 4186
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/police_002.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: f149c15e-63e6-445a-ad72-fc94827701ca
+      Position:
+        X: 9299
+        Y: 2046
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_034.png
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: edeb494b-3a1c-4adc-9863-9cb0b1b051a5
+      Position:
+        X: 9299
+        Y: 1716
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_047a.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: cd6f0a2a-1a68-48dc-875b-3054120af7cd
+      Position:
+        X: 9911
+        Y: 1734
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_025.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: fbc82722-c50e-4b4a-b0ba-1fa8d5c1825d
+      Position:
+        X: 11703
+        Y: 1762
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/out.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: a12170ac-44ed-4888-b00b-68ea02100506
+      Position:
+        X: 13467
+        Y: 1906
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/girl_042.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 954329bf-8bc1-4ed4-b642-1e1dbe44fa1d
+      Position:
+        X: 1874
+        Y: 59
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/please.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 6cca2bd9-4f7d-4084-b10c-a63572b49b63
+      Position:
+        X: 2591
+        Y: 70
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/End-Call.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 07dec059-94c0-4771-8893-4aacb43998c4
+      Position:
+        X: 2787
+        Y: 88
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_001.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 9a90982f-9d92-4bb3-93a8-446218ca4eeb
+      Position:
+        X: 7687
+        Y: 778
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_016.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: dac85a7a-33fa-4f3e-ad9e-ea7b19373d4b
+      Position:
+        X: 8311
+        Y: 828
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_047.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: a8253a26-8f85-4f81-b25e-d5fc30d7b43d
+      Position:
+        X: 8501
+        Y: 355
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_023.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    - Guid: 291edfc5-8b7d-4054-aa37-623ee38687db
+      Position:
+        X: 9080
+        Y: 389
+      PathToImage: Assets/ResourcesAddressables/Calls/OldPizza/Images/george_022.jpg
+      DurationInSeconds: 0
+      IgnoreDuration: 0
+    Interludes: []
+    Popups: []
+    Placements: []
+    ChoiceNodes:
+    - Guid: 7f03baae-78bf-4461-97a0-c010e79a1c62
+      Position:
+        X: 684
+        Y: 218
+      Choices:
+      - ChoiceId: OldPizza.Button.000
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.001
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.002
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: 9038ec9f-366e-4b76-86e4-a3b95328b140
+      Position:
+        X: 1403
+        Y: -104
+      Choices:
+      - ChoiceId: OldPizza.Button.003
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.004
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.005
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: dcf481bc-bffb-46bb-bc65-b5eee21e03e2
+      Position:
+        X: 2158
+        Y: 75
+      Choices:
+      - ChoiceId: OldPizza.Button.006
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.007
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: e6c52287-5c84-4157-b078-834b7615549e
+      Position:
+        X: 3380
+        Y: 275
+      Choices:
+      - ChoiceId: OldPizza.Button.008
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.009
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.010
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: 5cb5a656-b57d-460a-a499-487dc1c75ca1
+      Position:
+        X: 4087
+        Y: 499
+      Choices:
+      - ChoiceId: OldPizza.Button.011
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.012
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: b29da8b7-ee20-404f-ba94-91bca6a6785b
+      Position:
+        X: 4758
+        Y: 412
+      Choices:
+      - ChoiceId: OldPizza.Button.013
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.014
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: b99142bf-adaa-4d08-accc-9ac19520bfcc
+      Position:
+        X: 7012
+        Y: 707
+      Choices:
+      - ChoiceId: OldPizza.Button.015
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.016
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: 8b41b639-73c4-4074-9678-88327d22d70b
+      Position:
+        X: 7910
+        Y: 633
+      Choices:
+      - ChoiceId: OldPizza.Button.017
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.018
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.019
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: 73747d6e-8f92-4468-9600-ce4e14cf5433
+      Position:
+        X: 9291
+        Y: 552
+      Choices:
+      - ChoiceId: OldPizza.Button.020
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.021
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: a49f343a-863f-49cb-8af5-42d604223d61
+      Position:
+        X: 8912
+        Y: 1652
+      Choices:
+      - ChoiceId: OldPizza.Button.024
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.025
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: 15448105-643f-405f-8051-a6d13e36b083
+      Position:
+        X: 10335
+        Y: 1600
+      Choices:
+      - ChoiceId: OldPizza.Button.026
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.027
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.028
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: 399de9ad-4245-4994-a504-9c9484805589
+      Position:
+        X: 12213
+        Y: 1650
+      Choices:
+      - ChoiceId: OldPizza.Button.029
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.030
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: 14ff94d7-9cd1-408d-be14-d64b77eacbe3
+      Position:
+        X: 13690
+        Y: 1787
+      Choices:
+      - ChoiceId: OldPizza.Button.031
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.032
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: 7e20614c-02c0-4e19-a3dc-d2e2cd09cb2c
+      Position:
+        X: 8013
+        Y: 2343
+      Choices:
+      - ChoiceId: OldPizza.Button.033
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.034
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.035
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: ae03995e-7787-4585-8543-4a815d1f29d8
+      Position:
+        X: 10399
+        Y: 1070
+      Choices:
+      - ChoiceId: OldPizza.Button.022
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.023
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: 25fa8591-0974-4328-aa39-2fb8fc765f08
+      Position:
+        X: 9343
+        Y: 2798
+      Choices:
+      - ChoiceId: OldPizza.Button.036
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.037
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: e873229d-23d4-4c40-a2db-38d9ab6db184
+      Position:
+        X: 9804
+        Y: 2808
+      Choices:
+      - ChoiceId: OldPizza.Button.038
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.039
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.040
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: df3fa722-9321-4154-92df-7cc5c20b4faf
+      Position:
+        X: 11902
+        Y: 2815
+      Choices:
+      - ChoiceId: OldPizza.Button.041
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.042
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: 895352bb-731e-44f4-85d7-aa6eed1b5a35
+      Position:
+        X: 12553
+        Y: 2914
+      Choices:
+      - ChoiceId: OldPizza.Button.043
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.044
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: d8f07935-9ddd-431e-b695-b94933316448
+      Position:
+        X: 10447
+        Y: 3461
+      Choices:
+      - ChoiceId: OldPizza.Button.045
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.046
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: dc71fd37-09fe-4d08-af69-b94c85b2e119
+      Position:
+        X: 11256
+        Y: 3423
+      Choices:
+      - ChoiceId: OldPizza.Button.047
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.048
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: 732dcbd7-e3b7-433e-988b-0dab9ec67f77
+      Position:
+        X: 11921
+        Y: 3597
+      Choices:
+      - ChoiceId: OldPizza.Button.049
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.050
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: efec4108-969a-49d7-b53e-d0f871e2828f
+      Position:
+        X: 12838
+        Y: 3777
+      Choices:
+      - ChoiceId: OldPizza.Button.051
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.052
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: 220f7a7b-46f5-4b8c-8160-576319374b66
+      Position:
+        X: 5693
+        Y: 2852
+      Choices:
+      - ChoiceId: OldPizza.Button.053
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.054
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: a8e717d2-3e7d-4d54-b7f2-4b65dabcf419
+      Position:
+        X: 7046
+        Y: 3015
+      Choices:
+      - ChoiceId: OldPizza.Button.055
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.056
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.057
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: 4462717f-bc95-4ffa-8ade-e88a08914528
+      Position:
+        X: 4113
+        Y: -351
+      Choices:
+      - ChoiceId: OldPizza.Button.058
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.059
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.060
+        IsLocked: 0
+        UnlockedCondition: 
+    - Guid: 162eddab-ef07-4d7a-ae05-bad09b29ace7
+      Position:
+        X: 6200
+        Y: 187
+      Choices:
+      - ChoiceId: OldPizza.Button.061
+        IsLocked: 0
+        UnlockedCondition: 
+      - ChoiceId: OldPizza.Button.062
+        IsLocked: 0
+        UnlockedCondition: 
+    SwitchNodes: []
+    VariableNodes:
+    - Guid: 3ac612ad-f6c7-4ad5-b2cb-0e11b13d0077
+      Position:
+        X: 8509
+        Y: 867
+      Name: pizza.emotions
+      Value: 1
+    - Guid: 8da56002-5e99-41cf-b200-56338a6ced6f
+      Position:
+        X: 8500
+        Y: 1816
+      Name: pizza.emotions
+      Value: 1
+    - Guid: 6b36ba7d-ed69-4163-be60-0a2d44beaea1
+      Position:
+        X: 9486
+        Y: 1374
+      Name: pizza.emotions
+      Value: -1
+    - Guid: 00336cdd-5742-4c77-aadd-b12ef002b01b
+      Position:
+        X: 8692
+        Y: 2087
+      Name: pizza.emotions
+      Value: -1
+    - Guid: 3c385378-84a8-4d9f-a9f0-353d59eb8c43
+      Position:
+        X: 8700
+        Y: 2529
+      Name: pizza.emotions
+      Value: 2
+    - Guid: 63f600b4-1d28-4ed5-a7e3-a7039a1350ed
+      Position:
+        X: 12320
+        Y: 3047
+      Name: pizza.emotions
+      Value: 1
+    - Guid: dae7a4ee-adde-4c32-bc7e-9f9b28a87d19
+      Position:
+        X: 10859
+        Y: 3717
+      Name: pizza.emotions
+      Value: 1
+    - Guid: 826e179f-205c-4ce8-a0d5-365c2ca4a68a
+      Position:
+        X: 6376
+        Y: 2639
+      Name: pizza.emotions
+      Value: 1
+    - Guid: a3dcef1d-7861-4232-8c92-c1dd2cca5397
+      Position:
+        X: 6619
+        Y: 873
+      Name: pizza.emotions
+      Value: 1
+    RedirectNodes:
+    - Guid: f370e2fd-d7f1-49df-b87c-8a41f38feff1
+      Position:
+        X: 3057
+        Y: -180
+    - Guid: e1b1d972-0a4a-44b0-a2c6-1d6df8018e8e
+      Position:
+        X: 3067
+        Y: 415
+    - Guid: 902b517a-29c3-46b4-a48d-7741cad512f6
+      Position:
+        X: 4412.5503
+        Y: 670.4501
+    - Guid: 4cf83c2b-562f-4bbd-8bdb-0959e43f0db6
+      Position:
+        X: 1133
+        Y: 407
+    - Guid: 79630acd-c846-4fad-b9c4-d426138fa69a
+      Position:
+        X: 11112
+        Y: 1210
+    - Guid: 29dc6d94-2bc9-496b-9ec2-26106f22de90
+      Position:
+        X: 11109
+        Y: 732
+    - Guid: ac3b3f3c-d8a0-4cba-b42e-ff463f8a9b5e
+      Position:
+        X: 9818
+        Y: 1128
+    - Guid: 06c05a1f-695c-4866-8312-701315e21b60
+      Position:
+        X: 16034
+        Y: 1085
+    - Guid: 65eae56d-d7cb-423e-b09d-1884b2822199
+      Position:
+        X: 8795
+        Y: 2948
+    - Guid: 208f23f7-d265-4bec-bfb8-f8c848fc755f
+      Position:
+        X: 9401
+        Y: 3227
+    Links:
+    - FromGuid: 5907ed58-11fa-437a-8722-c99c0d98aa55
+      FromPortId: e088663c-f77d-4ba7-93e4-d2f42bdfe7cf
+      ToGuid: a375a3fe-946a-4008-bbe9-8c30babdcf5a
+      ToPortId: 04c5a81c-69f9-4909-ba14-7fdaf10c16c8
+    - FromGuid: a375a3fe-946a-4008-bbe9-8c30babdcf5a
+      FromPortId: e34cf787-d515-497b-b48a-03fc6ee80f69
+      ToGuid: 7f03baae-78bf-4461-97a0-c010e79a1c62
+      ToPortId: 36ed5c1c-b2b0-469b-aef5-5a2cce7e7454
+    - FromGuid: 7f03baae-78bf-4461-97a0-c010e79a1c62
+      FromPortId: OldPizza.Button.000
+      ToGuid: 1b6e6597-130a-497b-90ba-1a58884240c1
+      ToPortId: 817001e5-7e89-4207-926c-f31c77f6280b
+    - FromGuid: 1b6e6597-130a-497b-90ba-1a58884240c1
+      FromPortId: 019e3a5d-e035-4d03-a732-87bb36f0fa7b
+      ToGuid: 2551a4f3-ee1e-47a0-9f2f-9f5cb4b2c40b
+      ToPortId: 96bc5ff7-ba08-43a5-8af9-be6841ab3114
+    - FromGuid: 2551a4f3-ee1e-47a0-9f2f-9f5cb4b2c40b
+      FromPortId: 10b57baa-77d3-478a-b0eb-0b5191c14cb1
+      ToGuid: 9038ec9f-366e-4b76-86e4-a3b95328b140
+      ToPortId: 70365893-7f9d-40a3-b780-ea8841670874
+    - FromGuid: 1d3b03e1-46e5-4ab6-89b3-edee627ea95b
+      FromPortId: 675a7f80-a28e-47b1-a0c1-4a1a40075ab1
+      ToGuid: 5ae0420a-53f8-476c-b3f1-868a9477034a
+      ToPortId: 780b8ee2-1c2f-4450-b390-ace3d5b4f442
+    - FromGuid: 9038ec9f-366e-4b76-86e4-a3b95328b140
+      FromPortId: OldPizza.Button.005
+      ToGuid: 1d3b03e1-46e5-4ab6-89b3-edee627ea95b
+      ToPortId: f4786348-4f53-46e1-9dbc-c757c951aff2
+    - FromGuid: 9038ec9f-366e-4b76-86e4-a3b95328b140
+      FromPortId: OldPizza.Button.004
+      ToGuid: 9dafa0b8-64e4-4b07-ba6d-58888861f6a4
+      ToPortId: 5a442f16-193a-420f-a6b6-9b2ef39571e2
+    - FromGuid: 9dafa0b8-64e4-4b07-ba6d-58888861f6a4
+      FromPortId: df04fb75-bee4-4e8c-a88d-e444df6d77dd
+      ToGuid: 489b4994-c65d-4a7a-a5b3-00ca8d721194
+      ToPortId: 3528994d-9ac3-4fec-b32c-f89ba7cac92c
+    - FromGuid: 489b4994-c65d-4a7a-a5b3-00ca8d721194
+      FromPortId: 7676f27d-fbc9-477c-831e-25a21f5ddfdf
+      ToGuid: dcf481bc-bffb-46bb-bc65-b5eee21e03e2
+      ToPortId: 9b6f353d-c5f0-4f9e-ae30-3df5d1a8c8de
+    - FromGuid: 5ae0420a-53f8-476c-b3f1-868a9477034a
+      FromPortId: 6c470562-8019-4558-86e5-a08038f46409
+      ToGuid: dcf481bc-bffb-46bb-bc65-b5eee21e03e2
+      ToPortId: 9b6f353d-c5f0-4f9e-ae30-3df5d1a8c8de
+    - FromGuid: dcf481bc-bffb-46bb-bc65-b5eee21e03e2
+      FromPortId: OldPizza.Button.006
+      ToGuid: 2b72f6af-6e13-492a-8247-0281c1938c54
+      ToPortId: 30c9b2e6-50b6-4493-bf5e-ef22319dbd8e
+    - FromGuid: 2b72f6af-6e13-492a-8247-0281c1938c54
+      FromPortId: 3976d935-41e3-4921-804f-a4e4e4f5f7ed
+      ToGuid: c221395b-c337-4a4d-858b-3eec7007ce55
+      ToPortId: dedf1bbf-749b-46a7-93b3-208dc8dd6bb8
+    - FromGuid: c221395b-c337-4a4d-858b-3eec7007ce55
+      FromPortId: 0920227e-9ea5-442d-a5a4-2af35c043e5d
+      ToGuid: 5dd5258a-a88c-46b6-89bf-6236a6c20701
+      ToPortId: 10f02b0b-f219-4f6a-b265-45d1046e4163
+    - FromGuid: dcf481bc-bffb-46bb-bc65-b5eee21e03e2
+      FromPortId: OldPizza.Button.007
+      ToGuid: c771bbb8-9335-41d7-9994-36a010fbdbc9
+      ToPortId: 6e8f7599-9db5-486e-88c8-0365cac97cbd
+    - FromGuid: c771bbb8-9335-41d7-9994-36a010fbdbc9
+      FromPortId: 1fbed97e-0ba8-474a-b4a0-990136b682de
+      ToGuid: ff08412b-0a03-44a7-9d7b-6e54988c296b
+      ToPortId: cf8ae5c8-f096-4689-b201-db4350d45af3
+    - FromGuid: 9038ec9f-366e-4b76-86e4-a3b95328b140
+      FromPortId: OldPizza.Button.003
+      ToGuid: f5bac054-03e1-4b9b-890b-bb02d6a85b6d
+      ToPortId: 4e70cd35-33be-4275-9fab-e5afd08e776d
+    - FromGuid: ff08412b-0a03-44a7-9d7b-6e54988c296b
+      FromPortId: 97571ba1-59f2-4831-8b94-b74c0e827319
+      ToGuid: c9017066-4c30-40c1-abdf-19f41f710885
+      ToPortId: 8672fc9a-66b7-4458-8194-592f9279a724
+    - FromGuid: c9017066-4c30-40c1-abdf-19f41f710885
+      FromPortId: 481ba9e5-ac77-4a42-a91f-28ef0d4dfda1
+      ToGuid: 6e6a3a06-760f-4806-969b-b78f5f66545d
+      ToPortId: 830a6369-7d7b-487f-8116-b953891640e8
+    - FromGuid: f5bac054-03e1-4b9b-890b-bb02d6a85b6d
+      FromPortId: 9ba5eaa3-7004-4e9f-bb0a-db3dd0f4b2d4
+      ToGuid: f370e2fd-d7f1-49df-b87c-8a41f38feff1
+      ToPortId: dc0c7640-4c68-4def-b887-41880dd44071
+    - FromGuid: f370e2fd-d7f1-49df-b87c-8a41f38feff1
+      FromPortId: 06c8ba5f-b46e-4820-8e49-7873456f4c81
+      ToGuid: 6e6a3a06-760f-4806-969b-b78f5f66545d
+      ToPortId: 830a6369-7d7b-487f-8116-b953891640e8
+    - FromGuid: 7f03baae-78bf-4461-97a0-c010e79a1c62
+      FromPortId: OldPizza.Button.001
+      ToGuid: 192855f9-06f8-4c8b-9bf7-55c932d2a05d
+      ToPortId: ed500f66-e27e-49e7-b451-d32cd24eb69b
+    - FromGuid: e1b1d972-0a4a-44b0-a2c6-1d6df8018e8e
+      FromPortId: 0443f900-f18f-4c6a-b3d6-cd7273c3b940
+      ToGuid: 6e6a3a06-760f-4806-969b-b78f5f66545d
+      ToPortId: 830a6369-7d7b-487f-8116-b953891640e8
+    - FromGuid: 6e6a3a06-760f-4806-969b-b78f5f66545d
+      FromPortId: fd0a1d62-8a8b-4ba9-a184-e7a049bb7fc9
+      ToGuid: e6c52287-5c84-4157-b078-834b7615549e
+      ToPortId: 7beeb860-987c-4ffe-ad45-d1f5715a7198
+    - FromGuid: e6c52287-5c84-4157-b078-834b7615549e
+      FromPortId: OldPizza.Button.008
+      ToGuid: 8178ae2a-66c8-4f08-9c63-96ec20a0a352
+      ToPortId: 69d5cfa3-1bc3-4cf2-a573-1642e426c430
+    - FromGuid: e6c52287-5c84-4157-b078-834b7615549e
+      FromPortId: OldPizza.Button.009
+      ToGuid: de998f64-8938-4658-a289-0965c88e0ade
+      ToPortId: 00687cd0-f1bc-467a-b1c6-86456a3a30fa
+    - FromGuid: e6c52287-5c84-4157-b078-834b7615549e
+      FromPortId: OldPizza.Button.010
+      ToGuid: acbb5123-6054-45c8-adcf-da42b9587ee6
+      ToPortId: 9d750774-9d77-41ae-a36e-55eb104855d8
+    - FromGuid: acbb5123-6054-45c8-adcf-da42b9587ee6
+      FromPortId: 879b85bb-4085-435d-91a4-32f02ae48f7b
+      ToGuid: a1eb0a5d-5a32-416c-a65b-560fcf4e9214
+      ToPortId: 05e2a19a-6210-48f3-9fd6-a713b4b831c8
+    - FromGuid: a1eb0a5d-5a32-416c-a65b-560fcf4e9214
+      FromPortId: 107cd65e-2af7-4e94-8fb0-88e188cb265b
+      ToGuid: 5cb5a656-b57d-460a-a499-487dc1c75ca1
+      ToPortId: 577c7e8d-dacb-4400-ad94-b83fcf2caea6
+    - FromGuid: 5cb5a656-b57d-460a-a499-487dc1c75ca1
+      FromPortId: OldPizza.Button.011
+      ToGuid: e8bc5bd8-657a-442b-9cc6-68669d29b363
+      ToPortId: 53a6eccb-19a6-4344-813e-02e95af5fca5
+    - FromGuid: e8bc5bd8-657a-442b-9cc6-68669d29b363
+      FromPortId: 58ec9129-5ce1-49e5-8113-76d6acdf2fab
+      ToGuid: 6f8fbfec-4024-4d53-a7f9-3a560cd9761f
+      ToPortId: 9ab8fb26-2b45-4bfb-8b00-65c0339aa389
+    - FromGuid: 6f8fbfec-4024-4d53-a7f9-3a560cd9761f
+      FromPortId: fe1b6d89-f606-4ba9-9425-33b7e3791465
+      ToGuid: b29da8b7-ee20-404f-ba94-91bca6a6785b
+      ToPortId: 4d44e68e-03e8-4764-b02b-9b4574db42af
+    - FromGuid: 5cb5a656-b57d-460a-a499-487dc1c75ca1
+      FromPortId: OldPizza.Button.012
+      ToGuid: 902b517a-29c3-46b4-a48d-7741cad512f6
+      ToPortId: d2d0393e-3e80-4ebe-ba60-c9a869f74385
+    - FromGuid: 902b517a-29c3-46b4-a48d-7741cad512f6
+      FromPortId: fbf9f92b-c21d-44ed-b921-32bb0bf10231
+      ToGuid: 2f1c20dd-a821-4ff2-aa0b-1edf96212a86
+      ToPortId: 196f4187-11dc-4f37-99b6-02370444900e
+    - FromGuid: b29da8b7-ee20-404f-ba94-91bca6a6785b
+      FromPortId: OldPizza.Button.014
+      ToGuid: 2f1c20dd-a821-4ff2-aa0b-1edf96212a86
+      ToPortId: 196f4187-11dc-4f37-99b6-02370444900e
+    - FromGuid: b29da8b7-ee20-404f-ba94-91bca6a6785b
+      FromPortId: OldPizza.Button.013
+      ToGuid: 1cb4c9dd-7884-488f-967a-cdbab2a486bd
+      ToPortId: e14cf913-9db4-49f3-9d51-01a518d5fae9
+    - FromGuid: 192855f9-06f8-4c8b-9bf7-55c932d2a05d
+      FromPortId: e6846fde-8912-46db-a415-dfe3ad616e76
+      ToGuid: 4cf83c2b-562f-4bbd-8bdb-0959e43f0db6
+      ToPortId: b704a8a2-3078-4244-ab62-40df3fc8b6cf
+    - FromGuid: 4cf83c2b-562f-4bbd-8bdb-0959e43f0db6
+      FromPortId: 9e5250b8-8cc4-48d7-86a2-f8fbcd1787f3
+      ToGuid: e1b1d972-0a4a-44b0-a2c6-1d6df8018e8e
+      ToPortId: 5a61febe-fd0d-4ec1-86ff-5310cb570ab0
+    - FromGuid: 2f1c20dd-a821-4ff2-aa0b-1edf96212a86
+      FromPortId: c20051f9-cf94-4b55-9285-f92eef9527cd
+      ToGuid: 68307461-6f70-492e-9231-2c375379096a
+      ToPortId: ed127188-d046-4dc8-a045-3fd6c330d781
+    - FromGuid: 68307461-6f70-492e-9231-2c375379096a
+      FromPortId: de4ad10c-1e7e-4181-8b0c-dfd8be1e97a0
+      ToGuid: 89c5fb17-74c1-4eec-a749-f8302334bb55
+      ToPortId: c4e3e39f-0eae-4050-b235-9bfebd7db3b0
+    - FromGuid: 89c5fb17-74c1-4eec-a749-f8302334bb55
+      FromPortId: 1a421152-4969-422d-9d32-4b41f05a4919
+      ToGuid: 4d25b26f-f22b-4662-bc9b-02e405995f81
+      ToPortId: 8e2bfc5e-f69f-4327-aaa9-9b1f68083637
+    - FromGuid: 4d25b26f-f22b-4662-bc9b-02e405995f81
+      FromPortId: 643a52f9-ae9b-416b-99c6-48f744d485e7
+      ToGuid: 0ccc1c24-a31e-4636-a3da-7b410d7d2195
+      ToPortId: b03332a1-adb9-4d14-a199-fb5f6e14885d
+    - FromGuid: 0ccc1c24-a31e-4636-a3da-7b410d7d2195
+      FromPortId: 2043151f-7418-47c1-986e-94d02599202f
+      ToGuid: b958311f-d027-453d-9454-967883502fab
+      ToPortId: 62d994e5-9af0-492f-9a32-339302d3d477
+    - FromGuid: b958311f-d027-453d-9454-967883502fab
+      FromPortId: ef729e9b-7186-4748-a253-1401c0cbb495
+      ToGuid: 645b0a0a-c510-47e9-b3b5-fd1ef25c2cba
+      ToPortId: 15b15751-e0d6-409d-ada8-13bd9a5eada8
+    - FromGuid: 645b0a0a-c510-47e9-b3b5-fd1ef25c2cba
+      FromPortId: ecc2f3a3-62ce-4656-beb0-ffc60d95adb7
+      ToGuid: 7d864c08-def2-42ff-88bc-e0f89076169b
+      ToPortId: b01c0d40-a97d-40f1-8298-7b57a482ce64
+    - FromGuid: 7d864c08-def2-42ff-88bc-e0f89076169b
+      FromPortId: 4b89d27c-1a75-4286-b795-66489e2cfad4
+      ToGuid: a3dcef1d-7861-4232-8c92-c1dd2cca5397
+      ToPortId: 5c2aab4f-9a6b-491d-a0ff-74f880a9806f
+    - FromGuid: 7d864c08-def2-42ff-88bc-e0f89076169b
+      FromPortId: 4b89d27c-1a75-4286-b795-66489e2cfad4
+      ToGuid: d4f625f0-4f8d-4923-8b0a-ec2b2278b96f
+      ToPortId: fd2eeb3b-7406-4593-9426-015775a86dba
+    - FromGuid: d4f625f0-4f8d-4923-8b0a-ec2b2278b96f
+      FromPortId: 20cfd6a8-6c9a-4665-b9c0-733772dfa650
+      ToGuid: b99142bf-adaa-4d08-accc-9ac19520bfcc
+      ToPortId: 51cbdb03-7970-44d3-96b7-181ec29bbf4c
+    - FromGuid: b99142bf-adaa-4d08-accc-9ac19520bfcc
+      FromPortId: OldPizza.Button.015
+      ToGuid: 69d51973-bb85-4003-ae23-60b4bb8968cc
+      ToPortId: e5003510-bddd-4e76-ba1c-0bfaba80ef7b
+    - FromGuid: 69d51973-bb85-4003-ae23-60b4bb8968cc
+      FromPortId: 8decce31-31f4-4a05-ab31-b999d1f55841
+      ToGuid: 2d4f086a-a765-4732-afb3-18c92420679d
+      ToPortId: a7377012-4cff-4014-8497-4202b5224c9b
+    - FromGuid: 2d4f086a-a765-4732-afb3-18c92420679d
+      FromPortId: 2d3fa662-56b8-4c6d-8e0c-767c0a589a99
+      ToGuid: e1269a8f-bc0c-4e12-be3e-81e137c36473
+      ToPortId: ef54af10-93f8-4356-b2d6-b0a83afbab66
+    - FromGuid: e1269a8f-bc0c-4e12-be3e-81e137c36473
+      FromPortId: c04d2330-2516-4088-beea-eb227480a7aa
+      ToGuid: 8b41b639-73c4-4074-9678-88327d22d70b
+      ToPortId: d4a8e18a-a40e-45e4-8f16-f2b0d1a0a1b4
+    - FromGuid: 8b41b639-73c4-4074-9678-88327d22d70b
+      FromPortId: OldPizza.Button.017
+      ToGuid: 819917c1-2bd5-4ea8-be6f-3f5a14e078e8
+      ToPortId: bca4c958-2326-4ceb-91c8-c1c7e5ca10ea
+    - FromGuid: 819917c1-2bd5-4ea8-be6f-3f5a14e078e8
+      FromPortId: 9d0f011f-6210-4d5e-a349-113afd64bcab
+      ToGuid: 96bb3a3c-4648-410a-a421-4c5a289927b8
+      ToPortId: 308e346d-4fb5-49ea-b4aa-01da3354ba2d
+    - FromGuid: 96bb3a3c-4648-410a-a421-4c5a289927b8
+      FromPortId: ef08b209-7029-4be8-9f78-d8322d8b040c
+      ToGuid: d357fa3b-d32f-4a05-9916-bca50cb7a4ec
+      ToPortId: 7b10a864-892c-4dc0-a61f-0c719f5ce6cf
+    - FromGuid: d357fa3b-d32f-4a05-9916-bca50cb7a4ec
+      FromPortId: 3a623fb9-2636-4a7f-ac51-b0b04b2e7d21
+      ToGuid: 67ee41cf-b336-43b5-b09c-6158e42db98b
+      ToPortId: e8211ae6-1f01-4831-9b6a-9a8aacfe526a
+    - FromGuid: 67ee41cf-b336-43b5-b09c-6158e42db98b
+      FromPortId: c4c82b96-815f-437e-84dd-5f8a0cd0398f
+      ToGuid: 865b50b9-95ec-4d1f-b1b1-421ca9b12db2
+      ToPortId: 82d3a70e-a88c-4021-a2d1-784d0b60f006
+    - FromGuid: 865b50b9-95ec-4d1f-b1b1-421ca9b12db2
+      FromPortId: 98c35c05-48a9-459e-9994-18ba4447956d
+      ToGuid: cc00697f-90fb-49c5-82fe-4ad140b17ccf
+      ToPortId: 90fd595c-efd2-49bd-bd17-2bc8e976fe69
+    - FromGuid: cc00697f-90fb-49c5-82fe-4ad140b17ccf
+      FromPortId: 7e4320b1-a0b9-4b8d-9f65-4766661e0242
+      ToGuid: 73747d6e-8f92-4468-9600-ce4e14cf5433
+      ToPortId: ddb58bba-9f15-43c0-a59b-4d2aaaa7cdeb
+    - FromGuid: 73747d6e-8f92-4468-9600-ce4e14cf5433
+      FromPortId: OldPizza.Button.020
+      ToGuid: fb8fc6c6-e473-4a1d-90de-aba68ce52ce3
+      ToPortId: 2cc7b207-d200-436f-afd1-c9b90cca2595
+    - FromGuid: 73747d6e-8f92-4468-9600-ce4e14cf5433
+      FromPortId: OldPizza.Button.021
+      ToGuid: cb2d2f6d-ba74-46bb-bc68-e21167faec9f
+      ToPortId: 373da5ed-d671-471e-a181-651b3ad91ae9
+    - FromGuid: cb2d2f6d-ba74-46bb-bc68-e21167faec9f
+      FromPortId: 7eae1adb-cd50-4214-9111-316218e3f926
+      ToGuid: 09f1cf23-11fd-40cf-a684-f30db2efe7e3
+      ToPortId: 6cd1845c-84c1-40f5-86b7-974616af8817
+    - FromGuid: 8b41b639-73c4-4074-9678-88327d22d70b
+      FromPortId: OldPizza.Button.018
+      ToGuid: f18d945d-8cc0-4195-9b9c-94d3bc276370
+      ToPortId: b55e25ad-e6b2-48c6-9972-92634613b53d
+    - FromGuid: f18d945d-8cc0-4195-9b9c-94d3bc276370
+      FromPortId: 0f46ef08-6ed5-4ecf-96b8-81ebc2e81292
+      ToGuid: 61a51149-c8be-4e39-9ba9-7df53db033fd
+      ToPortId: de1fdd69-6f02-4c27-aad2-d4f267afcd0f
+    - FromGuid: 61a51149-c8be-4e39-9ba9-7df53db033fd
+      FromPortId: 8cbe3649-1fba-4d42-84ed-b8e51879d006
+      ToGuid: a2f67b4e-1e0f-4704-a392-c41b898eb63f
+      ToPortId: 9f0c3749-e1a3-4885-9bf0-6abc6cb5e370
+    - FromGuid: 61a51149-c8be-4e39-9ba9-7df53db033fd
+      FromPortId: 8cbe3649-1fba-4d42-84ed-b8e51879d006
+      ToGuid: 3ac612ad-f6c7-4ad5-b2cb-0e11b13d0077
+      ToPortId: 2e50208f-be29-4adc-90d1-fc3c1de3005b
+    - FromGuid: a2f67b4e-1e0f-4704-a392-c41b898eb63f
+      FromPortId: 24f771c4-169a-403a-b399-6d9eeb0aa71f
+      ToGuid: 4215048a-03a1-43b7-b176-65ed4d78fae1
+      ToPortId: 9d1ce3fe-007f-4ffc-bd84-001047d63fdb
+    - FromGuid: 4215048a-03a1-43b7-b176-65ed4d78fae1
+      FromPortId: f5a0041d-873b-4b5a-875b-54f58ef6811b
+      ToGuid: b3d293da-1121-4f22-be83-4773a8e74a76
+      ToPortId: 371b293c-30b6-4c56-a509-0df2f2f0429d
+    - FromGuid: b3d293da-1121-4f22-be83-4773a8e74a76
+      FromPortId: 6c384436-7e2d-402f-bd91-3a016e022413
+      ToGuid: 9c179be2-4aae-45c0-8c62-e9536fddfbe1
+      ToPortId: c9e93152-fdfc-42e8-a584-512c5e55a816
+    - FromGuid: 9c179be2-4aae-45c0-8c62-e9536fddfbe1
+      FromPortId: 5e80c551-14e0-49b0-bfff-7f951a112137
+      ToGuid: a9f15067-c4fa-489d-a78a-c1cce0a109b3
+      ToPortId: e4aa82b9-33fc-4cfb-9dd5-23593a75607b
+    - FromGuid: a9f15067-c4fa-489d-a78a-c1cce0a109b3
+      FromPortId: c375a4b1-937a-48d6-86a9-31cf4a18886b
+      ToGuid: f90add06-c31a-4deb-bcce-407b0f2c01f9
+      ToPortId: f03dc8bf-d9d2-42bf-85ea-80f2c4709d21
+    - FromGuid: f90add06-c31a-4deb-bcce-407b0f2c01f9
+      FromPortId: 2c9ded73-3e05-4705-92c4-e2cd366836bc
+      ToGuid: ae03995e-7787-4585-8543-4a815d1f29d8
+      ToPortId: 7e8a8b11-2a22-4240-b9c8-151bbf35952e
+    - FromGuid: ae03995e-7787-4585-8543-4a815d1f29d8
+      FromPortId: OldPizza.Button.022
+      ToGuid: 20d71cd5-da3c-4cd1-80a4-0802d2b6f8c8
+      ToPortId: 911f0a6c-1b9a-4208-b231-bebd67cfbd43
+    - FromGuid: 20d71cd5-da3c-4cd1-80a4-0802d2b6f8c8
+      FromPortId: ab0e65e3-6c05-4046-af7e-c9964d4d1006
+      ToGuid: 2a54142c-5283-4972-aff7-1e40cac89a20
+      ToPortId: ec0db5ce-dfd9-4daf-b030-93e9e34d9097
+    - FromGuid: 09f1cf23-11fd-40cf-a684-f30db2efe7e3
+      FromPortId: 2cf5a24e-4e4d-4670-8e68-065aa8fa8ee5
+      ToGuid: 29dc6d94-2bc9-496b-9ec2-26106f22de90
+      ToPortId: 87ee8e66-3d55-4949-ad48-21917b495ee6
+    - FromGuid: 29dc6d94-2bc9-496b-9ec2-26106f22de90
+      FromPortId: bb337f95-3b13-43f9-b184-330e82d61fe5
+      ToGuid: 1b68decb-83d8-4ef9-b2f2-05a0d8010a21
+      ToPortId: bfea9e59-5c01-43c1-b00a-e34c5e16a165
+    - FromGuid: ae03995e-7787-4585-8543-4a815d1f29d8
+      FromPortId: OldPizza.Button.023
+      ToGuid: 0422a835-b200-4f12-a219-47ebfb74f468
+      ToPortId: d6f3c2db-e883-497a-9abc-5bda914182d2
+    - FromGuid: 0422a835-b200-4f12-a219-47ebfb74f468
+      FromPortId: 15c3ccaa-930e-4b65-8df5-eee3fa3013f4
+      ToGuid: 3c53da3f-ab7c-484a-ad00-ef0c5d50b383
+      ToPortId: 2dc42e46-749d-490e-9eb6-c66b577d9634
+    - FromGuid: 3c53da3f-ab7c-484a-ad00-ef0c5d50b383
+      FromPortId: 7e64014e-7288-4a22-b1f6-d0e34d993d9a
+      ToGuid: 79630acd-c846-4fad-b9c4-d426138fa69a
+      ToPortId: 8ae34662-c1d6-446a-ba49-150d67dbaa7c
+    - FromGuid: 79630acd-c846-4fad-b9c4-d426138fa69a
+      FromPortId: bb9954f3-edc0-4a0a-9983-93a3a3b307e4
+      ToGuid: 1b68decb-83d8-4ef9-b2f2-05a0d8010a21
+      ToPortId: bfea9e59-5c01-43c1-b00a-e34c5e16a165
+    - FromGuid: 8b41b639-73c4-4074-9678-88327d22d70b
+      FromPortId: OldPizza.Button.019
+      ToGuid: 32cf3566-68a0-481a-a43c-476b478943f2
+      ToPortId: 7e3c09d0-7a26-4d24-9921-492634b105ff
+    - FromGuid: 32cf3566-68a0-481a-a43c-476b478943f2
+      FromPortId: 85d6c6fd-bee3-47b0-afd0-da7ece2aa4b2
+      ToGuid: 3c346b59-f8ce-435b-9ddd-066ea37234ae
+      ToPortId: a0bce2b0-ce1e-4341-838c-7f5ca357f2fe
+    - FromGuid: 3c346b59-f8ce-435b-9ddd-066ea37234ae
+      FromPortId: 10b91b72-f00a-403f-ba2a-76b94fc6fd43
+      ToGuid: 486fbe7b-4e0e-474f-86b9-49f1b1057bc9
+      ToPortId: ea181402-1ba6-4afe-bdbf-6d810144211a
+    - FromGuid: 3c346b59-f8ce-435b-9ddd-066ea37234ae
+      FromPortId: 10b91b72-f00a-403f-ba2a-76b94fc6fd43
+      ToGuid: 8da56002-5e99-41cf-b200-56338a6ced6f
+      ToPortId: 34b6c6e1-5303-4830-9fdd-4591e1c58783
+    - FromGuid: 486fbe7b-4e0e-474f-86b9-49f1b1057bc9
+      FromPortId: 701d1d23-6579-4f0f-8ab7-97861e15b0bd
+      ToGuid: 9f3f7cbe-3e1a-4b45-9ef7-6bd918cb8e8a
+      ToPortId: 822dcb09-f0dc-42a6-9aa4-adfa73ac232c
+    - FromGuid: 9f3f7cbe-3e1a-4b45-9ef7-6bd918cb8e8a
+      FromPortId: 86232e1d-05ba-4e3e-bb0a-7e89d273ca94
+      ToGuid: a49f343a-863f-49cb-8af5-42d604223d61
+      ToPortId: 71b5fe92-29a4-4556-ba91-87a4e2111756
+    - FromGuid: a49f343a-863f-49cb-8af5-42d604223d61
+      FromPortId: OldPizza.Button.025
+      ToGuid: f989d0d0-1b32-4422-a72f-bcf392ab33f1
+      ToPortId: c830855e-a57e-49c7-ad21-6ffb9b05cefc
+    - FromGuid: a49f343a-863f-49cb-8af5-42d604223d61
+      FromPortId: OldPizza.Button.024
+      ToGuid: 857b30c1-fae5-42ea-8d91-8a871be17bae
+      ToPortId: a67cc031-7735-45e8-b463-0fc847b52a82
+    - FromGuid: 857b30c1-fae5-42ea-8d91-8a871be17bae
+      FromPortId: e2109c4d-6c2b-4487-8de2-1cb7f24ede45
+      ToGuid: 1c3fb56c-a803-4ae3-bc30-fed35284b414
+      ToPortId: 36b9597e-76ed-4881-9d3d-231effe2a321
+    - FromGuid: 1c3fb56c-a803-4ae3-bc30-fed35284b414
+      FromPortId: a3326831-07f6-474a-b74d-d95c9e8a2051
+      ToGuid: 6b36ba7d-ed69-4163-be60-0a2d44beaea1
+      ToPortId: 2dd08493-41cd-44bb-adfe-8e5bc29a35ec
+    - FromGuid: f989d0d0-1b32-4422-a72f-bcf392ab33f1
+      FromPortId: de113c08-1d8d-4634-b85a-19a1fafaf11e
+      ToGuid: 66f953a8-d049-42c8-8bd3-662294271f93
+      ToPortId: b75dad77-efd4-4d0d-8b85-d5babd30dc70
+    - FromGuid: 66f953a8-d049-42c8-8bd3-662294271f93
+      FromPortId: f340423e-4818-4502-8cc9-d2ba25f94595
+      ToGuid: f2480bda-381d-4314-975f-1487f000b500
+      ToPortId: f2430051-be72-44cb-8201-9a5bac85a897
+    - FromGuid: 1c3fb56c-a803-4ae3-bc30-fed35284b414
+      FromPortId: a3326831-07f6-474a-b74d-d95c9e8a2051
+      ToGuid: 0375e1e6-e767-41e7-8553-55c82f67b724
+      ToPortId: 332acd4a-dcb7-4768-a22c-0d65248f1bf2
+    - FromGuid: 0375e1e6-e767-41e7-8553-55c82f67b724
+      FromPortId: 4d6f953a-5278-497d-b92f-026f9024209a
+      ToGuid: e7949df9-403d-49fb-8bc2-85945d138543
+      ToPortId: 3c65fde7-aa3a-4bf0-af64-7027f3da2795
+    - FromGuid: e7949df9-403d-49fb-8bc2-85945d138543
+      FromPortId: f67b476d-dc9c-4dd7-acc3-606e3d488eb1
+      ToGuid: 315d822a-6d66-4706-ab74-2bd12bcce6af
+      ToPortId: 9c2bda84-2327-4474-844e-f8b490ea2ff9
+    - FromGuid: 315d822a-6d66-4706-ab74-2bd12bcce6af
+      FromPortId: aacd2640-8b17-4e43-86d9-53a5641f9b50
+      ToGuid: 2704b9bd-93c6-4511-a29c-b44e2d30e674
+      ToPortId: 167001f8-36c0-4494-b8a7-9a131788dd48
+    - FromGuid: 2704b9bd-93c6-4511-a29c-b44e2d30e674
+      FromPortId: a5ae7c64-8db5-44cc-b7a0-545bcc72aaea
+      ToGuid: 15448105-643f-405f-8051-a6d13e36b083
+      ToPortId: 075abc74-cb30-4728-bdd6-c2f7d5105ba2
+    - FromGuid: 15448105-643f-405f-8051-a6d13e36b083
+      FromPortId: OldPizza.Button.026
+      ToGuid: ac8c9b37-5b15-4453-a272-a693d5b42a37
+      ToPortId: 9634b3c0-23bd-4cb4-b1da-3fdea4e4d86b
+    - FromGuid: 15448105-643f-405f-8051-a6d13e36b083
+      FromPortId: OldPizza.Button.027
+      ToGuid: ac614bca-626b-4ce0-9f69-be75e677b9c4
+      ToPortId: 7048a11b-2190-4836-9771-7bf132fece57
+    - FromGuid: 15448105-643f-405f-8051-a6d13e36b083
+      FromPortId: OldPizza.Button.028
+      ToGuid: c3dfcade-7332-4110-9bff-186b48db3e9b
+      ToPortId: eeb24e5e-1019-408f-8341-d6a12029a3ac
+    - FromGuid: ac8c9b37-5b15-4453-a272-a693d5b42a37
+      FromPortId: 4dca684d-1afe-4c32-9e63-df563f3f8eb0
+      ToGuid: 62a70b4d-279c-4c19-98ab-c6aa827567a1
+      ToPortId: 386ebbe8-a69e-4b28-8eae-668361c6e1d2
+    - FromGuid: 62a70b4d-279c-4c19-98ab-c6aa827567a1
+      FromPortId: 4a8112ec-4ab2-41a7-8e4c-718356e2116c
+      ToGuid: c9110cab-d1e0-4500-882c-7695653a9be6
+      ToPortId: bbc6bcbb-b209-4615-adfc-f861ce25d96e
+    - FromGuid: c9110cab-d1e0-4500-882c-7695653a9be6
+      FromPortId: 62168af9-fc48-47e6-81b4-0039d5ed4b59
+      ToGuid: fcd16f1e-799e-45d4-9e02-06fd6813ea1b
+      ToPortId: 7e3c6559-3b5e-4f79-84ea-3d0bfa88c14d
+    - FromGuid: c3dfcade-7332-4110-9bff-186b48db3e9b
+      FromPortId: 720be3f4-e2d5-4596-8a49-f214c1d618a5
+      ToGuid: 01cbbf01-7c49-4fc6-ab3b-545d9c54b74e
+      ToPortId: f4e61f95-8a67-4c9c-9458-e28f16137eeb
+    - FromGuid: ac614bca-626b-4ce0-9f69-be75e677b9c4
+      FromPortId: c226fb8b-8af1-497e-b8f4-7c6432c2412e
+      ToGuid: 01cbbf01-7c49-4fc6-ab3b-545d9c54b74e
+      ToPortId: f4e61f95-8a67-4c9c-9458-e28f16137eeb
+    - FromGuid: fcd16f1e-799e-45d4-9e02-06fd6813ea1b
+      FromPortId: d07ca83a-3149-4644-ab71-aeb1f15a38fd
+      ToGuid: 01cbbf01-7c49-4fc6-ab3b-545d9c54b74e
+      ToPortId: f4e61f95-8a67-4c9c-9458-e28f16137eeb
+    - FromGuid: 01cbbf01-7c49-4fc6-ab3b-545d9c54b74e
+      FromPortId: 3e3726aa-941f-4d7c-a216-3592e4997945
+      ToGuid: 330f91c7-e80e-40f9-952a-fa008642a00c
+      ToPortId: a4dcdc73-56ab-41fc-bc4f-5c75b7bb398a
+    - FromGuid: 330f91c7-e80e-40f9-952a-fa008642a00c
+      FromPortId: 9cb460cb-ab68-4871-8e4c-0fa15a4f64b4
+      ToGuid: d8536007-3f61-4ec4-a0f5-bfb7cb0936f2
+      ToPortId: 6b94baea-4467-4553-adb5-4794ede17664
+    - FromGuid: d8536007-3f61-4ec4-a0f5-bfb7cb0936f2
+      FromPortId: 8dd0f3d6-e815-48ec-80b0-27ba983cb8e7
+      ToGuid: 399de9ad-4245-4994-a504-9c9484805589
+      ToPortId: 3f852ec4-3b0a-4b33-b1d7-5eb6bc83c707
+    - FromGuid: 399de9ad-4245-4994-a504-9c9484805589
+      FromPortId: OldPizza.Button.029
+      ToGuid: 2d83c51d-eb0f-4fb4-9f31-ea9f0d4cfc52
+      ToPortId: ebd23f8f-242d-4931-a777-e580de7930ee
+    - FromGuid: 399de9ad-4245-4994-a504-9c9484805589
+      FromPortId: OldPizza.Button.030
+      ToGuid: fecbf2a3-f4e3-4ffe-b804-9c3a3ec61863
+      ToPortId: 838a2916-bf40-438b-823e-8ee080d8d081
+    - FromGuid: 2d83c51d-eb0f-4fb4-9f31-ea9f0d4cfc52
+      FromPortId: 29a9475f-af8f-4110-8c5d-1113c1314c6e
+      ToGuid: e57331b4-ca76-448b-b32b-19125c5f49d3
+      ToPortId: 2dfb32cb-cf12-41de-beae-822936f70830
+    - FromGuid: e57331b4-ca76-448b-b32b-19125c5f49d3
+      FromPortId: 0c2ae35a-fdcf-450b-b690-76226a7d7022
+      ToGuid: 9341934f-a9a4-4bf5-bb06-83d5f5e9a93f
+      ToPortId: 6d441d56-6219-4be8-9036-f3d6fffb95b4
+    - FromGuid: fecbf2a3-f4e3-4ffe-b804-9c3a3ec61863
+      FromPortId: 6ea15dc1-2e7c-40d2-a954-7debc9433224
+      ToGuid: 9341934f-a9a4-4bf5-bb06-83d5f5e9a93f
+      ToPortId: 6d441d56-6219-4be8-9036-f3d6fffb95b4
+    - FromGuid: 9341934f-a9a4-4bf5-bb06-83d5f5e9a93f
+      FromPortId: 11797537-1e9c-41ee-a642-0ec60ccbaad1
+      ToGuid: 6a63cffa-f55a-4d6c-a56c-ac954f112ac1
+      ToPortId: 55be7ef5-e18b-42a7-9150-11c854c412f1
+    - FromGuid: 6a63cffa-f55a-4d6c-a56c-ac954f112ac1
+      FromPortId: d731894f-6a73-4ab8-bdf3-51738dfe793b
+      ToGuid: 4219cba1-947f-46c9-98f9-c796b42748d0
+      ToPortId: 0cc2400d-1e6f-4c3f-972c-f68f1f3819ec
+    - FromGuid: 4219cba1-947f-46c9-98f9-c796b42748d0
+      FromPortId: df2577f5-8e69-47d4-8c13-d09f8ad4cd4f
+      ToGuid: c6e7db06-66ca-4ff8-91ed-ad70d190f679
+      ToPortId: 6fd929e3-b0ba-4edd-92ef-3d2da0bae49b
+    - FromGuid: c6e7db06-66ca-4ff8-91ed-ad70d190f679
+      FromPortId: 3aa9852a-1c4b-4b0f-a40e-9b0c8dbc2782
+      ToGuid: 14ff94d7-9cd1-408d-be14-d64b77eacbe3
+      ToPortId: 35e229f1-43f0-424e-96fb-db2f87e0ef6f
+    - FromGuid: 14ff94d7-9cd1-408d-be14-d64b77eacbe3
+      FromPortId: OldPizza.Button.031
+      ToGuid: 7256b16a-029a-458c-88f3-d0de54824adb
+      ToPortId: 0ee82972-f80c-4f0d-8797-21a94df3094a
+    - FromGuid: 14ff94d7-9cd1-408d-be14-d64b77eacbe3
+      FromPortId: OldPizza.Button.032
+      ToGuid: ec17fd42-eb69-4db2-b5af-01b251ffc4a2
+      ToPortId: c99e7ef6-dec0-4ca9-9e13-8ff29e921434
+    - FromGuid: 7256b16a-029a-458c-88f3-d0de54824adb
+      FromPortId: 07a23d7b-aecb-4fac-8372-388a87fec21c
+      ToGuid: 16aaf540-013e-45d6-b393-a70effd09502
+      ToPortId: cbf1603c-55e6-436c-b0c1-27dcf1334bd5
+    - FromGuid: ec17fd42-eb69-4db2-b5af-01b251ffc4a2
+      FromPortId: 97d438d5-416b-4650-98ad-37ab2e72a4d5
+      ToGuid: 3b9cc0ce-6b89-495a-a0b7-dd9dbfa256aa
+      ToPortId: 82aebeab-bc8d-4e5d-a294-ac3545e33e45
+    - FromGuid: 3b9cc0ce-6b89-495a-a0b7-dd9dbfa256aa
+      FromPortId: 6e73c4c7-41c8-4837-94f7-a965a3d7ab2e
+      ToGuid: 409aed6e-aaba-4f3d-8abf-f1d0a3711231
+      ToPortId: d7348b44-05f4-4488-9d60-b02b727ff337
+    - FromGuid: 409aed6e-aaba-4f3d-8abf-f1d0a3711231
+      FromPortId: ec1e49dc-4425-4c4f-a2e8-c72ebb80245b
+      ToGuid: 3c0437f1-0ef8-4f7a-ba4f-7e9b0fa83494
+      ToPortId: e2981ec9-f74b-482d-bb0d-a90b10009666
+    - FromGuid: 16aaf540-013e-45d6-b393-a70effd09502
+      FromPortId: d3617862-38c3-445c-ad7c-bb98f9af60f0
+      ToGuid: 3c0437f1-0ef8-4f7a-ba4f-7e9b0fa83494
+      ToPortId: e2981ec9-f74b-482d-bb0d-a90b10009666
+    - FromGuid: 3c0437f1-0ef8-4f7a-ba4f-7e9b0fa83494
+      FromPortId: 4c60d3b5-ba72-41ca-8aa6-b673ecbee036
+      ToGuid: 601e96b6-3c79-4edb-ad18-e4d9fe595ac2
+      ToPortId: a7db8758-6927-493e-b50b-d562f893c459
+    - FromGuid: b99142bf-adaa-4d08-accc-9ac19520bfcc
+      FromPortId: OldPizza.Button.016
+      ToGuid: ec45de55-5a2e-46bb-863c-38872d311458
+      ToPortId: 0ff991b7-d1a3-4633-8d23-b2bf221144d4
+    - FromGuid: ec45de55-5a2e-46bb-863c-38872d311458
+      FromPortId: b6de631a-eb6b-4b85-8d95-3f0512b6a53c
+      ToGuid: 817c7afb-77ab-4563-90cb-6718354beda3
+      ToPortId: b12f2c12-7c16-4ba2-9267-2ee5e85d6cca
+    - FromGuid: 817c7afb-77ab-4563-90cb-6718354beda3
+      FromPortId: 998c7115-1b43-4e42-a98c-0f172b67a083
+      ToGuid: 455d0933-97c5-48ae-825d-3bb4caf08e1e
+      ToPortId: 4ae4ffa4-f3d0-4934-8d73-160f1eba2421
+    - FromGuid: 455d0933-97c5-48ae-825d-3bb4caf08e1e
+      FromPortId: 038628ac-4aa5-4dce-bf1e-9d88af69fa50
+      ToGuid: 7e20614c-02c0-4e19-a3dc-d2e2cd09cb2c
+      ToPortId: ab6796bf-d489-4a8b-89ac-447f2102f688
+    - FromGuid: 7e20614c-02c0-4e19-a3dc-d2e2cd09cb2c
+      FromPortId: OldPizza.Button.033
+      ToGuid: 59fb8a33-b29f-490d-8774-26ad902bbb1e
+      ToPortId: 984bd77c-435c-42df-a3cd-8f995a308034
+    - FromGuid: 7e20614c-02c0-4e19-a3dc-d2e2cd09cb2c
+      FromPortId: OldPizza.Button.034
+      ToGuid: c007899c-f56f-41ce-93d1-2979225facf2
+      ToPortId: 07042cfb-f6db-43ef-bb23-5c112e81d821
+    - FromGuid: 7e20614c-02c0-4e19-a3dc-d2e2cd09cb2c
+      FromPortId: OldPizza.Button.035
+      ToGuid: e9c45187-fe02-47f5-851a-7b4f2796c45c
+      ToPortId: 863fe5c9-4360-4d46-bd99-409a6bb2efc1
+    - FromGuid: 59fb8a33-b29f-490d-8774-26ad902bbb1e
+      FromPortId: 0cc2ce85-6646-436c-aacc-b2be00c1b0dd
+      ToGuid: b05f9202-f4bb-4d6f-99fc-285a220cffba
+      ToPortId: ad93a5eb-bcb8-43ae-990f-a2c8d119238e
+    - FromGuid: b05f9202-f4bb-4d6f-99fc-285a220cffba
+      FromPortId: 4d2aba1c-6788-4b13-bafe-ca411f4635d7
+      ToGuid: f009fa1a-2650-47d9-ba1f-43a2d9cf6cc3
+      ToPortId: 43d8f963-149c-4a8d-b0df-c9ae4c8a16dd
+    - FromGuid: b05f9202-f4bb-4d6f-99fc-285a220cffba
+      FromPortId: 4d2aba1c-6788-4b13-bafe-ca411f4635d7
+      ToGuid: 00336cdd-5742-4c77-aadd-b12ef002b01b
+      ToPortId: c4f0a1cd-8307-4828-bb0f-2621b7c9ec59
+    - FromGuid: f009fa1a-2650-47d9-ba1f-43a2d9cf6cc3
+      FromPortId: df25b73c-cbfe-4aea-8854-cb3ed3657e3f
+      ToGuid: 24abfad9-7b0f-4de3-a2cb-ffbad8c2dcca
+      ToPortId: 2eb69a08-e3a2-40b9-af40-776324b298e6
+    - FromGuid: 24abfad9-7b0f-4de3-a2cb-ffbad8c2dcca
+      FromPortId: 2a33fbc4-120e-4ed7-8f18-7cafeb72f179
+      ToGuid: 9ec039bf-32d0-4bf5-bde8-ba12e4df7f36
+      ToPortId: 388ad682-8adb-4040-9c79-5d6c91bf5270
+    - FromGuid: 9ec039bf-32d0-4bf5-bde8-ba12e4df7f36
+      FromPortId: 5911e124-d140-45e6-a01f-f64235b1d3c3
+      ToGuid: 8f340ffc-0e80-4e1d-a170-8a368db87c32
+      ToPortId: 112d7f17-3183-424b-848f-bc2113f0aaea
+    - FromGuid: 8f340ffc-0e80-4e1d-a170-8a368db87c32
+      FromPortId: dffb22e2-900e-404a-ac42-c8164f03eb8c
+      ToGuid: 45314151-6327-4bd1-b1e7-ede2a2f5a96a
+      ToPortId: dd1b148d-b68e-45e1-b222-54abfe7ee9de
+    - FromGuid: 45314151-6327-4bd1-b1e7-ede2a2f5a96a
+      FromPortId: dfe25ff2-fa6a-4d1d-b00f-7fa1d50ee1e1
+      ToGuid: ac3b3f3c-d8a0-4cba-b42e-ff463f8a9b5e
+      ToPortId: a55ccf24-4a8d-4126-967d-b2be130926ac
+    - FromGuid: ac3b3f3c-d8a0-4cba-b42e-ff463f8a9b5e
+      FromPortId: 77da7c66-ab30-4b78-b7e5-f65a241b8bdb
+      ToGuid: a9f15067-c4fa-489d-a78a-c1cce0a109b3
+      ToPortId: e4aa82b9-33fc-4cfb-9dd5-23593a75607b
+    - FromGuid: 4153428a-ec01-44c1-9841-e53de4888698
+      FromPortId: 94088fde-2867-4906-8857-b87904e027e0
+      ToGuid: 7478ce65-833e-43c6-83fe-937457aa33ab
+      ToPortId: 22c3eeb8-11e7-4459-be07-1e097633d654
+    - FromGuid: c007899c-f56f-41ce-93d1-2979225facf2
+      FromPortId: 6b7b225d-fba4-4b7f-a3b2-1917d180499b
+      ToGuid: 4153428a-ec01-44c1-9841-e53de4888698
+      ToPortId: e55dbb6e-a3c0-4706-9f7e-18edf453d0f4
+    - FromGuid: 7478ce65-833e-43c6-83fe-937457aa33ab
+      FromPortId: ae5eed52-06c3-49f8-a97d-86a590f4b4a2
+      ToGuid: 24abfad9-7b0f-4de3-a2cb-ffbad8c2dcca
+      ToPortId: 2eb69a08-e3a2-40b9-af40-776324b298e6
+    - FromGuid: e9c45187-fe02-47f5-851a-7b4f2796c45c
+      FromPortId: 7657d4bb-36d6-4a53-89a4-be46ec178304
+      ToGuid: e32b3338-1b5a-4d98-8665-3c8bea30ff71
+      ToPortId: 40f8730b-259f-4f01-8c05-1aba877f7183
+    - FromGuid: e32b3338-1b5a-4d98-8665-3c8bea30ff71
+      FromPortId: 07991410-a025-4a12-a6eb-d0ee80fc9ef1
+      ToGuid: 038412d1-d693-4777-ab5c-110eea956683
+      ToPortId: 8f6199dc-8006-4937-b094-edf2d014f8d2
+    - FromGuid: e32b3338-1b5a-4d98-8665-3c8bea30ff71
+      FromPortId: 07991410-a025-4a12-a6eb-d0ee80fc9ef1
+      ToGuid: 3c385378-84a8-4d9f-a9f0-353d59eb8c43
+      ToPortId: 2e263502-372b-44f8-bd69-10b15468b0a0
+    - FromGuid: 038412d1-d693-4777-ab5c-110eea956683
+      FromPortId: 08d50aba-2b71-4111-bd6e-7018c9a2d589
+      ToGuid: 6c8f48c8-5e70-4eb4-83bd-5523a4f21fba
+      ToPortId: 64bf0314-178c-4b0f-9ad3-380500b99ef2
+    - FromGuid: 6c8f48c8-5e70-4eb4-83bd-5523a4f21fba
+      FromPortId: 81c3c65d-8ca0-4ece-a701-04ce7df5469e
+      ToGuid: dd42edd5-199a-4218-ab16-ffbfd03d867d
+      ToPortId: aeedc5f3-2b91-4c2b-9e55-3965e9e8bf9f
+    - FromGuid: dd42edd5-199a-4218-ab16-ffbfd03d867d
+      FromPortId: c200407c-05bc-4d17-8646-b9adfe11ab2a
+      ToGuid: 25fa8591-0974-4328-aa39-2fb8fc765f08
+      ToPortId: 9f6f4b06-f64f-47b2-afaf-4ace620add5a
+    - FromGuid: 9c75acc6-d4e9-490d-949c-cf36bb5359b1
+      FromPortId: f5ced85f-9af1-4998-bcdb-82e874abaf6f
+      ToGuid: d8f07935-9ddd-431e-b695-b94933316448
+      ToPortId: 88613830-a0d0-4a29-9f96-75dd4e96441b
+    - FromGuid: 25fa8591-0974-4328-aa39-2fb8fc765f08
+      FromPortId: OldPizza.Button.036
+      ToGuid: d41e08a5-a275-4c5d-aa34-cee592827314
+      ToPortId: d4390c65-ba4a-4500-b77b-4b2cc8d563b6
+    - FromGuid: e873229d-23d4-4c40-a2db-38d9ab6db184
+      FromPortId: OldPizza.Button.040
+      ToGuid: 8b32f37a-9048-46f4-b442-e4db09b60fba
+      ToPortId: f3438b3b-5776-417b-838c-c46c419798e4
+    - FromGuid: 25fa8591-0974-4328-aa39-2fb8fc765f08
+      FromPortId: OldPizza.Button.037
+      ToGuid: 42e30438-541e-4928-9143-21b844182938
+      ToPortId: bbb3893b-6edb-4e9a-8802-1365b2fdbf25
+    - FromGuid: 8b32f37a-9048-46f4-b442-e4db09b60fba
+      FromPortId: 3c2076d2-a4aa-40c7-9ae0-ca7fa14a683a
+      ToGuid: 9c75acc6-d4e9-490d-949c-cf36bb5359b1
+      ToPortId: 4576cd96-6d2f-441c-8351-941367c455d2
+    - FromGuid: 42e30438-541e-4928-9143-21b844182938
+      FromPortId: 23c0c7e1-22b5-4727-9523-bac483fb224e
+      ToGuid: 9c75acc6-d4e9-490d-949c-cf36bb5359b1
+      ToPortId: 4576cd96-6d2f-441c-8351-941367c455d2
+    - FromGuid: d41e08a5-a275-4c5d-aa34-cee592827314
+      FromPortId: 39bf9f1f-b962-474f-949a-315ea956fbea
+      ToGuid: e873229d-23d4-4c40-a2db-38d9ab6db184
+      ToPortId: 0e1cfed1-16a4-4ab6-a941-e64c9f0d1a77
+    - FromGuid: e873229d-23d4-4c40-a2db-38d9ab6db184
+      FromPortId: OldPizza.Button.038
+      ToGuid: 49ddbca7-eaf1-4b73-b875-30b45059ee8c
+      ToPortId: 2b91cd15-c2d8-4dba-bee1-0070571c5e80
+    - FromGuid: e873229d-23d4-4c40-a2db-38d9ab6db184
+      FromPortId: OldPizza.Button.039
+      ToGuid: 19443004-2c7b-4e50-bb29-37397e712648
+      ToPortId: e771bcc1-2277-402d-add4-681f5f5f9570
+    - FromGuid: 19443004-2c7b-4e50-bb29-37397e712648
+      FromPortId: 1afa0ce5-eebc-4f9f-ae9e-d0d113e0d769
+      ToGuid: ad97dd37-e22a-43ff-87f6-0d6b70d47112
+      ToPortId: b9af9de2-eae9-4699-b642-b011d8e33dc5
+    - FromGuid: ad97dd37-e22a-43ff-87f6-0d6b70d47112
+      FromPortId: 4230ee06-3f7e-4faf-930e-5a3d95317f5a
+      ToGuid: 0577a7b9-cd62-4b0b-91d8-2547ec539a77
+      ToPortId: 0611409f-8d61-4c85-9952-7c9444413ff1
+    - FromGuid: 49ddbca7-eaf1-4b73-b875-30b45059ee8c
+      FromPortId: 44126f5c-5ace-49e0-9db5-d79e15565cab
+      ToGuid: ff388f38-add8-45d6-acd6-05738bfa619d
+      ToPortId: 1414de98-0633-47d3-bec3-985fbf31c5cd
+    - FromGuid: ff388f38-add8-45d6-acd6-05738bfa619d
+      FromPortId: dd9a81a7-f8c8-45fd-8802-dcfb90f8241e
+      ToGuid: f8f14034-c60c-4cb8-9f7e-ff78833ff6fb
+      ToPortId: 6084ed05-d39e-45fd-9f78-7cf96568e796
+    - FromGuid: f8f14034-c60c-4cb8-9f7e-ff78833ff6fb
+      FromPortId: 96dc2543-70e1-45c8-bb97-03331d1b3438
+      ToGuid: 72c5d513-007e-4272-a42b-4d45409c4e0a
+      ToPortId: 82146ad1-5cd6-4784-9591-b25c83abe93e
+    - FromGuid: 72c5d513-007e-4272-a42b-4d45409c4e0a
+      FromPortId: d306e5dc-c11d-4513-90dd-54d52dbc9455
+      ToGuid: 0577a7b9-cd62-4b0b-91d8-2547ec539a77
+      ToPortId: 0611409f-8d61-4c85-9952-7c9444413ff1
+    - FromGuid: 0577a7b9-cd62-4b0b-91d8-2547ec539a77
+      FromPortId: da614fe7-c1c6-45e1-aeed-e0e42ec96a9c
+      ToGuid: e9be91ee-af4f-4a65-b932-4195efcf40cc
+      ToPortId: cb58019c-4816-41e5-8182-8072fc652496
+    - FromGuid: e9be91ee-af4f-4a65-b932-4195efcf40cc
+      FromPortId: 9e113661-3184-4554-8b4c-90df0fe90248
+      ToGuid: a0c4130e-c424-4c7d-b0eb-33055b119a58
+      ToPortId: 44b800ce-0617-471f-820b-1c8203c807b0
+    - FromGuid: a0c4130e-c424-4c7d-b0eb-33055b119a58
+      FromPortId: 6bfbbff3-8b6c-49fe-bcc2-0903dd15f462
+      ToGuid: e41b7b40-f966-4d53-a1ad-8972eaf63fa4
+      ToPortId: 3ea72f6d-dbe0-4429-91e6-7e70c8e2ce82
+    - FromGuid: e41b7b40-f966-4d53-a1ad-8972eaf63fa4
+      FromPortId: a56d45ce-a3a7-4ca5-b450-9cf8098e077a
+      ToGuid: 06683045-1889-4e64-bd6c-0ce769114f1a
+      ToPortId: 69ea38ed-a6f6-47ee-a376-997b67029c5c
+    - FromGuid: 06683045-1889-4e64-bd6c-0ce769114f1a
+      FromPortId: 95fdd705-0c69-467b-8bfc-09ccbe6cb4db
+      ToGuid: df3fa722-9321-4154-92df-7cc5c20b4faf
+      ToPortId: dd7039b2-2912-4bb5-9d43-0ab4318221d5
+    - FromGuid: df3fa722-9321-4154-92df-7cc5c20b4faf
+      FromPortId: OldPizza.Button.041
+      ToGuid: dbd8f986-a610-46c6-8372-d0194343b9b8
+      ToPortId: 0c3e285e-349d-4716-abd6-8d64a2f0abd7
+    - FromGuid: df3fa722-9321-4154-92df-7cc5c20b4faf
+      FromPortId: OldPizza.Button.042
+      ToGuid: a2d0aaa1-12b4-4c85-8e9b-7c1d66f2f124
+      ToPortId: f7085540-4fe7-48c0-a3fd-7dbf47450b46
+    - FromGuid: dbd8f986-a610-46c6-8372-d0194343b9b8
+      FromPortId: 90c5e677-dbdd-467a-bf3e-3264cbb5f9ca
+      ToGuid: 95ba2e9c-abd9-43a4-9c56-fa68104a37e5
+      ToPortId: 58c6edcb-74f8-4fef-b046-a93d842f5ab7
+    - FromGuid: a2d0aaa1-12b4-4c85-8e9b-7c1d66f2f124
+      FromPortId: de22bef1-54c5-43a8-af24-5053f2dcb7f6
+      ToGuid: 3a1a159c-a93c-4a9f-ba53-abad8fdc253d
+      ToPortId: 6845b9e7-c2b3-481c-9038-7eb3ec1496c6
+    - FromGuid: a2d0aaa1-12b4-4c85-8e9b-7c1d66f2f124
+      FromPortId: de22bef1-54c5-43a8-af24-5053f2dcb7f6
+      ToGuid: 63f600b4-1d28-4ed5-a7e3-a7039a1350ed
+      ToPortId: 1b756f70-cd02-4516-a836-aee0fefc5b94
+    - FromGuid: 3a1a159c-a93c-4a9f-ba53-abad8fdc253d
+      FromPortId: ae2727bd-e6cc-4b40-bdd9-437b582f3bb3
+      ToGuid: 895352bb-731e-44f4-85d7-aa6eed1b5a35
+      ToPortId: d314547a-124a-4aa6-afc9-8c1a0160e931
+    - FromGuid: 895352bb-731e-44f4-85d7-aa6eed1b5a35
+      FromPortId: OldPizza.Button.044
+      ToGuid: 77eb5079-d2f9-4fad-b8df-6fe60454b4da
+      ToPortId: 88cf237a-b512-4ce2-a7b8-4e0867d8d3c5
+    - FromGuid: 77eb5079-d2f9-4fad-b8df-6fe60454b4da
+      FromPortId: 39333947-b364-457d-9da2-ed2f3a114a94
+      ToGuid: e28decee-effe-4d9a-95b9-e8994ef528be
+      ToPortId: 7bb2c969-3f3f-4bf2-8224-ba42de4c692e
+    - FromGuid: e28decee-effe-4d9a-95b9-e8994ef528be
+      FromPortId: 64ebf5e0-f5f3-4027-91f4-825cc69065ce
+      ToGuid: b5607312-ae90-442d-96b3-38e95545b21e
+      ToPortId: 03540aef-e485-462a-bb31-5a1c03f92bcd
+    - FromGuid: 895352bb-731e-44f4-85d7-aa6eed1b5a35
+      FromPortId: OldPizza.Button.043
+      ToGuid: 28a0ab77-e06d-4f33-92f6-007e1bd098a1
+      ToPortId: c529ae57-48ce-4d90-943f-036d91407c06
+    - FromGuid: 28a0ab77-e06d-4f33-92f6-007e1bd098a1
+      FromPortId: a563077f-a405-444e-bcf3-7cf54f727724
+      ToGuid: 2eb1ce6e-0c45-467d-aa5d-811c640e51ef
+      ToPortId: 9931bea9-eedd-4680-9ac6-f2e0f5088516
+    - FromGuid: 2eb1ce6e-0c45-467d-aa5d-811c640e51ef
+      FromPortId: 067fe91d-04f0-421c-a35b-cb188e5b699f
+      ToGuid: 22de24eb-4df7-415d-9394-4fa85276be7e
+      ToPortId: 1352c407-2e0c-4bee-a7d2-f413197fa6f6
+    - FromGuid: 22de24eb-4df7-415d-9394-4fa85276be7e
+      FromPortId: e0362781-7951-4ccb-877e-6af4cc7cbf7c
+      ToGuid: f82e3452-bc28-4f05-babe-f49dd88898e7
+      ToPortId: a78c4988-71b4-4ecc-820a-59211a5850b4
+    - FromGuid: f82e3452-bc28-4f05-babe-f49dd88898e7
+      FromPortId: c5426a11-3527-4324-b069-d8f8ec902632
+      ToGuid: ca7f22a9-b24c-48a6-bdc4-0975f37f5d5b
+      ToPortId: 8c5b3153-d906-4279-8cd3-c2eacb511a77
+    - FromGuid: ca7f22a9-b24c-48a6-bdc4-0975f37f5d5b
+      FromPortId: de1beb49-4bbe-476f-921b-152c6b807f1b
+      ToGuid: 2b9a97fd-26a8-462e-8fc2-5a597b1f4af0
+      ToPortId: 4cba0b56-a8ba-41db-8293-f6b0efd5695b
+    - FromGuid: 2b9a97fd-26a8-462e-8fc2-5a597b1f4af0
+      FromPortId: 7510b79b-1d97-429f-abc0-0cd0e424ff99
+      ToGuid: ae9504dd-e608-4f82-b06f-49fb7dfd3f91
+      ToPortId: 59119832-3f60-42e8-8456-ca7da9c8d2c1
+    - FromGuid: ae9504dd-e608-4f82-b06f-49fb7dfd3f91
+      FromPortId: e5b053fe-5e44-418f-9d93-9cf24e8347b7
+      ToGuid: 1fa54cc4-73d8-4a53-98f5-334fa3691f85
+      ToPortId: 5950d2c6-aaf4-4b41-a0c8-e9273b25bb86
+    - FromGuid: 1fa54cc4-73d8-4a53-98f5-334fa3691f85
+      FromPortId: 92bcc6e8-17e2-4aa7-b2c5-b199788fe8aa
+      ToGuid: d8c07725-03fe-4c91-b3d2-e05a62286430
+      ToPortId: c3834692-d13f-421b-8583-98d52176194d
+    - FromGuid: 1b68decb-83d8-4ef9-b2f2-05a0d8010a21
+      FromPortId: ed3b6c94-2d64-4df8-b3cc-1634d4b71266
+      ToGuid: 06c05a1f-695c-4866-8312-701315e21b60
+      ToPortId: 64f6a088-e815-4ac9-b0b0-5d082d8cd6fa
+    - FromGuid: 06c05a1f-695c-4866-8312-701315e21b60
+      FromPortId: bbd06747-904f-42ca-a505-604a981fc160
+      ToGuid: f82e3452-bc28-4f05-babe-f49dd88898e7
+      ToPortId: a78c4988-71b4-4ecc-820a-59211a5850b4
+    - FromGuid: d8f07935-9ddd-431e-b695-b94933316448
+      FromPortId: OldPizza.Button.045
+      ToGuid: 28a2a31e-54b1-4303-ac47-150291150ea1
+      ToPortId: 7a3296d3-558d-41b8-b987-f33050fa1a4f
+    - FromGuid: 28a2a31e-54b1-4303-ac47-150291150ea1
+      FromPortId: 39856cc6-0685-41e0-91a7-9588788b58bf
+      ToGuid: 5aa90fcd-8bf5-46a5-860a-ac47b419c93f
+      ToPortId: 3c001124-fdb8-461a-bfa1-fdc7f3469d5d
+    - FromGuid: 5aa90fcd-8bf5-46a5-860a-ac47b419c93f
+      FromPortId: 8dec78ad-9363-4772-a392-861d1b327953
+      ToGuid: dc71fd37-09fe-4d08-af69-b94c85b2e119
+      ToPortId: 60039fdf-e36a-48e3-aafa-18c8697d449b
+    - FromGuid: d8f07935-9ddd-431e-b695-b94933316448
+      FromPortId: OldPizza.Button.046
+      ToGuid: bb18057d-a7d7-4827-8225-8b5ca843b644
+      ToPortId: 2b5c7180-3acd-4c8e-8a71-83bb5daa67ca
+    - FromGuid: bb18057d-a7d7-4827-8225-8b5ca843b644
+      FromPortId: 04e2dd04-ea9c-40d6-b2a8-15a24fe55c89
+      ToGuid: f6688a6a-792c-4d34-b96c-aa91975ea2c3
+      ToPortId: 73d404d0-8afe-49eb-ac20-1453e8f48d3e
+    - FromGuid: bb18057d-a7d7-4827-8225-8b5ca843b644
+      FromPortId: 04e2dd04-ea9c-40d6-b2a8-15a24fe55c89
+      ToGuid: dae7a4ee-adde-4c32-bc7e-9f9b28a87d19
+      ToPortId: 3147e8b6-f5d5-4a53-8350-9340bf6d0859
+    - FromGuid: f6688a6a-792c-4d34-b96c-aa91975ea2c3
+      FromPortId: d13f2678-23aa-4275-aaea-466a928d5ee7
+      ToGuid: 0e70d3b0-1bf0-4d1f-91b6-fa9c5ae97f05
+      ToPortId: 79f35f8e-6742-48cb-b209-b98a24b01fc7
+    - FromGuid: 0e70d3b0-1bf0-4d1f-91b6-fa9c5ae97f05
+      FromPortId: 1edd8b30-e1eb-4fba-9d13-9026aae5b990
+      ToGuid: dc71fd37-09fe-4d08-af69-b94c85b2e119
+      ToPortId: 60039fdf-e36a-48e3-aafa-18c8697d449b
+    - FromGuid: dc71fd37-09fe-4d08-af69-b94c85b2e119
+      FromPortId: OldPizza.Button.048
+      ToGuid: 7941675c-a843-444a-8d18-8379f12234d7
+      ToPortId: 0ba3fc67-fa37-467d-b170-c981a4265144
+    - FromGuid: dc71fd37-09fe-4d08-af69-b94c85b2e119
+      FromPortId: OldPizza.Button.047
+      ToGuid: 5608885e-9619-43c1-9178-d5cbe2645a13
+      ToPortId: 223cd15f-f4fb-4e38-a6b1-405a91a2ffcb
+    - FromGuid: 5608885e-9619-43c1-9178-d5cbe2645a13
+      FromPortId: fc25c2c4-9f7b-4cd5-96ca-c058f0dccad6
+      ToGuid: f0877f6f-0481-4a24-beaf-ed91544504f2
+      ToPortId: 83d1904a-2242-46f3-a177-f01e1826943a
+    - FromGuid: f0877f6f-0481-4a24-beaf-ed91544504f2
+      FromPortId: b80d3320-b067-4a22-965d-036f687dc59d
+      ToGuid: be236f04-dec6-4eb7-83e6-9ea175183a0b
+      ToPortId: 50538992-cdc1-4a75-b799-948fec292d44
+    - FromGuid: be236f04-dec6-4eb7-83e6-9ea175183a0b
+      FromPortId: 07b610c8-f57a-4d78-b426-dd32d52bd8ed
+      ToGuid: ddb29298-b4c7-4c15-a18d-ccb96a5d5d66
+      ToPortId: 60291a36-b52e-4ece-b39a-56aa67b06658
+    - FromGuid: 7941675c-a843-444a-8d18-8379f12234d7
+      FromPortId: 20f7c446-271e-4b33-880b-23c500821c2d
+      ToGuid: 5cdb285a-66c2-4793-aee9-cb4660891523
+      ToPortId: 31b03735-d64b-48a6-80ac-05a8936b4619
+    - FromGuid: 5cdb285a-66c2-4793-aee9-cb4660891523
+      FromPortId: 9b406475-e8a4-470c-83dd-b3599d9c76de
+      ToGuid: 732dcbd7-e3b7-433e-988b-0dab9ec67f77
+      ToPortId: 3961dea5-42fb-414d-8022-cd8f7a59901b
+    - FromGuid: 732dcbd7-e3b7-433e-988b-0dab9ec67f77
+      FromPortId: OldPizza.Button.049
+      ToGuid: 0d5e0575-9bab-4380-9a53-0e56b5e7621b
+      ToPortId: ce8bcb59-27ca-4bed-bfff-1af6b6ca2ea9
+    - FromGuid: ddb29298-b4c7-4c15-a18d-ccb96a5d5d66
+      FromPortId: 3c85704c-a6cd-4415-b696-f65841714b3a
+      ToGuid: 0d5e0575-9bab-4380-9a53-0e56b5e7621b
+      ToPortId: ce8bcb59-27ca-4bed-bfff-1af6b6ca2ea9
+    - FromGuid: 732dcbd7-e3b7-433e-988b-0dab9ec67f77
+      FromPortId: OldPizza.Button.050
+      ToGuid: 72ebb99f-3154-4aca-bbe6-6ffb531cea4f
+      ToPortId: fd960778-c6ef-4150-b853-8314ce56c567
+    - FromGuid: 72ebb99f-3154-4aca-bbe6-6ffb531cea4f
+      FromPortId: ae3a4b13-a15b-4b9e-9c6e-94c6a4790828
+      ToGuid: 41a2de7e-c6f0-4acf-97da-d2db72b732ab
+      ToPortId: 0b819d80-820e-412c-9318-e1e6073342f5
+    - FromGuid: 41a2de7e-c6f0-4acf-97da-d2db72b732ab
+      FromPortId: 9ae044d9-624f-4a11-82bc-8632894de1d5
+      ToGuid: efec4108-969a-49d7-b53e-d0f871e2828f
+      ToPortId: 530826f4-f44a-4267-bb7f-85a8ad9e2054
+    - FromGuid: efec4108-969a-49d7-b53e-d0f871e2828f
+      FromPortId: OldPizza.Button.051
+      ToGuid: c2fe1393-6210-4893-b201-3e6b907bd99f
+      ToPortId: e35ef0c6-6a85-4271-b9e4-2205e19783dc
+    - FromGuid: 0d5e0575-9bab-4380-9a53-0e56b5e7621b
+      FromPortId: bc085013-5ebe-41fb-81c0-b1d3fb4caced
+      ToGuid: c2fe1393-6210-4893-b201-3e6b907bd99f
+      ToPortId: e35ef0c6-6a85-4271-b9e4-2205e19783dc
+    - FromGuid: c2fe1393-6210-4893-b201-3e6b907bd99f
+      FromPortId: 9b6b159e-31e9-4222-9c77-e4be2cab9e33
+      ToGuid: 547fe20e-b499-45d5-949f-28ab9e642b77
+      ToPortId: a4345106-b5bc-4bdd-bfc7-a5a70a602f28
+    - FromGuid: efec4108-969a-49d7-b53e-d0f871e2828f
+      FromPortId: OldPizza.Button.052
+      ToGuid: 4d8a39c2-c19b-4d46-a7e3-380d7e42180a
+      ToPortId: 609f952d-6325-447c-a0ba-72a9e29f5a85
+    - FromGuid: 4d8a39c2-c19b-4d46-a7e3-380d7e42180a
+      FromPortId: 1efbe2ff-a98a-4fde-81f6-d933e567a48f
+      ToGuid: d3c27714-9c3d-48e4-8f50-91b8c67416bb
+      ToPortId: f0b400ef-a1ad-48c6-904d-2c4535378e0e
+    - FromGuid: d3c27714-9c3d-48e4-8f50-91b8c67416bb
+      FromPortId: bb05595b-e94e-4a94-ab8f-8c152b208d83
+      ToGuid: 9607dc3b-e59f-4a1f-9429-0dbaf81582df
+      ToPortId: 0a52f25e-8c32-4257-93e2-69bd17ed5d93
+    - FromGuid: 9607dc3b-e59f-4a1f-9429-0dbaf81582df
+      FromPortId: aa8adef8-440d-49a3-80c5-4ffec0b1d753
+      ToGuid: b2725ba9-bfc7-4920-bd2d-466f05d82906
+      ToPortId: 368b83b1-5007-43da-b177-97751f319852
+    - FromGuid: b2725ba9-bfc7-4920-bd2d-466f05d82906
+      FromPortId: 26f2b5c8-9568-4dee-8742-f716a7694d30
+      ToGuid: db439ada-0b29-4ef8-aa0f-dff6535033bc
+      ToPortId: 2eb41cf0-0726-4974-8505-b99ab0f87a0f
+    - FromGuid: db439ada-0b29-4ef8-aa0f-dff6535033bc
+      FromPortId: ef26aa75-ebfc-401e-9a25-12d1ba9a6844
+      ToGuid: 83302576-ed27-436b-8fae-e0285b885cab
+      ToPortId: 40654547-23d0-4e9f-a53f-ffdcbd356e76
+    - FromGuid: 83302576-ed27-436b-8fae-e0285b885cab
+      FromPortId: 2974aa2a-7799-441d-af03-4d3a39f43269
+      ToGuid: dec14c4c-0547-40ac-a5eb-38bcaed0be29
+      ToPortId: 1707d518-1358-4909-abe0-be78f68d1d8b
+    - FromGuid: dec14c4c-0547-40ac-a5eb-38bcaed0be29
+      FromPortId: ac2b908a-e0e0-4c56-bdb0-4578356479aa
+      ToGuid: bf19b801-98b2-4cd4-99df-abd939fb1a8e
+      ToPortId: c7a0849f-a99c-4508-a0a6-749c1327e94a
+    - FromGuid: bf19b801-98b2-4cd4-99df-abd939fb1a8e
+      FromPortId: 0796754e-0892-4a80-ac08-cb2a7bb9ad9a
+      ToGuid: e6a8f491-502a-4f8e-9ad6-19ea33cd9b14
+      ToPortId: 21f41db3-d007-426e-b420-18f890167fa8
+    - FromGuid: 547fe20e-b499-45d5-949f-28ab9e642b77
+      FromPortId: 9678b6ef-a908-49e8-a8a2-5ae4860253a5
+      ToGuid: 0c5daa9e-4871-40b4-b091-0b19e3691899
+      ToPortId: 475e96ae-fcad-4044-8ded-78a89bc46227
+    - FromGuid: 7f03baae-78bf-4461-97a0-c010e79a1c62
+      FromPortId: OldPizza.Button.002
+      ToGuid: 0e84cb21-f27c-4236-ab46-a115cb2afa9d
+      ToPortId: 6d2625fa-9151-4d06-82f6-59ff8e1580eb
+    - FromGuid: 0e84cb21-f27c-4236-ab46-a115cb2afa9d
+      FromPortId: 922357f9-1bd1-4a57-bea4-efa79a9161a5
+      ToGuid: ea1b4cd5-8cfb-4542-84da-16d53db539d7
+      ToPortId: 3d0f06d9-5506-459d-a3cb-98037ac42445
+    - FromGuid: ea1b4cd5-8cfb-4542-84da-16d53db539d7
+      FromPortId: 96a7cbbf-2303-4d7f-b2ce-fc2505382e15
+      ToGuid: 220f7a7b-46f5-4b8c-8160-576319374b66
+      ToPortId: 85a17f56-56bf-4f3d-ba03-ecd59dde82f9
+    - FromGuid: 220f7a7b-46f5-4b8c-8160-576319374b66
+      FromPortId: OldPizza.Button.053
+      ToGuid: cc43cfbc-a5ee-4f20-8a7b-a3540d0ad3e2
+      ToPortId: e7e1a916-aecb-4ede-a423-b4fc14e26f31
+    - FromGuid: 220f7a7b-46f5-4b8c-8160-576319374b66
+      FromPortId: OldPizza.Button.054
+      ToGuid: 948c3aec-36bf-4e1c-a3bc-effb222f0d0e
+      ToPortId: 3a11ec0a-f7ee-4415-8719-46d44cf722fd
+    - FromGuid: cc43cfbc-a5ee-4f20-8a7b-a3540d0ad3e2
+      FromPortId: c75b21e0-ac03-4f31-9cd5-fcaedf03d56b
+      ToGuid: 068217cc-9e42-4724-97f1-d724aaeffd02
+      ToPortId: 66281517-1e4e-4eac-b021-84b75ebf4354
+    - FromGuid: 948c3aec-36bf-4e1c-a3bc-effb222f0d0e
+      FromPortId: 6ca8e539-a46e-47c2-95bc-acbfa1051f2c
+      ToGuid: 19616a0d-f289-47b6-9b5b-1eb0f2d107fc
+      ToPortId: 95907f7d-be7c-4228-a5f6-ad72809d080a
+    - FromGuid: 068217cc-9e42-4724-97f1-d724aaeffd02
+      FromPortId: 7287b559-aefc-4765-9706-8a2df35d6c70
+      ToGuid: 92254f5a-6a95-4c82-a9ff-39ebe1171a48
+      ToPortId: f8b599a6-aa16-4840-86fd-b2c70cab3577
+    - FromGuid: 19616a0d-f289-47b6-9b5b-1eb0f2d107fc
+      FromPortId: 3768bd99-f271-4ee3-a1be-1ed2cca26162
+      ToGuid: df65c611-111d-49ad-8740-5f33330f395b
+      ToPortId: 22f3700f-41bb-4d27-a530-a8d35d4a3249
+    - FromGuid: 068217cc-9e42-4724-97f1-d724aaeffd02
+      FromPortId: 7287b559-aefc-4765-9706-8a2df35d6c70
+      ToGuid: 826e179f-205c-4ce8-a0d5-365c2ca4a68a
+      ToPortId: 8f9b46ce-c5ec-407b-9159-6918091411b5
+    - FromGuid: 92254f5a-6a95-4c82-a9ff-39ebe1171a48
+      FromPortId: 2385354d-9aaf-42a2-a2e9-51bbcabb1382
+      ToGuid: ea671684-aec4-4979-acce-679ad662c461
+      ToPortId: fdea9ef1-b08c-4b1b-b4ef-f0cf6f87ac3a
+    - FromGuid: df65c611-111d-49ad-8740-5f33330f395b
+      FromPortId: bac6e954-fb0a-4889-8a7c-3387ddf51d09
+      ToGuid: ea671684-aec4-4979-acce-679ad662c461
+      ToPortId: fdea9ef1-b08c-4b1b-b4ef-f0cf6f87ac3a
+    - FromGuid: ea671684-aec4-4979-acce-679ad662c461
+      FromPortId: f8c3e8c0-575f-41d4-b7a1-770ed1245751
+      ToGuid: 5f623ecc-e0db-42eb-be26-adc3eb3a4349
+      ToPortId: 9938d3a7-db8c-4239-8773-2d96d6dc1073
+    - FromGuid: 5f623ecc-e0db-42eb-be26-adc3eb3a4349
+      FromPortId: 39ba5dfa-7a92-4471-b7c2-df4429ae1cad
+      ToGuid: a8e717d2-3e7d-4d54-b7f2-4b65dabcf419
+      ToPortId: 894eb0e2-b049-4ccf-a965-cc0b677eb9dd
+    - FromGuid: a8e717d2-3e7d-4d54-b7f2-4b65dabcf419
+      FromPortId: OldPizza.Button.055
+      ToGuid: 10e7fe11-9355-4aff-9c50-28eff140314b
+      ToPortId: d15cbe5e-7c4f-4838-b394-e55cb253408c
+    - FromGuid: 10e7fe11-9355-4aff-9c50-28eff140314b
+      FromPortId: 80721e94-edc7-4478-8e0f-89fe369c41a3
+      ToGuid: 4156cd14-d507-4c92-9415-b0a7dbc25b0f
+      ToPortId: d3cd39be-ed30-4663-9730-94a071db90a1
+    - FromGuid: 4156cd14-d507-4c92-9415-b0a7dbc25b0f
+      FromPortId: 019320d9-49de-46b1-a99b-d8af1364f1ca
+      ToGuid: 36064d8a-b150-443a-a029-dfb3afb133cd
+      ToPortId: aa5b291c-6a26-411a-b84f-3148e3f8448f
+    - FromGuid: a8e717d2-3e7d-4d54-b7f2-4b65dabcf419
+      FromPortId: OldPizza.Button.056
+      ToGuid: 60fdf6e5-1682-41c1-b2b2-9d4ac8816752
+      ToPortId: ad9920ff-29f9-446f-8908-3946f97708c6
+    - FromGuid: a8e717d2-3e7d-4d54-b7f2-4b65dabcf419
+      FromPortId: OldPizza.Button.057
+      ToGuid: ba8929b3-4d18-42f1-8472-c5d7e864eda6
+      ToPortId: f47e5a0b-6fcc-4843-a12f-234aac437e68
+    - FromGuid: 60fdf6e5-1682-41c1-b2b2-9d4ac8816752
+      FromPortId: 1c687d5a-5740-4767-b144-615c2d807329
+      ToGuid: 70d0d33a-e740-4a50-8a0d-03319eaee09a
+      ToPortId: 22f59e0a-7d92-46bf-9afe-5360f9851b4c
+    - FromGuid: ba8929b3-4d18-42f1-8472-c5d7e864eda6
+      FromPortId: 0f5bb989-0832-43fa-8656-b91ac5c0de5e
+      ToGuid: 70d0d33a-e740-4a50-8a0d-03319eaee09a
+      ToPortId: 22f59e0a-7d92-46bf-9afe-5360f9851b4c
+    - FromGuid: 36064d8a-b150-443a-a029-dfb3afb133cd
+      FromPortId: c6da51eb-b81e-49e8-9110-4c71fe5b15e5
+      ToGuid: 65eae56d-d7cb-423e-b09d-1884b2822199
+      ToPortId: 2934e1e6-ed8e-440d-bce3-2177f6cc5a6c
+    - FromGuid: 65eae56d-d7cb-423e-b09d-1884b2822199
+      FromPortId: 0d224bee-8c1d-4312-9205-afdc9523c51c
+      ToGuid: 6c8f48c8-5e70-4eb4-83bd-5523a4f21fba
+      ToPortId: 64bf0314-178c-4b0f-9ad3-380500b99ef2
+    - FromGuid: 70d0d33a-e740-4a50-8a0d-03319eaee09a
+      FromPortId: 38a02d94-7c81-4e02-95e3-f5230a5730f1
+      ToGuid: 208f23f7-d265-4bec-bfb8-f8c848fc755f
+      ToPortId: b1b2411b-2909-4c19-9124-65d4055ae05f
+    - FromGuid: 208f23f7-d265-4bec-bfb8-f8c848fc755f
+      FromPortId: cf2477fa-b650-43f0-8e8a-2ad0b2c34b1b
+      ToGuid: d41e08a5-a275-4c5d-aa34-cee592827314
+      ToPortId: d4390c65-ba4a-4500-b77b-4b2cc8d563b6
+    - FromGuid: 5907ed58-11fa-437a-8722-c99c0d98aa55
+      FromPortId: e088663c-f77d-4ba7-93e4-d2f42bdfe7cf
+      ToGuid: 65d1e1a7-49d7-454a-999a-847bc1bfd84e
+      ToPortId: 7c510840-9d78-42dc-a3aa-29ab00b2854d
+    - FromGuid: 948c3aec-36bf-4e1c-a3bc-effb222f0d0e
+      FromPortId: 6ca8e539-a46e-47c2-95bc-acbfa1051f2c
+      ToGuid: 538800fa-70eb-4c9a-979c-25fde6d4765b
+      ToPortId: 57897daf-4173-4010-93ab-28cf5ea071db
+    - FromGuid: cc43cfbc-a5ee-4f20-8a7b-a3540d0ad3e2
+      FromPortId: c75b21e0-ac03-4f31-9cd5-fcaedf03d56b
+      ToGuid: 538800fa-70eb-4c9a-979c-25fde6d4765b
+      ToPortId: 57897daf-4173-4010-93ab-28cf5ea071db
+    - FromGuid: 068217cc-9e42-4724-97f1-d724aaeffd02
+      FromPortId: 7287b559-aefc-4765-9706-8a2df35d6c70
+      ToGuid: 344b17c3-4bc4-4478-a020-5d01dcf4b921
+      ToPortId: 1a9b1dac-4873-4e84-b809-06feb65798aa
+    - FromGuid: 19616a0d-f289-47b6-9b5b-1eb0f2d107fc
+      FromPortId: 3768bd99-f271-4ee3-a1be-1ed2cca26162
+      ToGuid: 8d12aafc-ac81-4c0e-a3d3-78b7b23b54bc
+      ToPortId: d67e868f-6515-4b28-b0ac-1202fb6d450d
+    - FromGuid: ba8929b3-4d18-42f1-8472-c5d7e864eda6
+      FromPortId: 0f5bb989-0832-43fa-8656-b91ac5c0de5e
+      ToGuid: e902792d-815e-4121-8fe2-47afc8db85c4
+      ToPortId: 8a77eac4-b3f2-4df7-b0ac-0d67141893a4
+    - FromGuid: 60fdf6e5-1682-41c1-b2b2-9d4ac8816752
+      FromPortId: 1c687d5a-5740-4767-b144-615c2d807329
+      ToGuid: e902792d-815e-4121-8fe2-47afc8db85c4
+      ToPortId: 8a77eac4-b3f2-4df7-b0ac-0d67141893a4
+    - FromGuid: 65eae56d-d7cb-423e-b09d-1884b2822199
+      FromPortId: 0d224bee-8c1d-4312-9205-afdc9523c51c
+      ToGuid: 0071d55d-cc9f-46ea-acff-783e594d7b8d
+      ToPortId: cf20aca1-389e-4372-add5-7beb69ef847a
+    - FromGuid: e873229d-23d4-4c40-a2db-38d9ab6db184
+      FromPortId: OldPizza.Button.038
+      ToGuid: c7aa6d65-97df-4017-9099-8e31a49b1b41
+      ToPortId: a96c6d5b-fa22-4815-af26-cbb5605cfb07
+    - FromGuid: f8f14034-c60c-4cb8-9f7e-ff78833ff6fb
+      FromPortId: 96dc2543-70e1-45c8-bb97-03331d1b3438
+      ToGuid: 6a305ef7-16c1-49f2-9174-4a2f784bd2c2
+      ToPortId: c57009e2-cf4a-463c-a474-0596bf54ed4b
+    - FromGuid: e9be91ee-af4f-4a65-b932-4195efcf40cc
+      FromPortId: 9e113661-3184-4554-8b4c-90df0fe90248
+      ToGuid: d8004b51-6ae8-4080-977a-023117a5e76a
+      ToPortId: 2cfa3939-bd31-47ac-9c36-59d018537946
+    - FromGuid: a2d0aaa1-12b4-4c85-8e9b-7c1d66f2f124
+      FromPortId: de22bef1-54c5-43a8-af24-5053f2dcb7f6
+      ToGuid: 6687f724-27d4-4a8d-8709-4dc435201b12
+      ToPortId: 83cb896e-71f4-4e2d-94cf-11d25b33aba8
+    - FromGuid: 895352bb-731e-44f4-85d7-aa6eed1b5a35
+      FromPortId: OldPizza.Button.044
+      ToGuid: e418cd22-34aa-40ee-9b9f-b29199a70c0b
+      ToPortId: 06cb3fbb-6d46-440e-97c3-ed82038b6ab5
+    - FromGuid: 895352bb-731e-44f4-85d7-aa6eed1b5a35
+      FromPortId: OldPizza.Button.043
+      ToGuid: e418cd22-34aa-40ee-9b9f-b29199a70c0b
+      ToPortId: 06cb3fbb-6d46-440e-97c3-ed82038b6ab5
+    - FromGuid: ca7f22a9-b24c-48a6-bdc4-0975f37f5d5b
+      FromPortId: de1beb49-4bbe-476f-921b-152c6b807f1b
+      ToGuid: 4a14db8c-867f-41b0-972a-377c69a8cd2e
+      ToPortId: e94d3477-57d5-416f-8e66-27c43192d34c
+    - FromGuid: ae9504dd-e608-4f82-b06f-49fb7dfd3f91
+      FromPortId: e5b053fe-5e44-418f-9d93-9cf24e8347b7
+      ToGuid: 7cf0713f-d5fd-4b98-8b1c-88682ccab458
+      ToPortId: 86a28c29-8c6b-4522-a3c1-c99fd695f53a
+    - FromGuid: 8178ae2a-66c8-4f08-9c63-96ec20a0a352
+      FromPortId: fa5552c0-6e67-4527-802a-7c2dc3993731
+      ToGuid: 3faf3c6e-855e-49b0-9a9d-f69e793ba9f9
+      ToPortId: 4271f616-e92f-48e8-8c5c-3684caf8eff2
+    - FromGuid: 8178ae2a-66c8-4f08-9c63-96ec20a0a352
+      FromPortId: fa5552c0-6e67-4527-802a-7c2dc3993731
+      ToGuid: 397b7be0-a094-432e-af01-b0c6c5cb360e
+      ToPortId: 57d89df5-85c7-493e-a3a7-0b0facc6376f
+    - FromGuid: 3faf3c6e-855e-49b0-9a9d-f69e793ba9f9
+      FromPortId: ec019620-ac1d-44da-837a-f982903ffaef
+      ToGuid: 4462717f-bc95-4ffa-8ade-e88a08914528
+      ToPortId: 8dc4477b-bf69-4552-a28f-7a05a310c3cf
+    - FromGuid: 4462717f-bc95-4ffa-8ade-e88a08914528
+      FromPortId: OldPizza.Button.058
+      ToGuid: ea29126b-5592-48c4-ac6b-291db7f8e2fc
+      ToPortId: 23d141e8-08f1-4d16-8000-3eb1b967e48a
+    - FromGuid: 4462717f-bc95-4ffa-8ade-e88a08914528
+      FromPortId: OldPizza.Button.059
+      ToGuid: 9f54a24d-8d77-475e-8242-916c44206e6f
+      ToPortId: 24e7dc16-9a31-4fec-bebe-88a560dc2f96
+    - FromGuid: ea29126b-5592-48c4-ac6b-291db7f8e2fc
+      FromPortId: 00cff8c9-95f0-4deb-bc98-91f568d53605
+      ToGuid: 2959c60f-49c5-484b-b88e-ebe76ac3ebbf
+      ToPortId: 0abf2c86-497d-4488-9787-95cab23c88b2
+    - FromGuid: 9f54a24d-8d77-475e-8242-916c44206e6f
+      FromPortId: 3f4d2312-80ac-42b2-89f0-84d3d4031da0
+      ToGuid: bd7596d5-53d4-4327-94de-648130074f2f
+      ToPortId: 9c0ac7fa-a3db-4c16-a1d0-5445b7843c96
+    - FromGuid: 4462717f-bc95-4ffa-8ade-e88a08914528
+      FromPortId: OldPizza.Button.060
+      ToGuid: 6f8fbfec-4024-4d53-a7f9-3a560cd9761f
+      ToPortId: 9ab8fb26-2b45-4bfb-8b00-65c0339aa389
+    - FromGuid: bd7596d5-53d4-4327-94de-648130074f2f
+      FromPortId: 69661281-1a7f-4892-a4ca-2591f3102371
+      ToGuid: d1901972-a08b-422c-bc3a-385604fd4118
+      ToPortId: c08f017f-8f60-4fa7-bcf3-e774dda14cdb
+    - FromGuid: 2959c60f-49c5-484b-b88e-ebe76ac3ebbf
+      FromPortId: de568070-769f-41d8-a778-27b9ff6a89df
+      ToGuid: d1901972-a08b-422c-bc3a-385604fd4118
+      ToPortId: c08f017f-8f60-4fa7-bcf3-e774dda14cdb
+    - FromGuid: d1901972-a08b-422c-bc3a-385604fd4118
+      FromPortId: 20e3fd2a-c961-43d2-a11f-e4545e2139d0
+      ToGuid: 2bdffc66-5513-4f63-872b-861cbdcd55f1
+      ToPortId: 28dd9a76-22d5-42a2-9aee-c8e65226bdec
+    - FromGuid: de998f64-8938-4658-a289-0965c88e0ade
+      FromPortId: 7e8416e6-b96e-43d5-83d5-cc0f40054a4a
+      ToGuid: 6f8fbfec-4024-4d53-a7f9-3a560cd9761f
+      ToPortId: 9ab8fb26-2b45-4bfb-8b00-65c0339aa389
+    - FromGuid: 2bdffc66-5513-4f63-872b-861cbdcd55f1
+      FromPortId: 28830c67-498a-4578-bf38-50f78891215c
+      ToGuid: 65eae56d-d7cb-423e-b09d-1884b2822199
+      ToPortId: 2934e1e6-ed8e-440d-bce3-2177f6cc5a6c
+    - FromGuid: 68307461-6f70-492e-9231-2c375379096a
+      FromPortId: de4ad10c-1e7e-4181-8b0c-dfd8be1e97a0
+      ToGuid: 8ef060bb-d195-4d5c-b636-881400c4e504
+      ToPortId: 601d0305-20bb-4bc4-b6c6-6bb405e981ef
+    - FromGuid: b958311f-d027-453d-9454-967883502fab
+      FromPortId: ef729e9b-7186-4748-a253-1401c0cbb495
+      ToGuid: f7962097-002e-4c43-a4f5-9f477a0310a2
+      ToPortId: f7235f12-b96d-4efb-9210-91f85aea5663
+    - FromGuid: 1cb4c9dd-7884-488f-967a-cdbab2a486bd
+      FromPortId: ef7e6d3a-1a80-4912-a3cf-2a41145a3682
+      ToGuid: 922ab4d0-76a2-4cbc-96a7-4e16543abc6c
+      ToPortId: 517d70d3-87f1-47fd-be85-c3771dfe1e51
+    - FromGuid: 922ab4d0-76a2-4cbc-96a7-4e16543abc6c
+      FromPortId: a215c623-b969-4aae-af56-ba2209b42380
+      ToGuid: cb82629a-fe1c-460a-b860-3b8bcc9d698b
+      ToPortId: ffdfcfbc-0cd1-4c84-a730-9ac003a28990
+    - FromGuid: cb82629a-fe1c-460a-b860-3b8bcc9d698b
+      FromPortId: 6d1993a4-9fd8-4c65-a39a-2617069e7376
+      ToGuid: b0fc83ca-1048-4271-bc07-95cfc6894842
+      ToPortId: db180b05-492b-4b40-a5ef-f4e07061bfe7
+    - FromGuid: b0fc83ca-1048-4271-bc07-95cfc6894842
+      FromPortId: 6051f99a-31fc-420a-974a-42f32348e0ea
+      ToGuid: a66f95fa-d3fc-4fc3-87a5-3499408e08fa
+      ToPortId: cbd953ad-5d0e-4972-8088-9d7f9cf3bfc0
+    - FromGuid: a66f95fa-d3fc-4fc3-87a5-3499408e08fa
+      FromPortId: 01a1f6ae-d115-4b56-9ede-730936fb375c
+      ToGuid: 121aa16f-8d09-459f-a19f-194d8760cd9d
+      ToPortId: 635fab5f-84ae-49fe-9377-b3108fd6266d
+    - FromGuid: 121aa16f-8d09-459f-a19f-194d8760cd9d
+      FromPortId: 0e878b5d-9148-49cb-b97b-73df7718c0f3
+      ToGuid: 1b54fdf1-53bd-41ca-bd7f-2201d5774730
+      ToPortId: f8429aad-f885-488f-b554-0c9a7852ac5a
+    - FromGuid: 1b54fdf1-53bd-41ca-bd7f-2201d5774730
+      FromPortId: c4ac0857-c184-4113-bbb4-f639e69de720
+      ToGuid: 162eddab-ef07-4d7a-ae05-bad09b29ace7
+      ToPortId: 9dc626e2-667f-4e6a-8613-59bc6dc65699
+    - FromGuid: 162eddab-ef07-4d7a-ae05-bad09b29ace7
+      FromPortId: OldPizza.Button.061
+      ToGuid: 9cf59f8e-ffa3-471c-a2af-8e46daf2a927
+      ToPortId: ad7e7f81-72d8-4866-8641-a5878ca5409e
+    - FromGuid: 162eddab-ef07-4d7a-ae05-bad09b29ace7
+      FromPortId: OldPizza.Button.062
+      ToGuid: 600e8f0a-9fc4-4e2b-beb4-8ad10f66c84d
+      ToPortId: d6547245-6990-4bb0-ad24-32ca515bc949
+    - FromGuid: 9cf59f8e-ffa3-471c-a2af-8e46daf2a927
+      FromPortId: 6e53fe7d-11e6-4eff-86b8-f9a4395bcedc
+      ToGuid: be72eae4-3655-439a-9f00-fe48e1ce6a22
+      ToPortId: c2c381a0-ab11-4093-9238-cf120bfebc76
+    - FromGuid: 600e8f0a-9fc4-4e2b-beb4-8ad10f66c84d
+      FromPortId: ed781b37-85c6-45f3-a050-4325b788961d
+      ToGuid: c8136f07-f683-4fd8-b5d6-7ba16c399a7a
+      ToPortId: ec360f3e-1413-4e1e-8238-51fa831a0074
+    - FromGuid: c8136f07-f683-4fd8-b5d6-7ba16c399a7a
+      FromPortId: 10a6c465-b134-4027-bf41-2687e4af71be
+      ToGuid: 426e151a-26cb-4913-8cb7-5dc2159ba2e6
+      ToPortId: 84abb001-7811-48c3-9645-8e6a7a3ff33e
+    - FromGuid: c8136f07-f683-4fd8-b5d6-7ba16c399a7a
+      FromPortId: 10a6c465-b134-4027-bf41-2687e4af71be
+      ToGuid: ec3de095-8ccf-4cfb-b227-6bcb9d05f01b
+      ToPortId: 377344e3-c786-4730-b1e2-5c2837dba6de
+    - FromGuid: be72eae4-3655-439a-9f00-fe48e1ce6a22
+      FromPortId: 515e3c57-fd5a-4779-b187-7c21abd516ac
+      ToGuid: 69bcf123-4f93-406d-bc13-6e30190f41d5
+      ToPortId: 61424c8a-dd4b-415c-a9e9-574a17bc1e5e
+    - FromGuid: 426e151a-26cb-4913-8cb7-5dc2159ba2e6
+      FromPortId: 80516e56-16b0-4dfe-a2a7-27e81a0a1da1
+      ToGuid: d4f625f0-4f8d-4923-8b0a-ec2b2278b96f
+      ToPortId: fd2eeb3b-7406-4593-9426-015775a86dba
+    - FromGuid: 69bcf123-4f93-406d-bc13-6e30190f41d5
+      FromPortId: 81852372-ab7f-4d57-a69a-eace5c64b2e6
+      ToGuid: ec45de55-5a2e-46bb-863c-38872d311458
+      ToPortId: 0ff991b7-d1a3-4633-8d23-b2bf221144d4
+    - FromGuid: 817c7afb-77ab-4563-90cb-6718354beda3
+      FromPortId: 998c7115-1b43-4e42-a98c-0f172b67a083
+      ToGuid: 220d7c7d-2aff-40cd-b200-8c89e021d429
+      ToPortId: 273229a7-fa45-4d31-8647-d3e89ba94d21
+    - FromGuid: 038412d1-d693-4777-ab5c-110eea956683
+      FromPortId: 08d50aba-2b71-4111-bd6e-7018c9a2d589
+      ToGuid: 1e73e2f2-7fe0-4468-9ce4-e3d63cd7a5c9
+      ToPortId: f06d2f84-b798-4fd2-bb7d-de3b06fe0c91
+    - FromGuid: 9c75acc6-d4e9-490d-949c-cf36bb5359b1
+      FromPortId: f5ced85f-9af1-4998-bcdb-82e874abaf6f
+      ToGuid: e2489367-0d1e-4b31-bd45-b9d3836fba19
+      ToPortId: 9941c434-fe8e-4364-ab87-6e89aa22d231
+    - FromGuid: f6688a6a-792c-4d34-b96c-aa91975ea2c3
+      FromPortId: d13f2678-23aa-4275-aaea-466a928d5ee7
+      ToGuid: d2f6a7d8-4902-426a-b3c8-40ac736fcc20
+      ToPortId: f7279a8c-66ce-4f57-ab4a-4864a980da3a
+    - FromGuid: 5608885e-9619-43c1-9178-d5cbe2645a13
+      FromPortId: fc25c2c4-9f7b-4cd5-96ca-c058f0dccad6
+      ToGuid: f84fc4ad-ae5a-4622-bbd0-bbfbd1957901
+      ToPortId: b50aef17-24fa-40eb-8623-01e8419bf724
+    - FromGuid: 7941675c-a843-444a-8d18-8379f12234d7
+      FromPortId: 20f7c446-271e-4b33-880b-23c500821c2d
+      ToGuid: 2fa91983-244e-477b-8399-d7fe7723c97e
+      ToPortId: 88878e6f-22ff-4eab-a0f6-d9a2fadabbee
+    - FromGuid: 4d8a39c2-c19b-4d46-a7e3-380d7e42180a
+      FromPortId: 1efbe2ff-a98a-4fde-81f6-d933e567a48f
+      ToGuid: e65cdf5b-d68d-423a-a1da-5ece1609e410
+      ToPortId: cf96b9a2-4ecb-4773-bf13-43d03461aeef
+    - FromGuid: 9607dc3b-e59f-4a1f-9429-0dbaf81582df
+      FromPortId: aa8adef8-440d-49a3-80c5-4ffec0b1d753
+      ToGuid: 31a201bb-2e45-4872-99e4-9761f0dc644f
+      ToPortId: 0ea32c05-aa87-4e20-a82b-149210f0ec66
+    - FromGuid: db439ada-0b29-4ef8-aa0f-dff6535033bc
+      FromPortId: ef26aa75-ebfc-401e-9a25-12d1ba9a6844
+      ToGuid: 0405cf31-72ac-416f-b0a7-2845454486d0
+      ToPortId: bd393153-f8d9-4eff-9110-e10a4b547fcd
+    - FromGuid: f989d0d0-1b32-4422-a72f-bcf392ab33f1
+      FromPortId: de113c08-1d8d-4634-b85a-19a1fafaf11e
+      ToGuid: f149c15e-63e6-445a-ad72-fc94827701ca
+      ToPortId: e59fe2ae-6f46-401b-a350-b35df6e88432
+    - FromGuid: 857b30c1-fae5-42ea-8d91-8a871be17bae
+      FromPortId: e2109c4d-6c2b-4487-8de2-1cb7f24ede45
+      ToGuid: edeb494b-3a1c-4adc-9863-9cb0b1b051a5
+      ToPortId: 308bf8c7-3bf0-4510-bea4-3a9fd1b4c66f
+    - FromGuid: e7949df9-403d-49fb-8bc2-85945d138543
+      FromPortId: f67b476d-dc9c-4dd7-acc3-606e3d488eb1
+      ToGuid: cd6f0a2a-1a68-48dc-875b-3054120af7cd
+      ToPortId: 453d349f-6d72-45ea-89b6-21b6608140a8
+    - FromGuid: 01cbbf01-7c49-4fc6-ab3b-545d9c54b74e
+      FromPortId: 3e3726aa-941f-4d7c-a216-3592e4997945
+      ToGuid: fbc82722-c50e-4b4a-b0ba-1fa8d5c1825d
+      ToPortId: 6e84b55f-f21b-407f-a043-0293f965db9e
+    - FromGuid: 4219cba1-947f-46c9-98f9-c796b42748d0
+      FromPortId: df2577f5-8e69-47d4-8c13-d09f8ad4cd4f
+      ToGuid: a12170ac-44ed-4888-b00b-68ea02100506
+      ToPortId: c1b657fd-978b-457d-a341-78c68891a01f
+    - FromGuid: 9dafa0b8-64e4-4b07-ba6d-58888861f6a4
+      FromPortId: df04fb75-bee4-4e8c-a88d-e444df6d77dd
+      ToGuid: 954329bf-8bc1-4ed4-b642-1e1dbe44fa1d
+      ToPortId: f40ceedf-0f04-4fd2-9d8c-86d15bfeaa24
+    - FromGuid: 1d3b03e1-46e5-4ab6-89b3-edee627ea95b
+      FromPortId: 675a7f80-a28e-47b1-a0c1-4a1a40075ab1
+      ToGuid: 954329bf-8bc1-4ed4-b642-1e1dbe44fa1d
+      ToPortId: f40ceedf-0f04-4fd2-9d8c-86d15bfeaa24
+    - FromGuid: 2b72f6af-6e13-492a-8247-0281c1938c54
+      FromPortId: 3976d935-41e3-4921-804f-a4e4e4f5f7ed
+      ToGuid: 6cca2bd9-4f7d-4084-b10c-a63572b49b63
+      ToPortId: 5afa490d-665b-4521-9ffc-caa693bdd3e2
+    - FromGuid: ff08412b-0a03-44a7-9d7b-6e54988c296b
+      FromPortId: 97571ba1-59f2-4831-8b94-b74c0e827319
+      ToGuid: 07dec059-94c0-4771-8893-4aacb43998c4
+      ToPortId: c67507ce-fedd-44e0-af0b-ddb320351e93
+    - FromGuid: 2d4f086a-a765-4732-afb3-18c92420679d
+      FromPortId: 2d3fa662-56b8-4c6d-8e0c-767c0a589a99
+      ToGuid: 9a90982f-9d92-4bb3-93a8-446218ca4eeb
+      ToPortId: b577b684-7d39-4ae8-a4e7-9d87a6d6b610
+    - FromGuid: f18d945d-8cc0-4195-9b9c-94d3bc276370
+      FromPortId: 0f46ef08-6ed5-4ecf-96b8-81ebc2e81292
+      ToGuid: dac85a7a-33fa-4f3e-ad9e-ea7b19373d4b
+      ToPortId: 705c1acb-d5d8-4843-99fd-01b2b8585803
+    - FromGuid: 96bb3a3c-4648-410a-a421-4c5a289927b8
+      FromPortId: ef08b209-7029-4be8-9f78-d8322d8b040c
+      ToGuid: a8253a26-8f85-4f81-b25e-d5fc30d7b43d
+      ToPortId: c168315c-75a5-420f-842b-b47f60474a99
+    - FromGuid: 865b50b9-95ec-4d1f-b1b1-421ca9b12db2
+      FromPortId: 98c35c05-48a9-459e-9994-18ba4447956d
+      ToGuid: 291edfc5-8b7d-4054-aa37-623ee38687db
+      ToPortId: d63ff143-90c5-4404-9366-03b79c90b64e
+    Notes: []
+    AudioEventNodes: []
+    EndNodes:
+    - Guid: 5dd5258a-a88c-46b6-89bf-6236a6c20701
+      Position:
+        X: 2773
+        Y: -80
+    - Guid: fb8fc6c6-e473-4a1d-90de-aba68ce52ce3
+      Position:
+        X: 9566
+        Y: 478
+    - Guid: 601e96b6-3c79-4edb-ad18-e4d9fe595ac2
+      Position:
+        X: 14761
+        Y: 1736
+    - Guid: 2a54142c-5283-4972-aff7-1e40cac89a20
+      Position:
+        X: 10806
+        Y: 1014
+    - Guid: f2480bda-381d-4314-975f-1487f000b500
+      Position:
+        X: 9496
+        Y: 2111
+    - Guid: 95ba2e9c-abd9-43a4-9c56-fa68104a37e5
+      Position:
+        X: 12322
+        Y: 2775
+    - Guid: d8c07725-03fe-4c91-b3d2-e05a62286430
+      Position:
+        X: 17304
+        Y: 2829
+    - Guid: e6a8f491-502a-4f8e-9ad6-19ea33cd9b14
+      Position:
+        X: 14703
+        Y: 3867
+    - Guid: 0c5daa9e-4871-40b4-b091-0b19e3691899
+      Position:
+        X: 13472
+        Y: 3620
+    - Guid: b5607312-ae90-442d-96b3-38e95545b21e
+      Position:
+        X: 13220
+        Y: 3164
+  Localization:
+  - {fileID: 4900000, guid: 163892603cfd28240930dbeb0fca7c32, type: 3}
+  - {fileID: 4900000, guid: 33f5aace301987e43be2e9c957f6c2b2, type: 3}
+  - {fileID: 4900000, guid: c32512613ad8c4d448793f4212854646, type: 3}
+  - {fileID: 4900000, guid: 41eb72e5ac7052d4db6fd636575ede93, type: 3}
+  - {fileID: 4900000, guid: 37cbc4ef6dd88ca499115be997bcd327, type: 3}
+  Started:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1105782525}
+        m_TargetAssemblyTypeName: CodeBase.Features.Cheats.DebugSceneBootstrapper,
+          CrimeCalls
+        m_MethodName: Setup
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &598275942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598275940}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1851884916}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &599333816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 599333820}
+  - component: {fileID: 599333819}
+  - component: {fileID: 599333818}
+  - component: {fileID: 599333817}
+  m_Layer: 5
+  m_Name: UI Root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &599333817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599333816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &599333818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599333816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1600, y: 900}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0.5
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &599333819
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599333816}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &599333820
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599333816}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 443931863}
+  - {fileID: 1403536787}
+  - {fileID: 759138025}
+  - {fileID: 1542048901}
+  - {fileID: 19252271}
+  - {fileID: 1759358838}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!1 &606975798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 606975799}
+  - component: {fileID: 606975801}
+  - component: {fileID: 606975800}
+  m_Layer: 5
+  m_Name: Choices Layout
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &606975799
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606975798}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1294501494}
+  - {fileID: 230912864}
+  m_Father: {fileID: 759138025}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &606975800
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606975798}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &606975801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606975798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 7
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!1 &759138024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 759138025}
+  - component: {fileID: 759138026}
+  m_Layer: 5
+  m_Name: Choices UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &759138025
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759138024}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 606975799}
+  m_Father: {fileID: 599333820}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -100, y: -100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &759138026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759138024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f19641aad846a6889ccc303c580b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _container: {fileID: 230912864}
+  _buttonPrefab: {fileID: -4015225624342433323, guid: 08d8367a0fec56838a15fb690611670e, type: 3}
+  _canvas: {fileID: 606975800}
+  _timer: {fileID: 1294501495}
+--- !u!1 &771622104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 771622105}
+  - component: {fileID: 771622107}
+  - component: {fileID: 771622106}
+  m_Layer: 5
+  m_Name: Menu Layout
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &771622105
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771622104}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1094176886}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &771622106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771622104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 50
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!222 &771622107
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771622104}
+  m_CullTransparentMesh: 1
+--- !u!1001 &1088945044
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 19252271}
+    m_Modifications:
+    - target: {fileID: 1460325158496557154, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460325158496557154, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817568526208771427, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_Name
+      value: Level Details Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817568526208771427, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144707470903749773, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+--- !u!224 &1088945045 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6288535501635606573, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+  m_PrefabInstance: {fileID: 1088945044}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1088945046 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6296723875263804145, guid: 73a49046d3ab21371b1afdb12f74567e, type: 3}
+  m_PrefabInstance: {fileID: 1088945044}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15cabfd8566a6803abd7a7f8d84727bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1094176885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1094176886}
+  - component: {fileID: 1094176888}
+  - component: {fileID: 1094176887}
+  m_Layer: 5
+  m_Name: Level Menu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1094176886
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094176885}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 771622105}
+  m_Father: {fileID: 19252271}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -100, y: -100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1094176887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094176885}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1094176888
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094176885}
+  m_CullTransparentMesh: 1
+--- !u!1 &1105782523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1105782524}
+  - component: {fileID: 1105782525}
+  m_Layer: 0
+  m_Name: Debug Bootstrapper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1105782524
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105782523}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1851884916}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1105782525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105782523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50dd399cd5514e8191555335e995ddec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1185954860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1185954861}
+  - component: {fileID: 1185954862}
+  m_Layer: 5
+  m_Name: Phrases Layout
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1185954861
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185954860}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1403536787}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -100, y: -100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1185954862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185954860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 50
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!1001 &1294501493
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 606975799}
+    m_Modifications:
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 399.99988
+      objectReference: {fileID: 0}
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 199.99994
+      objectReference: {fileID: 0}
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -649.99994
+      objectReference: {fileID: 0}
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145560927053597528, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276193392773380344, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_Name
+      value: Timer Bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276193392773380344, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915626100154574571, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172808589355536295, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172808589355536295, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 40
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+--- !u!224 &1294501494 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 483375589448595573, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+  m_PrefabInstance: {fileID: 1294501493}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1294501495 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3204434229523982821, guid: 7deba41f267a6ef22a724ed1e8d335c6, type: 3}
+  m_PrefabInstance: {fileID: 1294501493}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436dcd493a9a4425be986859046550e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1403536786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1403536787}
+  - component: {fileID: 1403536789}
+  - component: {fileID: 1403536788}
+  m_Layer: 5
+  m_Name: Phrases UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1403536787
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403536786}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1185954861}
+  m_Father: {fileID: 599333820}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1403536788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403536786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83f71b0953f14bddb71125595d7c68bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _container: {fileID: 1185954861}
+  _callPhrasePrefab: {fileID: 4186859054661311459, guid: 0e081ec3e106c7589bebb45a3cacb79a, type: 3}
+--- !u!222 &1403536789
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403536786}
+  m_CullTransparentMesh: 1
+--- !u!1 &1542048900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1542048901}
+  - component: {fileID: 1542048903}
+  - component: {fileID: 1542048902}
+  m_Layer: 5
+  m_Name: Main Menu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1542048901
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542048900}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 599333820}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -100, y: -100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1542048902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542048900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1542048903
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542048900}
+  m_CullTransparentMesh: 1
+--- !u!1 &1759358837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1759358838}
+  - component: {fileID: 1759358841}
+  - component: {fileID: 1759358840}
+  - component: {fileID: 1759358839}
+  m_Layer: 5
+  m_Name: Build Version Label
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1759358838
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759358837}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 599333820}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 100}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &1759358839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759358837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f479f574cf6f0230874964082dc2294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _label: {fileID: 1759358840}
+--- !u!114 &1759358840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759358837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Build version: 0.0.999'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: cd139cb443f949863a9501587dc879c8, type: 2}
+  m_sharedMaterial: {fileID: 1187893917364395131, guid: cd139cb443f949863a9501587dc879c8, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4286808963
+  m_fontColor: {r: 0.51286924, g: 0.51286924, b: 0.51286924, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 0
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 15, y: 15, z: 15, w: 15}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1759358841
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759358837}
+  m_CullTransparentMesh: 1
+--- !u!1 &1851884915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1851884916}
+  m_Layer: 0
+  m_Name: Debug
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1851884916
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851884915}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.69355, y: -0.29035357, z: 18.168476}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 598275942}
+  - {fileID: 1105782524}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 217571976}
+  - {fileID: 599333820}
+  - {fileID: 304330190}
+  - {fileID: 442929863}
+  - {fileID: 1851884916}

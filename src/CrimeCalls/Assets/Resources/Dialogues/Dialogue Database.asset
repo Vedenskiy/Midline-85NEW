@@ -16,7 +16,8 @@ MonoBehaviour:
   - Name: Elena
     Icon: {fileID: 0}
     Color: {r: 0.29119053, g: 0.8048404, b: 0.38327208, a: 1}
-    Emotions: []
+    Emotions:
+    - Name: 
   - Name: Girl
     Icon: {fileID: 0}
     Color: {r: 0.18709932, g: 0.6371524, b: 0.80651337, a: 1}
